@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply font-workSans text-[1.6rem] font-normal leading-[140%];
+    @apply font-workSans text-[1.6rem] font-normal leading-[140%] text-label-white;
   }
 
   h1 {
