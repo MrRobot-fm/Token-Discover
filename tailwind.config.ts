@@ -1,6 +1,7 @@
+import { withTV } from "tailwind-variants/transformer";
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+const config: Config = withTV({
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -30,5 +31,6 @@ const config: Config = {
     },
   },
   plugins: [],
-};
+});
+
 export default config;
