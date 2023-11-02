@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply text-[62.5%];
+@layer base {
+  html {
+    @apply text-[62.5%];
+  }
+
+  body {
+    @apply font-workSans text-[1.6rem] font-normal leading-[140%];
+  }
+
+  h1 {
+    @apply text-[6.7rem] font-bold leading-[110%] capitalize;
+  }
+
+  h2 {
+    @apply text-[5.1rem] font-bold leading-[110%] capitalize;
+  }
+
+  h3 {
+    @apply text-[3.8rem] font-bold leading-[120%] capitalize;
+  }
+
+  h4 {
+    @apply text-[2.8rem] font-bold leading-[140%] capitalize;
+  }
+
+  h5 {
+    @apply text-[2.2rem] font-bold leading-[160%] capitalize;
+  }
+
+  p {
+    @apply text-[1.6rem] font-normal leading-[140%];
+  }
+
+  span {
+    @apply text-[1.2rem] font-normal leading-[110%];
+  }
 }
