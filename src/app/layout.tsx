@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ChakraProviders } from "@/lib/chakra/provider/ChakraProvider";
+import { spaceMono, workSans } from "@/public/fonts/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${workSans.variable} ${spaceMono.variable}`}>
       <body>
         <ChakraProviders>{children}</ChakraProviders>
       </body>
