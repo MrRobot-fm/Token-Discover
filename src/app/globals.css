@@ -12,23 +12,23 @@
   }
 
   h1 {
-    @apply text-[6.7rem] font-bold leading-[110%] capitalize;
+    @apply text-[6.7rem] font-semibold leading-[110%] capitalize;
   }
 
   h2 {
-    @apply text-[5.1rem] font-bold leading-[110%] capitalize;
+    @apply text-[5.1rem] font-semibold leading-[110%] capitalize;
   }
 
   h3 {
-    @apply text-[3.8rem] font-bold leading-[120%] capitalize;
+    @apply text-[3.8rem] font-semibold leading-[120%] capitalize;
   }
 
   h4 {
-    @apply text-[2.8rem] font-bold leading-[140%] capitalize;
+    @apply text-[2.8rem] font-semibold leading-[140%] capitalize;
   }
 
   h5 {
-    @apply text-[2.2rem] font-bold leading-[160%] capitalize;
+    @apply text-[2.2rem] font-semibold leading-[160%] capitalize;
   }
 
   p {
