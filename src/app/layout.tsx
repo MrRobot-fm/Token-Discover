@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ChakraProviders } from "@/lib/chakra/provider/ChakraProvider";
 import { spaceMono, workSans } from "@/public/fonts/fonts";
 import "./globals.css";
 
@@ -15,9 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${workSans.variable} ${spaceMono.variable}`}>
-      <body>
-        <ChakraProviders>{children}</ChakraProviders>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
