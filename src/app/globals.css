@@ -11,31 +11,38 @@
     @apply font-workSans text-[1.6rem] font-normal leading-[140%] text-label-white;
   }
 
-  h1 {
-    @apply text-[6.7rem] font-semibold leading-[110%] capitalize;
+  h1,
+  .heading1 {
+    @apply text-[6.7rem] font-semibold capitalize leading-[110%];
   }
 
-  h2 {
-    @apply text-[5.1rem] font-semibold leading-[110%] capitalize;
+  h2,
+  .heading2 {
+    @apply text-[5.1rem] font-semibold capitalize leading-[110%];
   }
 
-  h3 {
-    @apply text-[3.8rem] font-semibold leading-[120%] capitalize;
+  h3,
+  .heading3 {
+    @apply text-[3.8rem] font-semibold capitalize leading-[120%];
   }
 
-  h4 {
-    @apply text-[2.8rem] font-semibold leading-[140%] capitalize;
+  h4,
+  .heading4 {
+    @apply text-[2.8rem] font-semibold capitalize leading-[140%];
   }
 
-  h5 {
-    @apply text-[2.2rem] font-semibold leading-[160%] capitalize;
+  h5,
+  .heading5 {
+    @apply text-[2.2rem] font-semibold capitalize leading-[160%];
   }
 
-  p {
+  p,
+  .paragraph {
     @apply text-[1.6rem] font-normal leading-[140%];
   }
 
-  span {
+  span,
+  .span {
     @apply text-[1.2rem] font-normal leading-[110%];
   }
 }
