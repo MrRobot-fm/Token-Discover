@@ -5,33 +5,27 @@ import type { ButtonProps } from "./Button.props";
 import { button } from "./button.variants";
 
 export const Button = (props: ButtonProps) => {
-  const { url, label, icon, size, variant } = props;
+  const { url: href, label, icon, size, variant } = props;
   const { buttonWrapper, buttonLabel, buttonIcon } = button({
     variant,
     size,
   });
 
-  const isExternal = checkIsExternal(url);
+  const isExternal = checkIsExternal(href);
+  const external = isExternal ? { target: "_blank", rel: "noopener" } : {};
 
-  if (isExternal) {
+  if (href) {
     return (
-      <a href={url} target="_blank" rel="noopener">
-        <button className={buttonWrapper()}>
-          {!!icon && <Icon name={icon} className={buttonIcon()} />}
-          <span className={buttonLabel()}>{label}</span>
-        </button>
-      </a>
-    );
-  }
-  if (!isExternal && url)
-    return (
-      <Link href={url}>
-        <button className={buttonWrapper()}>
-          {!!icon && <Icon name={icon} className={buttonIcon()} />}
-          <span className={buttonLabel()}>{label}</span>
-        </button>
+      <Link legacyBehavior passHref {...{ href }}>
+        <a {...external}>
+          <button className={buttonWrapper()}>
+            {!!icon && <Icon name={icon} className={buttonIcon()} />}
+            <span className={buttonLabel()}>{label}</span>
+          </button>
+        </a>
       </Link>
     );
+  }
 
   return (
     <button className={buttonWrapper()}>

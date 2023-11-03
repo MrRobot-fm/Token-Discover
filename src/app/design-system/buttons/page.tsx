@@ -14,6 +14,7 @@ export default function ButtonsPage() {
           size="sm"
           variant="secondary"
           icon="trendUp"
+          url="/"
         />
         <Button
           label="secondary"
