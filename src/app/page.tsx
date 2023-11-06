@@ -1,4 +1,5 @@
 import { Button } from "@/components/atoms/Button/Button";
+import { Icon } from "@/components/atoms/Icon/Icon";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         size="lg"
         variant="primary"
       />
+      <Icon name="swatches" size="xxl" />
     </div>
   );
 }
