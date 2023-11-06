@@ -23,4 +23,13 @@ export type IconName =
   | "instagram"
   | "metamask"
   | "walletConnect"
-  | "coinbase";
+  | "coinbase"
+  | "paintBrush"
+  | "musicNotes"
+  | "camera"
+  | "videoCamera"
+  | "basket"
+  | "magicWand"
+  | "planet"
+  | "bookmark"
+  | "swatches";
