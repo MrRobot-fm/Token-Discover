@@ -1,6 +1,9 @@
-import type { HTMLChakraProps, ThemingProps } from "@chakra-ui/react";
+import { HTMLProps } from "react";
 import type { IconName } from "@/types/icons";
+import { IconVariants } from "./Icon.variables";
 
-export interface IconProps extends ThemingProps, HTMLChakraProps<"div"> {
+export interface IconProps
+  extends Omit<HTMLProps<HTMLElement>, "size">,
+    IconVariants {
   name: IconName | string;
 }

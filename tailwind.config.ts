@@ -10,8 +10,8 @@ const config: Config = withTV({
   theme: {
     extend: {
       fontFamily: {
-        workSans: ["var(--font-works-sans)"],
-        spaceMono: ["var(--font-space-mono)"],
+        workSans: ["var(--font-works-sans)", "san-serif"],
+        spaceMono: ["var(--font-space-mono)", "san-serif"],
       },
       colors: {
         background: {

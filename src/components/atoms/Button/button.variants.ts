@@ -6,17 +6,15 @@ export const button = tv({
   slots: {
     buttonWrapper: "flex items-center justify-center gap-[1.2rem] px-[5rem]",
     buttonLabel: "text-white",
-    buttonIcon: "h-[2.1rem] w-[2.1rem] text-callToAction",
   },
   variants: {
     variant: {
       primary: {
         buttonWrapper: "bg-callToAction text-white",
-        buttonIcon: "text-white",
       },
       secondary: {
-        buttonWrapper: "border-[2px] border-callToAction bg-transparent",
-        buttonIcon: "text-callToAction",
+        buttonWrapper:
+          "border-[2px] border-callToAction bg-transparent text-callToAction",
         buttonLabel: " text-callToAction",
       },
     },
@@ -28,12 +26,10 @@ export const button = tv({
       md: {
         buttonWrapper: "h-[6rem]",
         buttonLabel: "paragraph capitalize",
-        buttonIcon: "mb-1",
       },
       lg: {
         buttonWrapper: "h-[7.2rem]",
         buttonLabel: "heading5 capitalize",
-        buttonIcon: "h-[2.5rem] w-[2.5rem]",
       },
     },
   },
