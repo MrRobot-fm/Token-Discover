@@ -6,7 +6,7 @@ import { button } from "./button.variants";
 
 export const Button = (props: ButtonProps) => {
   const { url: href, label, icon, size, variant } = props;
-  const { buttonWrapper, buttonLabel, buttonIcon } = button({
+  const { buttonWrapper, buttonLabel } = button({
     variant,
     size,
   });
@@ -19,7 +19,7 @@ export const Button = (props: ButtonProps) => {
       <Link legacyBehavior passHref {...{ href }}>
         <a {...external}>
           <button className={buttonWrapper()}>
-            {!!icon && <Icon name={icon} className={buttonIcon()} />}
+            {!!icon && <Icon name={icon} size={size} />}
             <span className={buttonLabel()}>{label}</span>
           </button>
         </a>
@@ -29,7 +29,7 @@ export const Button = (props: ButtonProps) => {
 
   return (
     <button className={buttonWrapper()}>
-      {!!icon && <Icon name={icon} className={buttonIcon()} />}
+      {!!icon && <Icon name={icon} size={size} />}
       <span className={buttonLabel()}>{label}</span>
     </button>
   );

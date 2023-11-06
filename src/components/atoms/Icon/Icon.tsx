@@ -1,9 +1,10 @@
 import v from "voca";
 import type { IconProps } from "@/components/atoms/Icon/Icon.props";
 import { IconsList } from "@/assets/icons/icons-list";
+import { icon } from "./Icon.variables";
 
 export const Icon = (props: IconProps) => {
-  const { name, className: cn } = props;
+  const { name, className, size } = props;
 
   const obj = Object.keys(IconsList).reduce(
     (result, key) => ({
@@ -18,6 +19,8 @@ export const Icon = (props: IconProps) => {
   if (!Element) return <></>;
 
   return (
-    <div className={cn}>{<Element w="auto" h="auto" fontSize="unset" />}</div>
+    <div className={icon({ className, size })}>
+      {<Element w="auto" h="auto" fontSize="unset" />}
+    </div>
   );
 };
