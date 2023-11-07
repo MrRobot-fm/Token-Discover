@@ -5,5 +5,5 @@ import { IconVariants } from "./Icon.variables";
 export interface IconProps
   extends Omit<HTMLProps<HTMLElement>, "size">,
     IconVariants {
-  name: IconName | string;
+  name: IconName;
 }

@@ -9,13 +9,21 @@ export const button = tv({
   },
   variants: {
     variant: {
-      primary: {
-        buttonWrapper: "bg-callToAction text-white",
-      },
-      secondary: {
+      filled: {
         buttonWrapper:
-          "border-[2px] border-callToAction bg-transparent text-callToAction",
-        buttonLabel: " text-callToAction",
+          "group border-[2px] border-callToAction bg-callToAction text-white transition duration-500  hover:bg-transparent hover:text-callToAction",
+        buttonLabel: "group-hover:text-callToAction",
+      },
+      outline: {
+        buttonWrapper:
+          "group border-[2px] border-callToAction bg-transparent text-callToAction transition duration-700 hover:bg-callToAction hover:text-white",
+        buttonLabel:
+          "text-callToAction transition duration-700 group-hover:text-white",
+      },
+      link: {
+        buttonWrapper:
+          "border-none bg-transparent p-0 text-inherit transition duration-500 hover:text-white",
+        buttonLabel: " text-current",
       },
     },
     size: {
@@ -39,9 +47,15 @@ export const button = tv({
       size: ["md", "lg"],
       class: "rounded-[3rem]",
     },
+    {
+      slots: ["buttonWrapper"],
+      size: ["sm", "md", "lg"],
+      variant: "link",
+      class: "h-fit",
+    },
   ],
   defaultVariants: {
     size: "md",
-    variant: "primary",
+    variant: "filled",
   },
 });
