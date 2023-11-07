@@ -8,6 +8,14 @@ const config: Config = withTV({
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      base: "0px",
+      sm: "375px",
+      md: "744px",
+      lg: "1024px",
+      xl: "1440px",
+      "2xl": "1920px",
+    },
     extend: {
       fontFamily: {
         workSans: ["var(--font-works-sans)", "san-serif"],

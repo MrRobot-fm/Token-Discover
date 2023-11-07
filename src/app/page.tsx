@@ -10,7 +10,7 @@ export default function Home() {
         url="/design-system/buttons"
         icon="rocketLaunch"
         size="lg"
-        variant="primary"
+        variant="filled"
       />
       <Icon name="swatches" size="xxl" />
     </div>

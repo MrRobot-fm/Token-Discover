@@ -5,7 +5,15 @@ import type { ButtonProps } from "./Button.props";
 import { button } from "./button.variants";
 
 export const Button = (props: ButtonProps) => {
-  const { url: href, label, icon, size, variant } = props;
+  const {
+    url: href,
+    label,
+    icon,
+    size,
+    variant,
+    buttonWrapperStyles,
+    ...rest
+  } = props;
   const { buttonWrapper, buttonLabel } = button({
     variant,
     size,
@@ -18,7 +26,12 @@ export const Button = (props: ButtonProps) => {
     return (
       <Link legacyBehavior passHref {...{ href }}>
         <a {...external}>
-          <button className={buttonWrapper()}>
+          <button
+            className={buttonWrapper({
+              className: buttonWrapperStyles,
+            })}
+            {...rest}
+          >
             {!!icon && <Icon name={icon} size={size} />}
             <span className={buttonLabel()}>{label}</span>
           </button>
@@ -28,7 +41,10 @@ export const Button = (props: ButtonProps) => {
   }
 
   return (
-    <button className={buttonWrapper()}>
+    <button
+      className={buttonWrapper({ className: buttonWrapperStyles })}
+      {...rest}
+    >
       {!!icon && <Icon name={icon} size={size} />}
       <span className={buttonLabel()}>{label}</span>
     </button>

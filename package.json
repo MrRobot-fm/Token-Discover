@@ -27,6 +27,7 @@
     "react": "^18",
     "react-dom": "^18",
     "tailwind-variants": "^0.1.18",
+    "use-breakpoint": "^4.0.1",
     "voca": "^1.4.1"
   },
   "devDependencies": {

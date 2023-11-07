@@ -1,4 +1,4 @@
-import { EXTERNAL_URL_REGEX } from "@/constants/regex";
+import { EXTERNAL_URL_REGEX } from "@/utils/constants/regex";
 
 export const checkIsExternal = (href?: string) => {
   if (!href) return false;
