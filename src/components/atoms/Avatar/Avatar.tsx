@@ -1,6 +1,6 @@
 import { CustomImage } from "../Image/CustomImage";
 import type { AvatarProps } from "./Avatar.props";
-import { avatar } from "./Avatar.variants";
+import { avatar } from "./avatar.variants";
 
 export const Avatar = (props: AvatarProps) => {
   const { size, src, alt = "avatar", className } = props;
