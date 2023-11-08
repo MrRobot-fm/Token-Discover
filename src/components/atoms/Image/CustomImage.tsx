@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { CustomImageProps } from "./CustomImage.props";
-import { customImage } from "./CustomImage.variants";
+import { customImage } from "./customImage.variants";
 
 export const CustomImage = (props: CustomImageProps) => {
   const {
