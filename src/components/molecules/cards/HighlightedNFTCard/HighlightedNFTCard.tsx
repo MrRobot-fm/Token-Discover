@@ -1,8 +1,7 @@
-import React from "react";
 import { Avatar } from "@/components/atoms/Avatar/Avatar";
 import { CustomImage } from "@/components/atoms/Image/CustomImage";
 import NftCardPlaceholder from "@/assets/placeholders/Nft-card-placeholder.svg";
-import { HighlightNFTedCardProps } from "./HighlightedNFTCard.props";
+import type { HighlightNFTedCardProps } from "./HighlightedNFTCard.props";
 import { highlightedNftCard } from "./highlightedNFTCard.variants";
 
 export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
@@ -22,7 +21,7 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
     <div className={cardWrapper({ className: cardWrapperStyles })}>
       <div className={imageWrapper({ className: imageWrapperStyles })}>
         <CustomImage
-          src={cardImage || NftCardPlaceholder}
+          src={cardImage || NftCardPlaceholder.src}
           alt="highlighted-card"
         />
       </div>

@@ -1,7 +1,7 @@
 import v from "voca";
 import type { IconProps } from "@/components/atoms/Icon/Icon.props";
 import { IconsList } from "@/assets/icons/icons-list";
-import { icon } from "./Icon.variables";
+import { icon } from "./Icon.variants";
 
 export const Icon = (props: IconProps) => {
   const { name, className, size } = props;
