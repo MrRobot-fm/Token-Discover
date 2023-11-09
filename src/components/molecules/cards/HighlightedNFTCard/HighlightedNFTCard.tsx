@@ -1,4 +1,4 @@
-import { Avatar } from "@/components/atoms/Avatar/Avatar";
+import { CollectionCardFooter } from "@/components/atoms/CollectionCardFooter/CollectionCardFooter";
 import { CustomImage } from "@/components/atoms/Image/CustomImage";
 import NftCardPlaceholder from "@/assets/placeholders/Nft-card-placeholder.svg";
 import type { HighlightNFTedCardProps } from "./HighlightedNFTCard.props";
@@ -14,8 +14,7 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
     nftName,
   } = props;
 
-  const { cardWrapper, imageWrapper, footerWrapper, authorWrapper } =
-    highlightedNftCard();
+  const { cardWrapper, imageWrapper } = highlightedNftCard();
 
   return (
     <div className={cardWrapper({ className: cardWrapperStyles })}>
@@ -25,13 +24,7 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
           alt="highlighted-card"
         />
       </div>
-      <div className={footerWrapper()}>
-        <h5>{nftName}</h5>
-        <div className={authorWrapper()}>
-          <Avatar src={avatarImage || ""} alt="author-avatar" size="sm" />
-          <span className="paragraph">{author}</span>
-        </div>
-      </div>
+      <CollectionCardFooter {...{ nftName, author, avatarImage }} />
     </div>
   );
 };
