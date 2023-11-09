@@ -11,8 +11,8 @@ export const button = tv({
     variant: {
       filled: {
         buttonWrapper:
-          "group border-[2px] border-callToAction bg-callToAction text-white transition duration-500  hover:bg-transparent hover:text-callToAction",
-        buttonLabel: "group-hover:text-callToAction",
+          "group border-[2px] border-callToAction bg-callToAction text-white transition duration-700  hover:bg-transparent hover:text-callToAction",
+        buttonLabel: "transition duration-700 group-hover:text-callToAction",
       },
       outline: {
         buttonWrapper:

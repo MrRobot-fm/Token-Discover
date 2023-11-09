@@ -11,10 +11,10 @@ export const StatsCard = (props: StatsCardProps) => {
   });
 
   return (
-    <div className="flex justify-center base:w-[9rem] lg:w-[15rem]">
+    <div className="flex base:w-[9rem] base:justify-center md:w-[15rem] lg:justify-start">
       <div>
-        <p className="base:heading5 lg:heading4">{motionValue}</p>
-        <span className="base:paragraph lg:heading5 capitalize">{label}</span>
+        <p className="base:heading5 md:heading4">{motionValue}</p>
+        <span className="base:paragraph md:heading5 capitalize">{label}</span>
       </div>
     </div>
   );

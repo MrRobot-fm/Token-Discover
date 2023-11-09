@@ -4,7 +4,7 @@ import type { ButtonVariants } from "./button.variants";
 
 export interface ButtonProps
   extends ButtonVariants,
-    Pick<HTMLProps<HTMLButtonElement>, "onClick"> {
+    Pick<HTMLProps<HTMLButtonElement>, "onClick" | "className"> {
   url?: string;
   label: string;
   icon?: IconName;
