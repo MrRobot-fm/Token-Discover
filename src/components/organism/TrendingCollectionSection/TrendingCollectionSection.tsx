@@ -6,8 +6,6 @@ export const TrendingCollectionSection = () => {
     <Section
       title="Trending Collection"
       subTitle="Checkout our weekly updated trending collection."
-      ctaProps={{ label: "View Rankings", icon: "rocket" }}
-      hasCta
     >
       <div className="flex w-full base:flex-col base:gap-[8rem] lg:flex-row lg:gap-[3rem]">
         {Array.from({ length: 3 }).map((_, index) => (
