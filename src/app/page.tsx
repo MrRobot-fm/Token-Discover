@@ -1,9 +1,11 @@
 import { HeroSection } from "@/components/organism/HeroSection/HeroSection";
+import { TrendingCollectionSection } from "@/components/organism/TrendingCollectionSection/TrendingCollectionSection";
 
 export default function Home() {
   return (
-    <div className="flex w-full flex-col items-center base:px-[3rem] md:px-[5rem]">
+    <div className="flex w-full flex-col items-center base:px-[3rem] md:px-[10rem] lg:px-[5rem]">
       <HeroSection />
+      <TrendingCollectionSection />
     </div>
   );
 }
