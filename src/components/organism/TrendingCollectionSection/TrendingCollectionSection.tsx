@@ -11,7 +11,7 @@ export const TrendingCollectionSection = () => {
         {Array.from({ length: 3 }).map((_, index) => (
           <TrendingCollectionCard
             key={index}
-            author="Federico"
+            creator="Federico"
             collectionName="Rukawa"
             collectionLength={2000}
           />

@@ -11,5 +11,6 @@ export const highlightedNftCard = tv({
     imageWrapper: "overflow-hidden base:h-[20.6rem] md:h-[40.1rem]",
     footerWrapper: "flex flex-col justify-between gap-[1rem] p-[2rem]",
     authorWrapper: "flex items-center gap-[1.2rem]",
+    detailsWrapper: "mt-[1rem] flex w-full justify-between",
   },
 });
