@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CustomImage } from "@/components/atoms/Image/CustomImage";
-import NftCardPlaceholder from "@/assets/placeholders/Nft-card-placeholder.svg";
+import TrendingCardPlaceholder from "@/assets/placeholders/Primary Photo Placeholder.svg";
 import type { TrendingCollectionContentProps } from "./TrendingCollectionContent.props";
 import { trendingCollectionContent } from "./trending-collection-content.variants";
 
@@ -25,7 +25,7 @@ export const TrendingCollectionContent = (
     <Link {...{ href }} className="group w-full">
       <div className={trendingCollectionContent({ size })}>
         <CustomImage
-          src={image || NftCardPlaceholder}
+          src={image || TrendingCardPlaceholder}
           alt="trending-collection"
         />
       </div>

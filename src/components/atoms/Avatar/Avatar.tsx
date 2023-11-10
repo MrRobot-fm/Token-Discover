@@ -1,4 +1,4 @@
-import AvatarPlaceholder from "@/public/avatar-placeholder.svg";
+import AvatarPlaceholder from "@/assets/placeholders/AvatarPlaceholder.svg";
 import { CustomImage } from "../Image/CustomImage";
 import type { AvatarProps } from "./Avatar.props";
 import { avatar } from "./avatar.variants";
