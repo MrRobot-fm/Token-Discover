@@ -1,3 +1,4 @@
+import { DiscoverNftSection } from "@/components/organism/DiscoverNftSection/DiscoverNftSection";
 import { HeroSection } from "@/components/organism/HeroSection/HeroSection";
 import { TopCreatorSection } from "@/components/organism/TopCreatorSection/TopCreatorSection";
 import { TrendingCollectionSection } from "@/components/organism/TrendingCollectionSection/TrendingCollectionSection";
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <TrendingCollectionSection />
       <TopCreatorSection />
+      <DiscoverNftSection />
     </div>
   );
 }

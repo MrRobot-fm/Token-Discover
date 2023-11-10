@@ -13,4 +13,16 @@ export const highlightedNftCard = tv({
     authorWrapper: "flex items-center gap-[1.2rem]",
     detailsWrapper: "mt-[1rem] flex w-full justify-between",
   },
+  variants: {
+    variant: {
+      hero: "",
+      nft: {
+        cardWrapper: "transition duration-500 group-hover:scale-105",
+        imageWrapper: "base:aspect-square md:h-auto",
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "hero",
+  },
 });
