@@ -10,7 +10,7 @@ export const HeroSection = () => {
       <div className="flex flex-col justify-center base:gap-[4rem] md:items-stretch md:gap-[6rem] md:py-[5rem] lg:w-[50%] lg:items-start lg:gap-[4rem] lg:p-0">
         <HeroTitle />
         <div className="w-full items-center justify-center base:flex lg:hidden">
-          <HighlightedNFTCard author="Animakid" nftName="Space Walking" />
+          <HighlightedNFTCard creator="Animakid" nftName="Space Walking" />
         </div>
         <SectionCta />
         <div className="flex base:justify-between md:justify-evenly lg:justify-start">
@@ -20,7 +20,7 @@ export const HeroSection = () => {
         </div>
       </div>
       <div className=" w-[50%] items-start justify-center base:hidden lg:flex">
-        <HighlightedNFTCard author="Animakid" nftName="Space Walking" />
+        <HighlightedNFTCard creator="Animakid" nftName="Space Walking" />
       </div>
     </main>
   );

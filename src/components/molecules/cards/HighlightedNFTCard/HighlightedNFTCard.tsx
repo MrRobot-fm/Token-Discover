@@ -1,18 +1,11 @@
-import { CollectionCardFooter } from "@/components/atoms/CollectionCardFooter/CollectionCardFooter";
 import { CustomImage } from "@/components/atoms/Image/CustomImage";
+import { NftCardFooter } from "@/components/atoms/NftCardFooter/NftCardFooter";
 import NftCardPlaceholder from "@/assets/placeholders/Nft-card-placeholder.svg";
 import type { HighlightNFTedCardProps } from "./HighlightedNFTCard.props";
 import { highlightedNftCard } from "./highlightedNFTCard.variants";
 
 export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
-  const {
-    cardWrapperStyles,
-    imageWrapperStyles,
-    avatarImage,
-    cardImage,
-    author,
-    nftName,
-  } = props;
+  const { cardWrapperStyles, imageWrapperStyles, cardImage, ...rest } = props;
 
   const { cardWrapper, imageWrapper } = highlightedNftCard();
 
@@ -24,7 +17,7 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
           alt="highlighted-card"
         />
       </div>
-      <CollectionCardFooter {...{ nftName, author, avatarImage }} />
+      <NftCardFooter {...rest} />
     </div>
   );
 };

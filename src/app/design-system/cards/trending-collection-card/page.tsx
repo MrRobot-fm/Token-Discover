@@ -7,7 +7,7 @@ export default function TrendingCollectionCardPage() {
       {Array.from({ length: 3 }).map((_, index) => (
         <TrendingCollectionCard
           key={index}
-          author="MrFox"
+          creator="MrFox"
           collectionName="DSGN Animals"
           collectionLength={1025}
           image={NftCardPlaceholder}

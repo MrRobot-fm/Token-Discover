@@ -2,7 +2,7 @@ import type { ImageProps } from "next/image";
 
 export type TrendingCollectionCardProps = {
   image?: ImageProps["src"];
-  author: string;
+  creator: string;
   collectionName: string;
   collectionLength: number;
 };
