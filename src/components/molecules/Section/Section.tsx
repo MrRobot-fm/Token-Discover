@@ -5,7 +5,7 @@ export const Section = (props: SectionProps) => {
   const { title, subTitle, hasCta = false, children, ctaProps } = props;
 
   return (
-    <section className="flex w-full max-w-[144rem] flex-col justify-between py-[8rem] base:gap-[4rem] lg:items-center lg:gap-[6rem]">
+    <section className="flex w-full max-w-[144rem] flex-col justify-between border-t border-t-background-grey  py-[8rem] base:gap-[4rem] lg:items-center lg:gap-[6rem]">
       <div className="flex w-full items-end justify-between">
         <div>
           <h3>{title}</h3>

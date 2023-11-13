@@ -7,7 +7,7 @@ import { statsValue } from "@/public/mock/stats-value";
 export const HeroSection = () => {
   return (
     <main className="flex max-w-[144rem] justify-between gap-[4rem] py-[2.5rem] md:flex-col md:items-start lg:flex-row lg:items-center lg:pb-[8rem] xl:py-[8rem]">
-      <div className="flex flex-col justify-center base:gap-[4rem] md:items-stretch md:gap-[6rem] md:py-[5rem] lg:w-[50%] lg:items-start lg:gap-[4rem] lg:p-0">
+      <div className="flex flex-col justify-center base:gap-[4rem] md:items-stretch md:gap-[6rem] md:py-[5rem] lg:w-[55%] lg:items-start lg:gap-[4rem] lg:p-0">
         <HeroTitle />
         <div className="w-full items-center justify-center base:flex lg:hidden">
           <HighlightedNFTCard creator="Animakid" nftName="Space Walking" />
@@ -19,7 +19,7 @@ export const HeroSection = () => {
           ))}
         </div>
       </div>
-      <div className=" w-[50%] items-start justify-center base:hidden lg:flex">
+      <div className="w-[45%] items-start justify-end base:hidden lg:flex">
         <HighlightedNFTCard creator="Animakid" nftName="Space Walking" />
       </div>
     </main>

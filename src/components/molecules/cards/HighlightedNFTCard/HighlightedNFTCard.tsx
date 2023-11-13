@@ -15,10 +15,10 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
     ...rest
   } = props;
 
-  const { cardWrapper, imageWrapper } = highlightedNftCard();
+  const { linkWrapper, cardWrapper, imageWrapper } = highlightedNftCard();
 
   return (
-    <Link {...{ href }} className="group w-full">
+    <Link {...{ href }} className={linkWrapper({ variant })}>
       <div className={cardWrapper({ className: cardWrapperStyles, variant })}>
         <div
           className={imageWrapper({ className: imageWrapperStyles, variant })}

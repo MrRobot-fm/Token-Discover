@@ -7,7 +7,7 @@ export const TrendingCollectionSection = () => {
       title="Trending Collection"
       subTitle="Checkout our weekly updated trending collection."
     >
-      <div className="flex w-full base:flex-col base:gap-[8rem] lg:flex-row lg:gap-[3rem]">
+      <div className="grid w-full base:grid-cols-1 base:gap-[8rem] md:grid-cols-2 md:gap-[4rem] lg:grid-cols-3 lg:flex-row lg:gap-[3rem]">
         {Array.from({ length: 3 }).map((_, index) => (
           <TrendingCollectionCard
             key={index}

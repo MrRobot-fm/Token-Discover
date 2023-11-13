@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/molecules/nav/Navbar/Navbar";
+import { Footer } from "@/components/organism/Footer/Footer";
 import { spaceMono, workSans } from "@/public/fonts/fonts";
 import "./globals.css";
 
@@ -15,9 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${workSans.variable} ${spaceMono.variable}`}>
-      <body className="bg-background-black">
+      <body className="w-full bg-background-black">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
