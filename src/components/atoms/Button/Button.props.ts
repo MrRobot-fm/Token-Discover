@@ -6,7 +6,7 @@ export interface ButtonProps
   extends ButtonVariants,
     Pick<HTMLProps<HTMLButtonElement>, "onClick" | "className"> {
   url?: string;
-  label: string;
+  label?: string;
   icon?: IconName;
   buttonWrapperStyles?: HTMLProps<HTMLElement>["className"];
 }

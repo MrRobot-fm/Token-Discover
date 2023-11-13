@@ -8,8 +8,8 @@ export const trendingCollectionContent = tv({
   base: "flex w-full items-center justify-center overflow-hidden rounded-[2rem] transition duration-500 group-hover:scale-105",
   variants: {
     size: {
-      sm: "base:h-[9.5rem] md:h-[10rem]",
-      md: "base:h-[31.5rem] md:h-[33rem]",
+      sm: "aspect-[1/1] ",
+      md: "aspect-[4/3]",
     },
     variant: {
       image: "",

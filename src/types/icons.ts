@@ -1,4 +1,7 @@
 export type IconName =
+  | "whatsapp"
+  | "linkedin"
+  | "github"
   | "rocket"
   | "rocketLaunch"
   | "user"

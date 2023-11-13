@@ -22,7 +22,7 @@ export const button = tv({
       },
       link: {
         buttonWrapper:
-          "border-none bg-transparent p-0 text-inherit transition duration-500 hover:text-white",
+          "h-fit border-none bg-transparent p-0 text-inherit transition duration-500 hover:text-white",
         buttonLabel: " text-current",
       },
     },
@@ -39,6 +39,7 @@ export const button = tv({
         buttonWrapper: "h-[7.2rem]",
         buttonLabel: "heading5 capitalize",
       },
+      xl: "h-[7.2rem]",
     },
   },
   compoundSlots: [
