@@ -24,7 +24,7 @@ export const NavbarLinks = ({
         </Link>
       ))}
       <Button
-        url="/sing-up"
+        url="/sign-up"
         label="Sign Up"
         icon="user"
         buttonWrapperStyles="px-[3rem]"

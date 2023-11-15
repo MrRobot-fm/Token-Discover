@@ -2,7 +2,7 @@ import { NavLogo } from "@/components/atoms/navbar/NavbarLogo/NavbarLogo";
 import { FooterLegalInfo } from "@/components/molecules/footer/FooterLegalInfo/FooterLegalInfo";
 import { FooterLinks } from "@/components/molecules/footer/FooterLinks/FooterLinks";
 import { FooterSocialCta } from "@/components/molecules/footer/FooterSocialCta/FooterSocialCta";
-import styles from "./footer.module.css";
+import { styles } from "./footer.styles";
 
 export const Footer = () => {
   return (
