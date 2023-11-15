@@ -8,6 +8,7 @@ module.exports = {
     "next/core-web-vitals",
     "plugin:@next/next/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
     "google",
     "prettier",
   ],
@@ -22,7 +23,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "react-hooks"],
+  plugins: ["react", "@typescript-eslint", "react-hooks", "@tanstack/query"],
   rules: {
     "require-jsdoc": 0,
     "react/react-in-jsx-scope": 0,
@@ -30,6 +31,7 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "no-console": ["error", { allow: ["warn", "error"] }],
+    "@tanstack/query/exhaustive-deps": "error",
     camelcase: "off",
     "@typescript-eslint/ban-types": [
       "error",

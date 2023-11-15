@@ -21,6 +21,8 @@
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@tanstack/react-query": "^5.8.4",
+    "@tanstack/react-query-devtools": "^5.8.4",
     "@types/voca": "^1.4.4",
     "dayjs": "^1.11.10",
     "framer-motion": "^10.16.4",
@@ -35,6 +37,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
+    "@tanstack/eslint-plugin-query": "^5.8.4",
     "@trivago/prettier-plugin-sort-imports": "^4.2.1",
     "@types/node": "^20",
     "@types/react": "^18",

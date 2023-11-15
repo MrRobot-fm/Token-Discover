@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TanstackQUeryProvider from "@/utils/providers/tanstack-query-provider";
 import { Navbar } from "@/components/molecules/nav/Navbar/Navbar";
 import { Footer } from "@/components/organism/Footer/Footer";
 import { spaceMono, workSans } from "@/public/fonts/fonts";
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className={`${workSans.variable} ${spaceMono.variable}`}>
       <body className="w-full bg-background-black">
         <Navbar />
-        {children}
+        <TanstackQUeryProvider>{children}</TanstackQUeryProvider>
         <Footer />
       </body>
     </html>
