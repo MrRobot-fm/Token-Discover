@@ -8,5 +8,6 @@ export interface ButtonProps
   url?: string;
   label?: string;
   icon?: IconName;
+  type?: "button" | "submit" | "reset";
   buttonWrapperStyles?: HTMLProps<HTMLElement>["className"];
 }

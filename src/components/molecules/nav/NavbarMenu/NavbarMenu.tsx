@@ -43,7 +43,7 @@ export const NavbarMenu = (props: NavbarMenuProps) => {
             />
           ))}
           <Button
-            url="/sing-up"
+            url="/sign-up"
             label="Sign Up"
             icon="user"
             size="sm"
