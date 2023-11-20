@@ -1,4 +1,3 @@
-import React from "react";
 import { Section } from "@/components/molecules/Section/Section";
 import { CreatorCard } from "@/components/molecules/cards/CreatorCard/CreatorCard";
 

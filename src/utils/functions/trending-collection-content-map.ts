@@ -4,7 +4,7 @@ const trending = {
   card3: "text",
 };
 
-export const trendingCollectionMap = Object.values(trending).map((type) => {
+export const TopCollectionMap = Object.values(trending).map((type) => {
   return {
     contentId: type,
     hasText: type === "text",

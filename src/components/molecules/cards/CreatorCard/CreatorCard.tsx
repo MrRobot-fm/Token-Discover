@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Avatar } from "@/components/atoms/Avatar/Avatar";
 import { RankingBadge } from "@/components/atoms/RankingBadge/RankingBadge";
+import AvatarPlaceholder from "@/assets/placeholders/AvatarPlaceholder.svg";
 import type { CreatorCardProps } from "./CreatorCard.props";
 
 export const CreatorCard = (props: CreatorCardProps) => {
@@ -19,7 +20,7 @@ export const CreatorCard = (props: CreatorCardProps) => {
         </div>
         <div className="base:relative">
           <Avatar
-            src=""
+            src={AvatarPlaceholder}
             alt="artist-logo"
             {...(avatarStyle && { size: avatarStyle?.size })}
           />

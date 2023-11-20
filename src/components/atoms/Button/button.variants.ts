@@ -25,6 +25,10 @@ export const button = tv({
           "h-fit border-none bg-transparent p-0 text-inherit transition duration-500 hover:text-white",
         buttonLabel: " text-current",
       },
+      carouselNavigation: {
+        buttonWrapper:
+          "w-[6rem] gap-0 rounded-full bg-label-grey p-0 text-white base:hidden lg:flex",
+      },
     },
     size: {
       sm: {
@@ -39,7 +43,6 @@ export const button = tv({
         buttonWrapper: "h-[7.2rem]",
         buttonLabel: "heading5 capitalize",
       },
-      xl: "h-[7.2rem]",
     },
   },
   compoundSlots: [
