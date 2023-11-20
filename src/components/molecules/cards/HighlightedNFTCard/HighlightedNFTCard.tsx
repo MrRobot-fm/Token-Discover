@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { DEFAULT_IMG_URL_FALLBACK } from "@/utils/constants/global";
 import { CustomImage } from "@/components/atoms/Image/CustomImage";
 import { NftCardFooter } from "@/components/atoms/NftCardFooter/NftCardFooter";
-import NftCardPlaceholder from "@/assets/placeholders/Nft-card-placeholder.svg";
 import type { HighlightNFTedCardProps } from "./HighlightedNFTCard.props";
 import { highlightedNftCard } from "./highlightedNFTCard.variants";
 
@@ -24,7 +24,7 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
           className={imageWrapper({ className: imageWrapperStyles, variant })}
         >
           <CustomImage
-            src={cardImage || NftCardPlaceholder.src}
+            src={cardImage || DEFAULT_IMG_URL_FALLBACK}
             alt="highlighted-card"
           />
         </div>

@@ -11,7 +11,7 @@ export const CustomImage = (props: CustomImageProps) => {
     quality,
     placeholder,
     blurDataURL,
-    sizes,
+    sizes = "75vw",
     size,
     className,
   } = props;

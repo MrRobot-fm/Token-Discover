@@ -7,7 +7,8 @@ export const avatar = tv(
     base: "overflow-hidden rounded-full",
     variants: {
       size: {
-        sm: "h-[2.4rem] w-[2.4rem]",
+        xs: "h-[2.4rem] w-[2.4rem]",
+        sm: "h-[3.2rem] w-[3.2rem]",
         md: "h-[6rem] w-[6rem]",
         lg: "h-[12rem] w-[12rem]",
       },

@@ -1,5 +1,5 @@
 import type { LinkProps } from "next/link";
-import type { AvatarVariants } from "@/components/atoms/Avatar/avatar.variants";
+import { AvatarVariants } from "@/components/atoms/Avatar/avatar.variants";
 
 export type CreatorCardProps = {
   avatarStyle?: AvatarVariants;
