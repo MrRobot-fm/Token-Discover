@@ -15,7 +15,7 @@ export const carousel = tv({
     variant: {
       default: {
         carouselRoot: "group/carousel relative col-span-full",
-        carouselViewport: "overflow-hidden",
+        carouselViewport: "",
         carouselContainer:
           "flex-row md:gap-[4rem] lg:gap-[3rem] xl:gap-[2.5rem]",
         carouselSlide:

@@ -24,6 +24,10 @@ export const cardSkeleton = tv({
         skeletonRoot:
           "base:min-h-[32.32rem] md:min-h-[52rem] lg:min-w-[48rem] xl:w-[48rem]",
       },
+      nfts: {
+        skeletonRoot:
+          " base:min-h-[34.62rem] base:w-full md:min-h-[47.72rem] md:min-w-[48rem] lg:min-h-[41.7rem] lg:min-w-[40rem] xl:min-h-[45.47rem] xl:min-w-[45rem]",
+      },
     },
   },
   defaultVariants: {

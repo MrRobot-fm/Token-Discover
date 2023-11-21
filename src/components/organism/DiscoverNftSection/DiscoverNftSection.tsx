@@ -1,7 +1,23 @@
+"use client";
+
+import { useMemo } from "react";
+import { useGetTrendingCollections } from "@/api/collections/hooks/use-get-trending-collections";
+import { HighlightedNftList } from "@/components/molecules/HighlightedNftList/HighlightedNftList";
 import { Section } from "@/components/molecules/Section/Section";
-import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 
 export const DiscoverNftSection = () => {
+  const { data: trendingCollection } = useGetTrendingCollections({
+    limit: 10,
+    chain: "ethereum",
+    interval: "24h",
+  });
+
+  const collectionId = useMemo(() => {
+    return trendingCollection?.collections?.map((collection) => {
+      return collection?.collection_id;
+    });
+  }, [trendingCollection?.collections]);
+
   return (
     <Section
       title="Discover More NFTs"
@@ -9,18 +25,12 @@ export const DiscoverNftSection = () => {
       ctaProps={{ label: "see all", icon: "eye" }}
       hasCta
     >
-      <div className="grid w-full gap-[3rem] base:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {Array.from({ length: 3 }).map((_, index) => (
-          <HighlightedNFTCard
-            key={index}
-            variant="nft"
-            creator="mr fox"
-            nftPrice={1.63}
-            nftHighBid={0.33}
-            criptoCurrency="ETH"
-            hasDetails
-          />
-        ))}
+      <div className="w-full gap-[3rem] base:hidden md:grid md:grid-cols-2 lg:grid-cols-3">
+        <HighlightedNftList hasCarousel {...{ collectionId }} />
+      </div>
+
+      <div className="w-full gap-[5rem] base:grid base:grid-cols-1 sm:grid-cols-1 md:hidden">
+        <HighlightedNftList {...{ collectionId }} />
       </div>
     </Section>
   );

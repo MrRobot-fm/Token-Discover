@@ -13,8 +13,8 @@ export const TopCollectionSection = () => {
 
   return (
     <Section
-      title="Trending Collection"
-      subTitle="Checkout our weekly updated trending collection."
+      title="Top Collection"
+      subTitle="Checkout our weekly updated top collection."
     >
       <div className="w-full gap-[5rem] base:hidden base:grid-cols-1 sm:grid-cols-1 md:grid md:grid-cols-2 lg:grid-cols-3 ">
         <TopCollectionList hasCarousel topCollection={topCollection} />

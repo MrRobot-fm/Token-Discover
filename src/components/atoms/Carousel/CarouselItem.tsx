@@ -1,4 +1,4 @@
-import { CarouselItemProps } from "./Carousel.props";
+import type { CarouselItemProps } from "./Carousel.props";
 import { carousel } from "./carousel.variants";
 
 export const CarouselItem = (props: CarouselItemProps) => {
