@@ -3,7 +3,6 @@ import type { HTMLProps } from "react";
 
 export type NftCardFooterProps = {
   avatarImage?: ImageProps["src"];
-  creator: string;
   nftName?: string;
   collectionName?: string;
   footerWrapperStyles?: HTMLProps<HTMLElement>["className"];

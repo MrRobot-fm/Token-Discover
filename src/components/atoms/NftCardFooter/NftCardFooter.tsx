@@ -7,7 +7,6 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
     nftName,
     collectionName,
     avatarImage,
-    creator,
     footerWrapperStyles,
     nftPrice,
     nftHighBid,
@@ -18,10 +17,10 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
   const { footerWrapper, authorWrapper, detailsWrapper } = highlightedNftCard();
   return (
     <div className={footerWrapper({ className: footerWrapperStyles })}>
-      {(!!nftName || !!collectionName) && <h5>{nftName || collectionName}</h5>}
+      {!!nftName && <h5>{nftName}</h5>}
       <div className={authorWrapper()}>
         <Avatar src={avatarImage || ""} alt="author-avatar" size="sm" />
-        <span className="paragraph capitalize">{creator}</span>
+        <span className="paragraph capitalize">{collectionName}</span>
       </div>
       {hasDetails && (
         <div className={detailsWrapper()}>
@@ -37,7 +36,7 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
             <div>
               <p className="text-label-grey">Highest Bid</p>
               <span className="paragraph">
-                {`${nftHighBid} ${criptoCurrency}`}
+                {`0.${nftHighBid} ${criptoCurrency}`}
               </span>
             </div>
           )}

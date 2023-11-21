@@ -27,7 +27,7 @@ export const TopCollectionCardContent = ({
 
       <NftCardFooter
         avatarImage={nftByCollection?.nfts[0]?.collection?.image_url}
-        creator={nftByCollection?.nfts[0]?.collection?.name || ""}
+        collectionName={nftByCollection?.nfts[0]?.collection?.name || ""}
         footerWrapperStyles="p-0"
       />
     </>

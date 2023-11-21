@@ -6,7 +6,7 @@ export default function HighlightedNFTCardPage() {
   return (
     <div className="flex h-screen items-center justify-center">
       <HighlightedNFTCard
-        creator="Animakid"
+        collectionName="Animakid"
         nftName="Space Walking"
         cardImage={NftCardPlaceholder}
       />
