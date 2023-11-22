@@ -8,7 +8,7 @@ export default function HighlightedNFTCardPage() {
       <HighlightedNFTCard
         collectionName="Animakid"
         nftName="Space Walking"
-        cardImage={NftCardPlaceholder}
+        cardImage={{ src: NftCardPlaceholder, alt: "card-img" }}
       />
     </div>
   );

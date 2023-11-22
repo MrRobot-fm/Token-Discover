@@ -9,6 +9,6 @@ export interface HighlightNFTedCardProps
     highlightedNftCardVariants {
   cardWrapperStyles?: HTMLProps<HTMLDivElement>["className"];
   imageWrapperStyles?: HTMLProps<HTMLDivElement>["className"];
-  cardImage?: ImageProps["src"];
+  cardImage?: ImageProps;
   href?: LinkProps["href"];
 }

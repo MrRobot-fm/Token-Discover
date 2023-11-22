@@ -26,8 +26,14 @@ export const HeroSection = () => {
             <HighlightedNFTCard
               nftName={`#${nftData?.token_id}` || ""}
               collectionName={nftData?.collection?.name || ""}
-              cardImage={nftData?.image_url || ""}
-              avatarImage={nftData?.collection?.image_url}
+              cardImage={{
+                src: nftData?.image_url || "",
+                alt: nftData?.token_id || "nft-img",
+              }}
+              avatarImage={{
+                src: nftData?.collection?.image_url || "",
+                alt: nftData?.collection?.name || "",
+              }}
             />
           )}
         </div>
@@ -45,8 +51,14 @@ export const HeroSection = () => {
           <HighlightedNFTCard
             nftName={`#${nftData?.token_id}`}
             collectionName={nftData?.collection?.name || ""}
-            cardImage={nftData?.image_url || ""}
-            avatarImage={nftData?.collection?.image_url}
+            cardImage={{
+              src: nftData?.image_url || "",
+              alt: nftData?.token_id || "nft-img",
+            }}
+            avatarImage={{
+              src: nftData?.collection?.image_url || "",
+              alt: nftData?.collection?.name || "",
+            }}
           />
         )}
       </div>

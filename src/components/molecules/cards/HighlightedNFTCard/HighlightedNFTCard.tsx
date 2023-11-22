@@ -24,8 +24,8 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
           className={imageWrapper({ className: imageWrapperStyles, variant })}
         >
           <CustomImage
-            src={cardImage || DEFAULT_IMG_URL_FALLBACK}
-            alt="highlighted-card"
+            src={cardImage?.src || DEFAULT_IMG_URL_FALLBACK}
+            alt={cardImage?.alt || "nft-img"}
           />
         </div>
         <NftCardFooter {...rest} />
