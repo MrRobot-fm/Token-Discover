@@ -4,6 +4,7 @@ import { useGetNftCollectionById } from "@/api/NFT/hooks/use-get-nft-by-collecti
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 import type { TopCollectionCardProps } from "./TopCollectionCard.props";
 import { TopCollectionCardContent } from "./TopCollectionCardContent";
+import { styles } from "./top-collection-card.styles";
 
 export const TopCollectionCard = (props: TopCollectionCardProps) => {
   const { collectionId } = props || {};
@@ -13,7 +14,7 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
   });
 
   return (
-    <div className="flex w-full flex-col base:gap-[1.5rem] md:gap-[2rem] lg:gap-[1.5rem]">
+    <div className={styles.cardWrapper}>
       {isLoading ? (
         <CardSkeleton variant="section" />
       ) : (

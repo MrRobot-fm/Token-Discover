@@ -2,6 +2,7 @@
 
 import { useGetTransformedValue } from "@/hooks/use-get-transformed-value";
 import type { StatsCardProps } from "./StatsCard.props";
+import { styles } from "./stats-card.styles";
 
 export const StatsCard = (props: StatsCardProps) => {
   const { stats = 240, label = "total sales" } = props;
@@ -11,10 +12,10 @@ export const StatsCard = (props: StatsCardProps) => {
   });
 
   return (
-    <div className="flex base:w-[9rem] base:justify-center md:w-[15rem] lg:justify-start">
+    <div className={styles.statWrapper}>
       <div>
-        <p className="base:heading5 md:heading4">{motionValue}</p>
-        <span className="base:paragraph md:heading5 capitalize">{label}</span>
+        <p className={styles.statValue}>{motionValue}</p>
+        <span className={styles.statLabel}>{label}</span>
       </div>
     </div>
   );

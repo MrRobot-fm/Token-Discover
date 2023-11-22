@@ -7,6 +7,7 @@ import { CardSkeleton } from "@/components/molecules/cards/CardSkeleton/CardSkel
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 import { StatsCard } from "@/components/molecules/cards/StatsCard/StatsCard";
 import { statsValue } from "@/public/mock/stats-value";
+import { styles } from "./hero-section.styles";
 
 export const HeroSection = () => {
   const { data: nftData, isLoading } = useGetNftByTokenId({
@@ -16,10 +17,10 @@ export const HeroSection = () => {
   });
 
   return (
-    <main className="flex max-w-[144rem] justify-between gap-[4rem] py-[2.5rem] md:flex-col md:items-start lg:flex-row lg:items-center lg:pb-[8rem] xl:py-[8rem]">
-      <div className="flex flex-col justify-center base:gap-[4rem] md:items-stretch md:gap-[6rem] md:py-[5rem] lg:w-[55%] lg:items-start lg:gap-[4rem] lg:p-0">
+    <main className={styles.main}>
+      <div className={styles.mobileSectionWrapper}>
         <HeroTitle />
-        <div className="w-full items-center justify-center base:flex lg:hidden">
+        <div className={styles.mobileSectionWrapper_cardWrapper}>
           {isLoading ? (
             <CardSkeleton />
           ) : (
@@ -38,13 +39,13 @@ export const HeroSection = () => {
           )}
         </div>
         <SectionCta />
-        <div className="flex base:justify-between md:justify-evenly lg:justify-start">
+        <div className={styles.mobileSectionWrapper_statsCardWrapper}>
           {statsValue.map((value) => (
             <StatsCard key={value.id} stats={value.stat} label={value.label} />
           ))}
         </div>
       </div>
-      <div className="w-[45%] items-start justify-end base:hidden lg:flex">
+      <div className={styles.desktopCardWrapper}>
         {isLoading ? (
           <CardSkeleton />
         ) : (
@@ -53,7 +54,7 @@ export const HeroSection = () => {
             collectionName={nftData?.collection?.name || ""}
             cardImage={{
               src: nftData?.image_url || "",
-              alt: nftData?.token_id || "nft-img",
+              alt: nftData?.token_id || "",
             }}
             avatarImage={{
               src: nftData?.collection?.image_url || "",
