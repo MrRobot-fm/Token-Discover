@@ -4,7 +4,7 @@ import { prefetchTrendingCollections } from "@/api/collections/prefetch/prefetch
 import { DiscoverNftSection } from "@/components/organism/DiscoverNftSection/DiscoverNftSection";
 import { HeroSection } from "@/components/organism/HeroSection/HeroSection";
 import { TopCollectionSection } from "@/components/organism/TopCollectionSection/TopCollectionSection";
-import { TopCreatorSection } from "@/components/organism/TopCreatorSection/TopCreatorSection";
+import { TopNFTSoldSection } from "@/components/organism/TopNFTSoldSection/TopNFTSoldSection";
 
 export default async function Home() {
   const { dehydrateState: dehydrateTopCollections } =
@@ -26,8 +26,8 @@ export default async function Home() {
       <HeroSection />
       <HydrationBoundary state={dehydrateTopCollections}>
         <TopCollectionSection />
+        <TopNFTSoldSection />
       </HydrationBoundary>
-      <TopCreatorSection />
       <HydrationBoundary state={dehydrateTrendingCollections}>
         <DiscoverNftSection />
       </HydrationBoundary>
