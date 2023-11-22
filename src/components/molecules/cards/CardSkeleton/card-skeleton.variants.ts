@@ -28,6 +28,12 @@ export const cardSkeleton = tv({
         skeletonRoot:
           " base:min-h-[34.62rem] base:w-full md:min-h-[47.72rem] md:min-w-[48rem] lg:min-h-[41.7rem] lg:min-w-[40rem] xl:min-h-[45.47rem] xl:min-w-[45rem]",
       },
+      topSales: {
+        skeletonHeader: "md:py-[3rem]",
+        skeletonCircle: "base:h-[5rem] base:w-[5rem] md:h-[6rem] md:w-[6rem]",
+        skeletonBar: "base:h-[1.7rem] md:h-[2rem]",
+        skeletonBody: "base:hidden md:flex md:flex-col",
+      },
     },
   },
   defaultVariants: {

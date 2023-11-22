@@ -1,7 +1,8 @@
-import { CardSkeletonVariants, cardSkeleton } from "./card-skeleton.variants";
+import type { CardSkeletonProps } from "./CardSkeleton.props";
+import { cardSkeleton } from "./card-skeleton.variants";
 
-export const CardSkeleton = (props: CardSkeletonVariants) => {
-  const { variant } = props;
+export const CardSkeleton = (props: CardSkeletonProps) => {
+  const { variant, barCount = 4 } = props;
 
   const {
     skeletonRoot,
@@ -22,7 +23,7 @@ export const CardSkeleton = (props: CardSkeletonVariants) => {
         </div>
       </div>
       <div className={skeletonBody()}>
-        {Array.from({ length: 4 }).map((_, index) => (
+        {Array.from({ length: barCount }).map((_, index) => (
           <div key={index} className={skeletonBar()} />
         ))}
       </div>

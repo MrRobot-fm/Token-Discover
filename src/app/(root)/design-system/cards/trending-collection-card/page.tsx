@@ -10,7 +10,7 @@ export default function TopCollectionCardPage() {
           creator="MrFox"
           collectionName="DSGN Animals"
           collectionLength={1025}
-          image={NftCardPlaceholder}
+          image={{ src: NftCardPlaceholder, alt: "card-img" }}
         />
       ))}
     </div>

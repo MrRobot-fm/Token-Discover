@@ -7,7 +7,10 @@ export const Avatar = (props: AvatarProps) => {
   const { size, src, alt = "avatar", className } = props;
   return (
     <div className={avatar({ size, className })}>
-      <CustomImage src={src || DEFAULT_IMG_URL_FALLBACK} alt={alt} />
+      <CustomImage
+        src={src || DEFAULT_IMG_URL_FALLBACK}
+        alt={alt || "avatar-img"}
+      />
     </div>
   );
 };
