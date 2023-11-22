@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useGetTopCollections } from "@/api/collections/hooks/use-get-top-collections";
 import { Section } from "@/components/molecules/Section/Section";
 import { TopSalesList } from "@/components/molecules/TopSalesList/TopSalesList";
+import { styles } from "./top-nft-sold-secton.styles";
 
 export const TopNFTSoldSection = () => {
   const { data: topCollection } = useGetTopCollections({
@@ -25,7 +26,7 @@ export const TopNFTSoldSection = () => {
       hasCta
       ctaProps={{ icon: "rocket", label: "View Rankings" }}
     >
-      <div className="grid w-full gap-[3rem] base:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div className={styles.list_wrapper}>
         <TopSalesList collectionId={collectionId} />
       </div>
     </Section>

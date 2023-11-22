@@ -1,25 +1,26 @@
 import { SectionCta } from "@/components/atoms/SectionCta/SectionCta";
-import { SectionProps } from "./Section.props";
+import type { SectionProps } from "./Section.props";
+import { styles } from "./section.styles";
 
 export const Section = (props: SectionProps) => {
   const { title, subTitle, hasCta = false, children, ctaProps } = props;
 
   return (
-    <section className="flex w-full max-w-[144rem] flex-col justify-between  border-t border-t-background-grey py-[8rem] base:gap-[4rem] lg:items-center lg:gap-[6rem]">
-      <div className="flex w-full items-end justify-between">
+    <section className={styles.section}>
+      <div className={styles.section_headingWrapper}>
         <div>
           <h3>{title}</h3>
           <h5>{subTitle}</h5>
         </div>
         {hasCta && (
-          <div className="base:hidden lg:flex">
+          <div className={styles.section_desktopCtaWrapper}>
             <SectionCta variant="outline" {...ctaProps} />
           </div>
         )}
       </div>
-      <div className="flex w-full">{children}</div>
+      <div className={styles.section_childrenWrapper}>{children}</div>
       {hasCta && (
-        <div className="flex w-full flex-col lg:hidden">
+        <div className={styles.section_mobileCtaWrapper}>
           <SectionCta variant="outline" {...ctaProps} />
         </div>
       )}

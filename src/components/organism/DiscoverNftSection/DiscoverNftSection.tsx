@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useGetTrendingCollections } from "@/api/collections/hooks/use-get-trending-collections";
 import { HighlightedNftList } from "@/components/molecules/HighlightedNftList/HighlightedNftList";
 import { Section } from "@/components/molecules/Section/Section";
+import { styles } from "./discover-nft-section.styles";
 
 export const DiscoverNftSection = () => {
   const { data: trendingCollection } = useGetTrendingCollections({
@@ -25,11 +26,11 @@ export const DiscoverNftSection = () => {
       ctaProps={{ label: "see all", icon: "eye" }}
       hasCta
     >
-      <div className="w-full gap-[3rem] base:hidden md:grid md:grid-cols-2 lg:grid-cols-3">
+      <div className={styles.desktopListWrapper}>
         <HighlightedNftList hasCarousel {...{ collectionId }} />
       </div>
 
-      <div className="w-full gap-[5rem] base:grid base:grid-cols-1 sm:grid-cols-1 md:hidden">
+      <div className={styles.mobileListWrapper}>
         <HighlightedNftList {...{ collectionId }} />
       </div>
     </Section>

@@ -8,6 +8,7 @@ import { NavbarLinks } from "@/components/atoms/navbar/NavbarLinks/NavbarLinks";
 import { NavLogo } from "@/components/atoms/navbar/NavbarLogo/NavbarLogo";
 import { NavbarMenuButton } from "@/components/atoms/navbar/NavbarMenuButton/NavMenuButton";
 import { NavbarMenu } from "@/components/molecules/nav/NavbarMenu/NavbarMenu";
+import { styles } from "./navbar.styles";
 
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -21,13 +22,13 @@ export const Navbar = () => {
   }, [isMobile, isTablet, onClose]);
 
   return (
-    <nav className="flex items-center justify-between px-[3rem] base:py-[2rem] md:px-[5rem]">
+    <nav className={styles.navbar}>
       <NavLogo />
-      <div className="base:hidden lg:flex">
+      <div className={styles.desktopNavLinksWrapper}>
         <NavbarLinks {...{ links }} />
       </div>
 
-      <div className="base:flex lg:hidden">
+      <div className={styles.mobileNavLinksWrapper}>
         <NavbarMenuButton {...{ onOpen }} />
         <NavbarMenu {...{ isOpen, onClose }} />
       </div>

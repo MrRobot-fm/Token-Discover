@@ -1,6 +1,7 @@
 import { GetNftByCollectionsIdResponseModel } from "@/types/model/api-nft-by-collection-id";
 import { NftCardFooter } from "@/components/atoms/NftCardFooter/NftCardFooter";
 import { TopCollectionContent } from "@/components/atoms/TopCollectionContent/TopCollectionContent";
+import { styles } from "./top-collection-card.styles";
 
 export const TopCollectionCardContent = ({
   nftByCollection,
@@ -16,7 +17,7 @@ export const TopCollectionCardContent = ({
         }}
         size="md"
       />
-      <div className="flex w-full justify-between base:gap-[1.5rem] md:gap-[2.5rem] lg:gap-[1.5rem] ">
+      <div className={styles.mappedContentWrapper}>
         {nftByCollection?.nfts?.slice(1, 4).map((item, index) => (
           <TopCollectionContent
             key={index}
