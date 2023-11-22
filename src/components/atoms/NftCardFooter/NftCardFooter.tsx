@@ -19,7 +19,11 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
     <div className={footerWrapper({ className: footerWrapperStyles })}>
       {!!nftName && <h5>{nftName}</h5>}
       <div className={authorWrapper()}>
-        <Avatar src={avatarImage || ""} alt="author-avatar" size="sm" />
+        <Avatar
+          src={avatarImage?.src || ""}
+          alt={avatarImage?.alt || "avatar-img"}
+          size="sm"
+        />
         <span className="paragraph capitalize">{collectionName}</span>
       </div>
       {hasDetails && (

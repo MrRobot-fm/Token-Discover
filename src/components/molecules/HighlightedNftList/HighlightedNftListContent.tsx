@@ -24,8 +24,11 @@ export const HighlightedNftListContent = ({
               variant="nft"
               collectionName={nft?.collection?.name}
               nftName={nft?.name || ""}
-              avatarImage={nft?.collection?.image_url}
-              cardImage={nft?.image_url}
+              avatarImage={{
+                src: nft?.collection?.image_url,
+                alt: nft?.collection?.name,
+              }}
+              cardImage={{ src: nft?.image_url, alt: nft?.name || "nft-img" }}
             />
           </CarouselItem>
         ))

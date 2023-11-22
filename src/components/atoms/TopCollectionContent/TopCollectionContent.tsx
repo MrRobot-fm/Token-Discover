@@ -21,7 +21,7 @@ export const TopCollectionContent = (props: TopCollectionContentProps) => {
     <Link {...{ href }} className="group w-full">
       <div className={topCollectionContent({ size })}>
         <CustomImage
-          src={image || DEFAULT_IMG_URL_FALLBACK}
+          src={image.src || DEFAULT_IMG_URL_FALLBACK}
           alt="trending-collection"
         />
       </div>

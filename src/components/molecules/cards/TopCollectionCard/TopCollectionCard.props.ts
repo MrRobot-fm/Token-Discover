@@ -1,7 +1,7 @@
 import type { ImageProps } from "next/image";
 
 export type TopCollectionCardProps = {
-  image?: ImageProps["src"];
+  image?: ImageProps;
   creator?: string;
   collectionName?: string;
   collectionLength?: number;

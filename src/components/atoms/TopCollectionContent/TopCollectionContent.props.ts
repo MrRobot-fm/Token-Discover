@@ -4,7 +4,7 @@ import type { TopCollectionContentVariants } from "./top-collection-content.vari
 
 export interface TopCollectionContentProps
   extends TopCollectionContentVariants {
-  image: ImageProps["src"];
+  image: ImageProps;
   collectionLength?: number;
   hasText?: boolean;
   href?: LinkProps["href"];
