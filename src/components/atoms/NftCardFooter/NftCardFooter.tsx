@@ -7,6 +7,7 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
     nftName,
     collectionName,
     avatarImage,
+    avatarSize = "sm",
     footerWrapperStyles,
     nftPrice,
     nftHighBid,
@@ -18,13 +19,23 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
   return (
     <div className={footerWrapper({ className: footerWrapperStyles })}>
       {!!nftName && <h5>{nftName}</h5>}
-      <div className={authorWrapper()}>
+      <div
+        className={authorWrapper({
+          className: `${avatarSize === "xs" && "gap-[0.7rem]"}`,
+        })}
+      >
         <Avatar
           src={avatarImage?.src || ""}
           alt={avatarImage?.alt || "avatar-img"}
-          size="sm"
+          size={avatarSize}
         />
-        <span className="paragraph capitalize">{collectionName}</span>
+        <span
+          className={`${
+            avatarSize === "xs" ? "base:span md:paragraph" : "paragraph"
+          } capitalize lg:whitespace-nowrap`}
+        >
+          {collectionName}
+        </span>
       </div>
       {hasDetails && (
         <div className={detailsWrapper()}>

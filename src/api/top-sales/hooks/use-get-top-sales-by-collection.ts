@@ -1,4 +1,4 @@
-import { UseQueryOptions, useQuery } from "@tanstack/react-query";
+import { UseQueryOptions, useQueries } from "@tanstack/react-query";
 import { useMemo } from "react";
 import type {
   GetTopSalesByCollectionResponseModel,
@@ -10,20 +10,29 @@ export const useGetTopSalesByCollection = (
   apiParams: UseGetTopSalesByCollectionsApiParams,
   queryOptions?: UseQueryOptions<GetTopSalesByCollectionResponseModel>
 ) => {
-  const { collectionId, nftDetails, cursor, limit } = apiParams;
+  const { nftDetails, cursor, limit, collectionId } = apiParams;
 
   const parsedParams = useMemo(() => {
     return {
-      collection_id: collectionId,
       ...(nftDetails && { include_nft_details: nftDetails }),
       ...(cursor && { cursor }),
       ...(limit && { limit }),
     };
   }, [apiParams]);
 
-  return useQuery({
-    queryKey: ["top-sales-by-collection", parsedParams],
-    queryFn: () => getTopSalesByCollection(parsedParams),
-    ...queryOptions,
+  return useQueries({
+    queries: collectionId.map((collection_id) => ({
+      queryKey: ["top-sales-by-collection", { collection_id, ...parsedParams }],
+      queryFn: () =>
+        getTopSalesByCollection({ collection_id, ...parsedParams }),
+      staleTime: Infinity,
+      ...queryOptions,
+    })),
+    combine: (results) => {
+      return {
+        data: results.map((result) => result.data),
+        isLoading: results.some((result) => result.isLoading),
+      };
+    },
   });
 };

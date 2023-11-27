@@ -27,11 +27,11 @@ export const DiscoverNftSection = () => {
       hasCta
     >
       <div className={styles.desktopListWrapper}>
-        <HighlightedNftList hasCarousel {...{ collectionId }} />
+        <HighlightedNftList hasCarousel collectionId={collectionId || []} />
       </div>
 
       <div className={styles.mobileListWrapper}>
-        <HighlightedNftList {...{ collectionId }} />
+        <HighlightedNftList collectionId={collectionId || []} />
       </div>
     </Section>
   );

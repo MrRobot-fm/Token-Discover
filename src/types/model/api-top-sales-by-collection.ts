@@ -183,7 +183,7 @@ export type GetTopSalesByCollectionSearchParams = {
 };
 
 export type UseGetTopSalesByCollectionsApiParams = {
-  collectionId: string;
+  collectionId: string[];
   nftDetails?: string;
   cursor?: string;
   limit?: number;
