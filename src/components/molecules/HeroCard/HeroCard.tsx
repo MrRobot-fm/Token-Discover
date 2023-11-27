@@ -1,0 +1,29 @@
+"use client";
+
+import { useGetNftByTokenId } from "@/api/NFT/hooks/use-get-nft-by-token-id";
+import { CardSkeleton } from "@/components/molecules/cards/CardSkeleton/CardSkeleton";
+import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
+
+export const HeroCard = () => {
+  const { data: nftData, isLoading } = useGetNftByTokenId({
+    chain: "ethereum",
+    contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+    tokenId: "4160",
+  });
+  return isLoading ? (
+    <CardSkeleton />
+  ) : (
+    <HighlightedNFTCard
+      nftName={`#${nftData?.token_id}` || ""}
+      collectionName={nftData?.collection?.name || ""}
+      cardImage={{
+        src: nftData?.image_url || "",
+        alt: nftData?.token_id || "",
+      }}
+      avatarImage={{
+        src: nftData?.collection?.image_url || "",
+        alt: nftData?.collection?.name || "",
+      }}
+    />
+  );
+};
