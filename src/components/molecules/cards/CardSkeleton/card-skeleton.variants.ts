@@ -16,9 +16,9 @@ export const cardSkeleton = tv({
   },
   variants: {
     variant: {
-      section: {
+      topCollection: {
         skeletonRoot:
-          "base:min-h-[30rem] md:min-h-[57rem] lg:min-h-[48.5rem] xl:min-h-[54rem]",
+          "base:min-h-[30rem] base:min-w-full md:min-h-[57rem] md:min-w-[48rem] lg:min-h-[48.5rem] lg:min-w-[40rem] xl:min-h-[54rem] xl:min-w-[45rem]",
       },
       hero: {
         skeletonRoot:
@@ -30,8 +30,8 @@ export const cardSkeleton = tv({
       },
       topSales: {
         skeletonHeader: "md:py-[3rem]",
-        skeletonCircle: "base:h-[5rem] base:w-[5rem] md:h-[6rem] md:w-[6rem]",
-        skeletonBar: "base:h-[1.7rem] md:h-[2rem]",
+        skeletonCircle: "base:h-[7rem] base:w-[7rem] ",
+        skeletonBar: "base:h-[2rem]",
         skeletonBody: "base:hidden md:flex md:flex-col",
       },
     },

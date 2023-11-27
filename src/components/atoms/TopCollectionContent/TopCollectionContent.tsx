@@ -22,7 +22,7 @@ export const TopCollectionContent = (props: TopCollectionContentProps) => {
       <div className={topCollectionContent({ size })}>
         <CustomImage
           src={image.src || DEFAULT_IMG_URL_FALLBACK}
-          alt="trending-collection"
+          alt={image.alt}
         />
       </div>
     </Link>

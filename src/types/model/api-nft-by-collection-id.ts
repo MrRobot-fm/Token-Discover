@@ -174,6 +174,7 @@ export type GetNftByCollectionsIdResponseModel = {
 
 export type UseGetNftByCollectionsIdApiParams = {
   collectionId?: string;
+  collectionsIds?: string[];
   limit?: number;
   cursor?: string;
 };

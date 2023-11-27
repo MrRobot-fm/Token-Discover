@@ -27,7 +27,9 @@ export const TopNFTSoldSection = () => {
       ctaProps={{ icon: "rocket", label: "View Rankings" }}
     >
       <div className={styles.list_wrapper}>
-        <TopSalesList collectionId={collectionId} />
+        <TopSalesList
+          collectionId={collectionId?.map((collectionId) => collectionId) || []}
+        />
       </div>
     </Section>
   );
