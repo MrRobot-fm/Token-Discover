@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from "react";
 import { useGetTopSalesByCollection } from "@/api/top-sales/hooks/use-get-top-sales-by-collection";
 import { CardSkeleton } from "@/components/molecules/cards/CardSkeleton/CardSkeleton";
