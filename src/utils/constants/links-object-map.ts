@@ -7,8 +7,8 @@ export const links = [
     icon: "search" as IconName,
   },
   {
-    text: "Marketplace",
-    route: "/marketplace",
+    text: "Discover",
+    route: "/discover/top-collections",
     icon: "store" as IconName,
   },
   {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PAGES_PATH } from "@/utils/constants/pages-path";
 import type { IconName } from "@/types/icons";
 import { Button } from "@/components/atoms/Button/Button";
 
@@ -17,14 +18,16 @@ export const NavbarLinks = ({
           key={link?.text}
           href={link?.route}
           className={`paragraph font-semibold transition duration-500 hover:opacity-70 ${
-            pathname === link?.route && "scale-110 text-callToAction"
+            (pathname === link.route ||
+              (link.route.includes("discover") && pathname !== "/")) &&
+            "scale-110 text-callToAction"
           }`}
         >
           {link?.text}
         </Link>
       ))}
       <Button
-        url="/sign-up"
+        href={PAGES_PATH.SIGN_UP}
         label="Sign Up"
         icon="user"
         buttonWrapperStyles="px-[3rem]"

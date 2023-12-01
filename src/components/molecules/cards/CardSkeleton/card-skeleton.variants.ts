@@ -16,6 +16,9 @@ export const cardSkeleton = tv({
   },
   variants: {
     variant: {
+      fluid: {
+        skeletonRoot: "min-h-full min-w-full",
+      },
       topCollection: {
         skeletonRoot:
           "base:min-h-[30rem] base:min-w-full md:min-h-[57rem] md:min-w-[48rem] lg:min-h-[48.5rem] lg:min-w-[40rem] xl:min-h-[54rem] xl:min-w-[45rem]",

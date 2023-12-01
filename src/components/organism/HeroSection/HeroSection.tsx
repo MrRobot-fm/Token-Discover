@@ -1,3 +1,4 @@
+import { PAGES_PATH } from "@/utils/constants/pages-path";
 import { HeroTitle } from "@/components/atoms/HeroTitle/HeroTitle";
 import { SectionCta } from "@/components/atoms/SectionCta/SectionCta";
 import { HeroCard } from "@/components/molecules/HeroCard/HeroCard";
@@ -13,7 +14,7 @@ export const HeroSection = () => {
         <div className={styles.mobileSectionWrapper_cardWrapper}>
           <HeroCard />
         </div>
-        <SectionCta />
+        <SectionCta href={PAGES_PATH.DISCOVER_TOP_COLLECTIONS} />
         <div className={styles.mobileSectionWrapper_statsCardWrapper}>
           {statsValue.map((value) => (
             <StatsCard key={value.id} stats={value.stat} label={value.label} />

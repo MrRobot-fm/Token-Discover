@@ -1,4 +1,5 @@
 import { SubmitHandler, useFormContext } from "react-hook-form";
+import { PAGES_PATH } from "@/utils/constants/pages-path";
 import {
   emailFormValidation,
   passwordFormValidation,
@@ -66,7 +67,7 @@ export const SingUpForm = () => {
         buttonWrapperStyles="mt-[1rem]"
       />
       <OnBoardingFooter
-        href="/sign-in"
+        href={PAGES_PATH.SIGN_IN}
         label="Do not have an account?"
         cta="sign in"
       />

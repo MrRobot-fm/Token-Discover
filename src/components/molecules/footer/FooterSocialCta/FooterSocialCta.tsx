@@ -12,7 +12,7 @@ export const FooterSocialCta = () => {
             icon={item?.icon}
             size={item?.size}
             variant={item?.variant}
-            url={item?.url || ""}
+            href={item?.url || ""}
             buttonWrapperStyles="gap-0"
           />
         ))}

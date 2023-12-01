@@ -35,7 +35,7 @@ export const NavbarMenu = (props: NavbarMenuProps) => {
             <Button
               key={link.text}
               label={link.text}
-              url={link.route}
+              href={link.route}
               icon={link.icon}
               variant="link"
               size="lg"
@@ -43,7 +43,7 @@ export const NavbarMenu = (props: NavbarMenuProps) => {
             />
           ))}
           <Button
-            url="/sign-up"
+            href="/sign-up"
             label="Sign Up"
             icon="user"
             size="sm"

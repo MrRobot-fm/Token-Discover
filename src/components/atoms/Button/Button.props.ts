@@ -4,8 +4,11 @@ import type { ButtonVariants } from "./button.variants";
 
 export interface ButtonProps
   extends ButtonVariants,
-    Pick<HTMLProps<HTMLButtonElement>, "onClick" | "className"> {
-  url?: string;
+    Pick<
+      HTMLProps<HTMLButtonElement>,
+      "onClick" | "className" | "value" | "name" | "defaultValue"
+    > {
+  href?: string;
   label?: string;
   icon?: IconName;
   type?: "button" | "submit" | "reset";
