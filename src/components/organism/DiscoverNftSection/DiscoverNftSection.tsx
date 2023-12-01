@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { PAGES_PATH } from "@/utils/constants/pages-path";
 import { useGetTrendingCollections } from "@/api/collections/hooks/use-get-trending-collections";
 import { HighlightedNftList } from "@/components/molecules/HighlightedNftList/HighlightedNftList";
 import { Section } from "@/components/molecules/Section/Section";
@@ -23,7 +24,11 @@ export const DiscoverNftSection = () => {
     <Section
       title="Discover More NFTs"
       subTitle="Explore new trending NFTs"
-      ctaProps={{ label: "see all", icon: "eye" }}
+      ctaProps={{
+        label: "see all",
+        icon: "eye",
+        href: PAGES_PATH.DISCOVER_TRENDING_NFTS,
+      }}
       hasCta
     >
       <div className={styles.desktopListWrapper}>

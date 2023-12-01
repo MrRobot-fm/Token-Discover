@@ -14,14 +14,14 @@ export default function ButtonsPage() {
           size="sm"
           variant="outline"
           icon="trendUp"
-          url="/"
+          href="/"
         />
         <Button
           label="secondary"
           size="md"
           variant="outline"
           icon="eye"
-          url="https://vocajs.pages.dev/"
+          href="https://vocajs.pages.dev/"
         />
         <Button label="secondary" size="lg" variant="outline" icon="store" />
       </div>
@@ -32,14 +32,14 @@ export default function ButtonsPage() {
           size="sm"
           variant="link"
           icon="trendUp"
-          url="/"
+          href="/"
         />
         <Button
           label="secondary"
           size="md"
           variant="link"
           icon="eye"
-          url="https://vocajs.pages.dev/"
+          href="https://vocajs.pages.dev/"
         />
         <Button label="secondary" size="lg" variant="link" icon="store" />
       </div>

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { HTMLProps, ReactNode } from "react";
 import type { IconName } from "@/types/icons";
 
 export type SectionProps = {
@@ -7,7 +7,13 @@ export type SectionProps = {
   subTitle: string;
   hasCta?: boolean;
   ctaProps?: {
-    label: string;
-    icon: IconName;
+    label?: string;
+    icon?: IconName;
+    href?: string;
+  };
+  sectionStyles?: HTMLProps<HTMLElement>["className"];
+  titleProps?: {
+    titleStyles?: HTMLProps<HTMLHeadElement>["className"];
+    subtitleStyles?: HTMLProps<HTMLHeadElement>["className"];
   };
 };

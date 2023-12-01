@@ -19,20 +19,23 @@ const TopCollectionList = ({
   if (hasCarousel) {
     return (
       <Carousel>
-        {nftByCollection?.map((collection, index) =>
-          isLoading ? (
-            <CardSkeleton key={index} variant="topCollection" />
-          ) : (
-            <CarouselItem key={`${index}`}>
-              <TopCollectionCard data={collection} />
-            </CarouselItem>
-          )
-        )}
+        {nftByCollection
+          ?.filter((item) => item?.nfts[0]?.image_url !== null)
+          ?.map((collection, index) =>
+            isLoading ? (
+              <CardSkeleton key={index} variant="topCollection" />
+            ) : (
+              <CarouselItem key={`${index}`}>
+                <TopCollectionCard data={collection} />
+              </CarouselItem>
+            )
+          )}
       </Carousel>
     );
   }
 
   return nftByCollection
+    ?.filter((item) => item?.nfts[0]?.image_url !== null)
     ?.slice(0, 3)
     .map((collection, index) =>
       isLoading ? (

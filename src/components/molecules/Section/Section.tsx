@@ -3,14 +3,22 @@ import type { SectionProps } from "./Section.props";
 import { styles } from "./section.styles";
 
 export const Section = (props: SectionProps) => {
-  const { title, subTitle, hasCta = false, children, ctaProps } = props;
+  const {
+    title,
+    subTitle,
+    hasCta = false,
+    children,
+    ctaProps,
+    sectionStyles,
+    titleProps,
+  } = props;
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${sectionStyles}`}>
       <div className={styles.section_headingWrapper}>
         <div>
-          <h3>{title}</h3>
-          <h5>{subTitle}</h5>
+          <h3 className={titleProps?.titleStyles}>{title}</h3>
+          <h5 className={titleProps?.subtitleStyles}>{subTitle}</h5>
         </div>
         {hasCta && (
           <div className={styles.section_desktopCtaWrapper}>

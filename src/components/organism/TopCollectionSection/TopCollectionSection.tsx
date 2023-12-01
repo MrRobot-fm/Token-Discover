@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { PAGES_PATH } from "@/utils/constants/pages-path";
 import { useGetTopCollections } from "@/api/collections/hooks/use-get-top-collections";
 import { Section } from "@/components/molecules/Section/Section";
 import TopCollectionList from "@/components/molecules/TopCollectionList/TopCollectionList";
@@ -23,6 +24,12 @@ export const TopCollectionSection = () => {
     <Section
       title="Top Collection"
       subTitle="Checkout our weekly updated top collection."
+      hasCta
+      ctaProps={{
+        label: "See all",
+        icon: "rocketLaunch",
+        href: PAGES_PATH.DISCOVER_TOP_COLLECTIONS,
+      }}
     >
       <div className={styles.desktopCollectionListWrapper}>
         <TopCollectionList hasCarousel collectionId={collectionIds || []} />

@@ -6,7 +6,7 @@ import { button } from "./button.variants";
 
 export const Button = (props: ButtonProps) => {
   const {
-    url: href,
+    href,
     label,
     icon,
     size,

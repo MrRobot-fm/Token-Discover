@@ -14,7 +14,7 @@ export const FooterLinks = () => {
             {item.links.map((link, index) => (
               <Button
                 key={`${index}-${link?.label}`}
-                url={link?.route || ""}
+                href={link?.route || ""}
                 label={link?.label}
                 variant="link"
               />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { PAGES_PATH } from "@/utils/constants/pages-path";
 import { useGetTopCollections } from "@/api/collections/hooks/use-get-top-collections";
 import { Section } from "@/components/molecules/Section/Section";
 import { TopSalesList } from "@/components/molecules/TopSalesList/TopSalesList";
@@ -24,7 +25,11 @@ export const TopNFTSoldSection = () => {
       title="Top NFTs sold by collection"
       subTitle="Checkout the Top Sold NFT on the Marketplace"
       hasCta
-      ctaProps={{ icon: "rocket", label: "View Rankings" }}
+      ctaProps={{
+        icon: "rocket",
+        label: "See all",
+        href: PAGES_PATH.DISCOVER_TOP_SOLD_NFTS,
+      }}
     >
       <div className={styles.list_wrapper}>
         <TopSalesList

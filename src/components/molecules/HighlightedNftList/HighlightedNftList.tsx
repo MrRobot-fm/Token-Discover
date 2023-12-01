@@ -20,27 +20,32 @@ export const HighlightedNftList = ({
   if (hasCarousel) {
     return (
       <Carousel>
-        {nftByCollectionId?.map((nft, index) =>
-          isLoading ? (
-            <CardSkeleton key={index} variant="nfts" />
-          ) : (
-            <CarouselItem key={`${index}-${nft?.nfts[0]?.nft_id}`}>
-              <HighlightedNFTCard
-                variant="nft"
-                collectionName={nft?.nfts[0]?.collection?.name}
-                nftName={nft?.nfts[0]?.name || ""}
-                avatarImage={{
-                  src: nft?.nfts[0]?.collection?.image_url || "",
-                  alt: nft?.nfts[0]?.collection?.name || "",
-                }}
-                cardImage={{
-                  src: nft?.nfts[0]?.image_url || "",
-                  alt: nft?.nfts[0]?.name || "nft-img",
-                }}
-              />
-            </CarouselItem>
+        {nftByCollectionId
+          ?.filter(
+            (item) =>
+              item?.nfts[0]?.image_url !== null && item?.nfts[0]?.name !== null
           )
-        )}
+          ?.map((nft, index) =>
+            isLoading ? (
+              <CardSkeleton key={index} variant="nfts" />
+            ) : (
+              <CarouselItem key={`${index}-${nft?.nfts[0]?.nft_id}`}>
+                <HighlightedNFTCard
+                  variant="nft"
+                  collectionName={nft?.nfts[0]?.collection?.name}
+                  nftName={nft?.nfts[0]?.name || ""}
+                  avatarImage={{
+                    src: nft?.nfts[0]?.collection?.image_url || "",
+                    alt: nft?.nfts[0]?.collection?.name || "",
+                  }}
+                  cardImage={{
+                    src: nft?.nfts[0]?.image_url || "",
+                    alt: nft?.nfts[0]?.name || "nft-img",
+                  }}
+                />
+              </CarouselItem>
+            )
+          )}
       </Carousel>
     );
   }

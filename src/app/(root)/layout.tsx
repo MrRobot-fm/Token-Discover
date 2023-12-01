@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${workSans.variable} ${spaceMono.variable}`}>
       <body className="w-full bg-background-black">
-        <Navbar />
-        <TanstackQUeryProvider>{children}</TanstackQUeryProvider>
-        <Footer />
+        <TanstackQUeryProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </TanstackQUeryProvider>
       </body>
     </html>
   );
