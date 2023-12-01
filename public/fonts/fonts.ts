@@ -16,18 +16,7 @@ export const workSans = localFont({
   variable: '--font-works-sans'
 });
 
-export const spaceMono = localFont({
-  src: [
-    {
-      style: 'normal',
-      weight: '400',
-      path: './SpaceMono/SpaceMono-Regular-webfont.woff'
-    },
-    {
-      style: 'normal',
-      weight: '700',
-      path: './SpaceMono/SpaceMono-Bold-webfont.woff'
-    }
-  ],
-  variable: '--font-space-mono'
-});
+
+
+
+

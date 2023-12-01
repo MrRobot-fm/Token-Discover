@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TanstackQUeryProvider from "@/utils/providers/tanstack-query-provider";
 import { Navbar } from "@/components/molecules/nav/Navbar/Navbar";
 import { Footer } from "@/components/organism/Footer/Footer";
-import { spaceMono, workSans } from "@/public/fonts/fonts";
+import { workSans } from "@/public/fonts/fonts";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${workSans.variable} ${spaceMono.variable}`}>
+    <html lang="en" className={workSans.variable}>
       <body className="w-full bg-background-black">
         <TanstackQUeryProvider>
           <Navbar />

@@ -19,7 +19,6 @@ const config: Config = withTV({
     extend: {
       fontFamily: {
         workSans: ["var(--font-works-sans)", "san-serif"],
-        spaceMono: ["var(--font-space-mono)", "san-serif"],
       },
       colors: {
         background: {
