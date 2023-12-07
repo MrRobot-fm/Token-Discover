@@ -1,8 +1,8 @@
-import type { CardSkeletonProps } from "./CardSkeleton.props";
-import { cardSkeleton } from "./card-skeleton.variants";
+import type { SkeletonProps } from "./Skeleton.props";
+import { skeleton } from "./skeleton.variants";
 
-export const CardSkeleton = (props: CardSkeletonProps) => {
-  const { variant, barCount = 4 } = props;
+export const Skeleton = (props: SkeletonProps) => {
+  const { variant, barCount = 4, children } = props;
 
   const {
     skeletonRoot,
@@ -11,7 +11,7 @@ export const CardSkeleton = (props: CardSkeletonProps) => {
     skeletonHeaderBarWrapper,
     skeletonBody,
     skeletonBar,
-  } = cardSkeleton({ variant });
+  } = skeleton({ variant });
   return (
     <div className={skeletonRoot()}>
       <div className={skeletonHeader()}>
@@ -21,6 +21,7 @@ export const CardSkeleton = (props: CardSkeletonProps) => {
             <div key={index} className={skeletonBar()} />
           ))}
         </div>
+        {children}
       </div>
       <div className={skeletonBody()}>
         {Array.from({ length: barCount }).map((_, index) => (

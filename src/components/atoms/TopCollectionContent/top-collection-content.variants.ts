@@ -5,7 +5,7 @@ export type TopCollectionContentVariants = VariantProps<
 >;
 
 export const topCollectionContent = tv({
-  base: "flex w-full items-center justify-center overflow-hidden rounded-[2rem] transition duration-500 group-hover:scale-105",
+  base: "flex w-full items-center justify-center overflow-hidden rounded-[2rem]",
   variants: {
     size: {
       sm: "aspect-[1/1] ",

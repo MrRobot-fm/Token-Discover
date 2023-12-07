@@ -1,8 +1,9 @@
 import { UseQueryOptions, useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { getTopCollections } from "@/api/collections/get-top-collections";
-import {
+import type {
   GetTopCollectionsResponseModel,
+  GetTopCollectionsSearchParams,
   UseGetTopCollectionsApiParams,
 } from "@/types/model/api-top-collections";
 
@@ -19,7 +20,7 @@ export const useGetTopCollections = (
     referenceDate,
   } = apiParams || {};
 
-  const parsedParams: UseGetTopCollectionsApiParams = useMemo(() => {
+  const parsedParams: GetTopCollectionsSearchParams = useMemo(() => {
     return {
       chains,
       ...(limit && { limit }),

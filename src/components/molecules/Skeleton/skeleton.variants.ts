@@ -1,8 +1,8 @@
 import { VariantProps, tv } from "tailwind-variants";
 
-export type CardSkeletonVariants = VariantProps<typeof cardSkeleton>;
+export type SkeletonVariants = VariantProps<typeof skeleton>;
 
-export const cardSkeleton = tv({
+export const skeleton = tv({
   slots: {
     skeletonRoot:
       "w-full animate-pulse rounded-[2rem] bg-background-grey py-4 shadow-md ",
@@ -36,6 +36,18 @@ export const cardSkeleton = tv({
         skeletonCircle: "base:h-[7rem] base:w-[7rem] ",
         skeletonBar: "base:h-[2rem]",
         skeletonBody: "base:hidden md:flex md:flex-col",
+      },
+      banner: {
+        skeletonRoot: "w-full base:h-[25rem] md:h-[28rem] lg:h-[32rem]",
+        skeletonHeader: "hidden",
+      },
+      image: {
+        skeletonRoot: "h-full w-full rounded-none bg-label-grey",
+        skeletonHeader: "hidden",
+        skeletonCircle: "hidden",
+        skeletonHeaderBarWrapper: "hidden",
+        skeletonBody: "hidden",
+        skeletonBar: "hidden",
       },
     },
   },

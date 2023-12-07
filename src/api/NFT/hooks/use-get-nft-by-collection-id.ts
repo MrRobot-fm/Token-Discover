@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { getNftByCollectionId } from "@/api/NFT/get-nft-by-collection-id";
 import type {
   GetNftByCollectionsIdResponseModel,
+  GetNftByCollectionsIdSearchParams,
   UseGetNftByCollectionsIdApiParams,
 } from "@/types/model/api-nft-by-collection-id";
 
@@ -12,7 +13,7 @@ export const useGetNftCollectionById = (
 ) => {
   const { limit, cursor, collectionId } = apiParams || {};
 
-  const parsedParams = useMemo(() => {
+  const parsedParams: GetNftByCollectionsIdSearchParams = useMemo(() => {
     return {
       collection_id: collectionId,
       ...(limit && { limit }),

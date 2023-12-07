@@ -1,6 +1,6 @@
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { Button } from "@/components/atoms/Button/Button";
-import { CardSkeleton } from "@/components/molecules/cards/CardSkeleton/CardSkeleton";
+import { Skeleton } from "@/components/molecules/Skeleton/Skeleton";
 import type { DiscoverIndexListProps } from "./DiscoverIndexList.props";
 import { styles } from "./discover-index-list.styles";
 import { useDiscoverIndexList } from "./use-discover-index-list";
@@ -15,7 +15,7 @@ export const DiscoverIndexList = (props: DiscoverIndexListProps) => {
     <div className={styles.listWrapper}>
       {isLoading
         ? Array.from({ length: items.length }).map((_, index) => (
-            <CardSkeleton key={index} variant={skeletonVariant} barCount={2} />
+            <Skeleton key={index} variant={skeletonVariant} barCount={2} />
           ))
         : (items || [])
             .slice(0, loadedItems)

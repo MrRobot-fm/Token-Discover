@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { getNftByTokenId } from "@/api/NFT/get-nft-by-token-id";
 import type {
   GetNftByTokenIdResponseModel,
+  GetNftByTokenIdSearchParams,
   UseGetNftByTokenIdApiParams,
 } from "@/types/model/api-nft-by-token-id";
 
@@ -12,7 +13,7 @@ export const useGetNftByTokenId = (
 ) => {
   const { chain, contractAddress, tokenId } = apiParams;
 
-  const parsedParams = useMemo(() => {
+  const parsedParams: GetNftByTokenIdSearchParams = useMemo(() => {
     return {
       chain,
       contract_address: contractAddress,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useGetNftByTokenId } from "@/api/NFT/hooks/use-get-nft-by-token-id";
-import { CardSkeleton } from "@/components/molecules/cards/CardSkeleton/CardSkeleton";
+import { Skeleton } from "@/components/molecules/Skeleton/Skeleton";
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 
 export const HeroCard = () => {
@@ -11,7 +11,7 @@ export const HeroCard = () => {
     tokenId: "4160",
   });
   return isLoading ? (
-    <CardSkeleton />
+    <Skeleton />
   ) : (
     <HighlightedNFTCard
       nftName={`#${nftData?.token_id}` || ""}
