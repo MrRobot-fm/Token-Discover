@@ -2,6 +2,7 @@ import { UseQueryOptions, useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import type {
   GetTrendingCollectionsResponseModel,
+  GetTrendingCollectionsSearchParams,
   UseGetTrendingCollectionsApiParams,
 } from "@/types/model/api-trending-collections";
 import { getTrendingCollections } from "../get-trending-collections";
@@ -12,7 +13,7 @@ export const useGetTrendingCollections = (
 ) => {
   const { chain, interval, limit, includeContractDetails } = apiParams || {};
 
-  const parsedParams: UseGetTrendingCollectionsApiParams = useMemo(() => {
+  const parsedParams: GetTrendingCollectionsSearchParams = useMemo(() => {
     return {
       ...(chain && { chain }),
       ...(interval && { time_period: interval }),

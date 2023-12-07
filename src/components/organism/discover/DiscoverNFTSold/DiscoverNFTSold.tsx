@@ -24,26 +24,27 @@ export const DiscoverNFTSold = ({
           item?.top_sales[0]?.nft_details?.name !== null
       )
       ?.map((item) => {
+        const { top_sales = [] } = item || {};
+
+        const { nft_details, sale_details } = top_sales[0] || [];
+
         return {
-          nftName:
-            item?.top_sales[0]?.nft_details?.name ||
-            `#${item?.top_sales[0]?.nft_details?.token_id}`,
+          nftName: nft_details?.name || `#${nft_details?.token_id}`,
 
           image: {
-            src: item?.top_sales[0]?.nft_details?.image_url || "",
-            alt: item?.top_sales[0]?.nft_details?.token_id || "",
+            src: nft_details?.image_url,
+            alt: nft_details?.token_id,
           },
           collection: {
             image: {
-              src: item?.top_sales[0]?.nft_details?.collection?.image_url || "",
-              alt: item?.top_sales[0]?.nft_details?.collection?.name || "",
+              src: nft_details?.collection?.image_url,
+              alt: nft_details?.collection?.name,
             },
-            name: item?.top_sales[0]?.nft_details?.collection?.name || "",
+            name: nft_details?.collection?.name,
           },
           avatarStyle: { size: { base: "md", md: "lg" } },
-          criptoCurrency:
-            item?.top_sales[0]?.sale_details?.payment_token?.symbol || "",
-          price: item?.top_sales[0]?.sale_details?.unit_price || 0,
+          criptoCurrency: sale_details?.payment_token?.symbol,
+          price: sale_details?.unit_price || 0,
         };
       });
   }, [topNftSales]);

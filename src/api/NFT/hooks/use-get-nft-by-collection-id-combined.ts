@@ -2,6 +2,7 @@ import { UseQueryOptions, useQueries } from "@tanstack/react-query";
 import { useMemo } from "react";
 import type {
   GetNftByCollectionsIdResponseModel,
+  GetNftByCollectionsIdSearchParams,
   UseGetNftByCollectionsIdApiParams,
 } from "@/types/model/api-nft-by-collection-id";
 import { getNftByCollectionId } from "../get-nft-by-collection-id";
@@ -12,7 +13,7 @@ export const useGetNftByCollectionByIdCombined = (
 ) => {
   const { limit, cursor, collectionsIds } = apiParams || {};
 
-  const parsedParams = useMemo(() => {
+  const parsedParams: GetNftByCollectionsIdSearchParams = useMemo(() => {
     return {
       ...(limit && { limit }),
       ...(cursor && { cursor }),

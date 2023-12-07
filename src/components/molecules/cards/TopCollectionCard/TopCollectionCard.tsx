@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { NftCardFooter } from "@/components/atoms/NftCardFooter/NftCardFooter";
 import { TopCollectionContent } from "@/components/atoms/TopCollectionContent/TopCollectionContent";
 import type { TopCollectionCardProps } from "./TopCollectionCard.props";
@@ -9,7 +10,10 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
   const { data } = props || {};
 
   return (
-    <div className={styles.cardWrapper}>
+    <Link
+      href={`/collections/${data?.nfts[0].collection?.collection_id}` || ""}
+      className={styles.cardWrapper}
+    >
       <TopCollectionContent
         image={{
           src: data?.nfts[0]?.image_url || "",
@@ -38,6 +42,6 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
         collectionName={data?.nfts[0]?.collection?.name || ""}
         footerWrapperStyles="p-0"
       />
-    </div>
+    </Link>
   );
 };
