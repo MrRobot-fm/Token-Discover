@@ -29,13 +29,12 @@ export const DiscoverNftSection = () => {
         icon: "eye",
         href: PAGES_PATH.DISCOVER_TRENDING_NFTS,
       }}
+      titleProps={{
+        subtitleStyles: "lowercase first-letter:uppercase font-normal",
+      }}
       hasCta
     >
-      <div className={styles.desktopListWrapper}>
-        <HighlightedNftList hasCarousel collectionId={collectionId || []} />
-      </div>
-
-      <div className={styles.mobileListWrapper}>
+      <div className={styles.discoverNFTListWrapper}>
         <HighlightedNftList collectionId={collectionId || []} />
       </div>
     </Section>

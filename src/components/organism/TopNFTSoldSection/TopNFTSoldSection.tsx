@@ -30,6 +30,9 @@ export const TopNFTSoldSection = () => {
         label: "See all",
         href: PAGES_PATH.DISCOVER_TOP_SOLD_NFTS,
       }}
+      titleProps={{
+        subtitleStyles: "lowercase first-letter:uppercase font-normal",
+      }}
     >
       <div className={styles.list_wrapper}>
         <TopSalesList
