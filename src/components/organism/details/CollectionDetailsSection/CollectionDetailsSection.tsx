@@ -5,8 +5,8 @@ import { useGetNftCollectionById } from "@/api/NFT/hooks/use-get-nft-by-collecti
 import { useGetCollectionById } from "@/api/collections/hooks/use-get-collection-by-id";
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 import type { HighlightNFTedCardProps } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard.props";
-import { CollectionDetailsCover } from "@/components/molecules/details/CollectionDetailsCover/CollectionDetailsCover";
 import { CollectionDetailsInfo } from "@/components/molecules/details/CollectionDetailsInfo/CollectionDetailsInfo";
+import { DetailsPageCover } from "@/components/molecules/details/DetailsPageCover/DetailsPageCover";
 import { DiscoverIndexList } from "@/components/organism/discover/DiscoverIndexList/DiscoverIndexList";
 import { styles } from "./collection-details-section.styles";
 
@@ -24,12 +24,21 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
     return nftByCollectionId?.nfts
       ?.filter((item) => item?.image_url !== null)
       ?.map((nft) => {
-        const { collection, image_url, previews, name, token_id } = nft;
+        const {
+          collection,
+          image_url,
+          previews,
+          name,
+          token_id,
+          chain,
+          contract_address,
+        } = nft || {};
 
         return {
           variant: "nft",
           collectionName: collection?.name,
           nftName: name || `#${token_id}`,
+          href: `/nft/${chain}/${contract_address}/${token_id}`,
           avatarImage: {
             src: collection?.image_url,
             alt: collection?.name,
@@ -44,7 +53,17 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
 
   return (
     <div className={styles.collectionDetailsSection}>
-      <CollectionDetailsCover data={collectionById} isLoading={isLoading} />
+      <DetailsPageCover
+        bannerProps={{
+          src: collectionById?.collections[0]?.banner_image_url || "",
+          alt: collectionById?.collections[0]?.name || "",
+        }}
+        avatarProps={{
+          src: collectionById?.collections[0]?.image_url || "",
+          alt: collectionById?.collections[0]?.name || "",
+        }}
+        isLoading={isLoading}
+      />
       <CollectionDetailsInfo data={collectionById} />
       <div className={styles.collectionDetails_list}>
         <DiscoverIndexList

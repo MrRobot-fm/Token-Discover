@@ -16,20 +16,29 @@ export const DiscoverNFTs = ({ collectionId }: { collectionId: string[] }) => {
     return nftByCollectionId
       ?.filter((item) => item?.nfts[0].image_url !== null)
       ?.map((nft) => {
+        const { nfts = [] } = nft || {};
+        const {
+          collection,
+          name,
+          token_id,
+          chain,
+          contract_address,
+          image_url,
+          previews,
+        } = nfts[0] || {};
+
         return {
           variant: "nft",
-          collectionName: nft?.nfts[0]?.collection?.name,
-          nftName: nft?.nfts[0]?.name || `#${nft?.nfts[0].token_id}`,
+          collectionName: collection?.name,
+          nftName: name || `#${token_id}`,
+          href: `/nft/${chain}/${contract_address}/${token_id}`,
           avatarImage: {
-            src: nft?.nfts[0]?.collection?.image_url || "",
-            alt: nft?.nfts[0]?.collection?.name || "",
+            src: collection?.image_url || "",
+            alt: collection?.name || "",
           },
           cardImage: {
-            src:
-              nft?.nfts[0]?.image_url ||
-              nft?.nfts[0]?.previews?.image_medium_url ||
-              "",
-            alt: nft?.nfts[0]?.name || "nft-img",
+            src: image_url || previews?.image_medium_url || "",
+            alt: name || "nft-img",
           },
         };
       });

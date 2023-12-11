@@ -37,10 +37,7 @@ export const skeleton = tv({
         skeletonBar: "base:h-[2rem]",
         skeletonBody: "base:hidden md:flex md:flex-col",
       },
-      banner: {
-        skeletonRoot: "w-full base:h-[25rem] md:h-[28rem] lg:h-[32rem]",
-        skeletonHeader: "hidden",
-      },
+
       image: {
         skeletonRoot: "h-full w-full rounded-none bg-label-grey",
         skeletonHeader: "hidden",

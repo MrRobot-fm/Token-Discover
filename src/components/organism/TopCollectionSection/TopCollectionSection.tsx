@@ -30,16 +30,12 @@ export const TopCollectionSection = () => {
         icon: "rocketLaunch",
         href: PAGES_PATH.DISCOVER_TOP_COLLECTIONS,
       }}
+      titleProps={{
+        subtitleStyles: "lowercase first-letter:uppercase font-normal",
+      }}
     >
-      <div className={styles.desktopCollectionListWrapper}>
-        <TopCollectionList hasCarousel collectionId={collectionIds || []} />
-      </div>
-
-      <div className={styles.mobileCollectionListWrapper}>
-        <TopCollectionList
-          hasCarousel={false}
-          collectionId={collectionIds || []}
-        />
+      <div className={styles.topCollectionListWrapper}>
+        <TopCollectionList collectionId={collectionIds || []} />
       </div>
     </Section>
   );

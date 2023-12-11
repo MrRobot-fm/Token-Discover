@@ -15,13 +15,13 @@ export const CustomImage = (props: CustomImageProps) => {
     sizes = "75vw",
     size,
     className,
-    isLoading,
+    isLoading = false,
   } = props;
 
   if (isLoading) {
     return (
-      <Skeleton variant="image">
-        <div className={customImage({ size, className })}>
+      <div className={customImage({ size, className })}>
+        <Skeleton variant="image">
           <Image
             fill={fill}
             priority={priority}
@@ -33,8 +33,8 @@ export const CustomImage = (props: CustomImageProps) => {
             src={src}
             style={{ objectFit: "cover" }}
           />
-        </div>
-      </Skeleton>
+        </Skeleton>
+      </div>
     );
   }
 

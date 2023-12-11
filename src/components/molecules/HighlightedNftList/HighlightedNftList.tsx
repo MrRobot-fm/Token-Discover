@@ -1,3 +1,4 @@
+import useBreakpoints from "@/hooks/use-breakpoints";
 import { useGetNftByCollectionByIdCombined } from "@/api/NFT/hooks/use-get-nft-by-collection-id-combined";
 import { Carousel } from "@/components/atoms/Carousel/Carousel";
 import { CarouselItem } from "@/components/atoms/Carousel/CarouselItem";
@@ -6,18 +7,18 @@ import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTC
 
 export const HighlightedNftList = ({
   collectionId,
-  hasCarousel,
 }: {
   collectionId: string[];
-  hasCarousel?: boolean;
 }) => {
+  const { isBase, isMobile } = useBreakpoints();
+
   const { data: nftByCollectionId, isLoading } =
     useGetNftByCollectionByIdCombined({
       collectionsIds: collectionId,
       limit: 1,
     });
 
-  if (hasCarousel) {
+  if (!isBase && !isMobile) {
     return (
       <Carousel>
         {nftByCollectionId
@@ -25,46 +26,72 @@ export const HighlightedNftList = ({
             (item) =>
               item?.nfts[0]?.image_url !== null && item?.nfts[0]?.name !== null
           )
-          ?.map((nft, index) =>
-            isLoading ? (
+          ?.map((nft, index) => {
+            const { nfts = [] } = nft || {};
+            const {
+              nft_id,
+              chain,
+              contract_address,
+              token_id,
+              collection,
+              image_url,
+              name,
+            } = nfts[0] || [];
+
+            return isLoading ? (
               <Skeleton key={index} variant="nfts" />
             ) : (
-              <CarouselItem key={`${index}-${nft?.nfts[0]?.nft_id}`}>
+              <CarouselItem key={`${index}-${nft_id}`}>
                 <HighlightedNFTCard
+                  href={`/nft/${chain}/${contract_address}/${token_id}`}
                   variant="nft"
-                  collectionName={nft?.nfts[0]?.collection?.name}
-                  nftName={nft?.nfts[0]?.name || ""}
+                  collectionName={collection?.name}
+                  nftName={name || ""}
                   avatarImage={{
-                    src: nft?.nfts[0]?.collection?.image_url || "",
-                    alt: nft?.nfts[0]?.collection?.name || "",
+                    src: collection?.image_url || "",
+                    alt: collection?.name || "",
                   }}
                   cardImage={{
-                    src: nft?.nfts[0]?.image_url || "",
-                    alt: nft?.nfts[0]?.name || "nft-img",
+                    src: image_url || "",
+                    alt: name || "nft-img",
                   }}
                 />
               </CarouselItem>
-            )
-          )}
+            );
+          })}
       </Carousel>
     );
   }
 
-  return nftByCollectionId?.slice(0, 3)?.map((nft, index) => (
-    <CarouselItem key={`${index}-${nft?.nfts[0]?.nft_id}`}>
-      <HighlightedNFTCard
-        variant="nft"
-        collectionName={nft?.nfts[0]?.collection?.name}
-        nftName={nft?.nfts[0]?.name || ""}
-        avatarImage={{
-          src: nft?.nfts[0]?.collection?.image_url || "",
-          alt: nft?.nfts[0]?.collection?.name || "",
-        }}
-        cardImage={{
-          src: nft?.nfts[0]?.image_url || "",
-          alt: nft?.nfts[0]?.name || "nft-img",
-        }}
-      />
-    </CarouselItem>
-  ));
+  return nftByCollectionId?.slice(0, 3)?.map((nft, index) => {
+    const { nfts = [] } = nft || {};
+    const {
+      nft_id,
+      chain,
+      contract_address,
+      token_id,
+      collection,
+      image_url,
+      name,
+    } = nfts[0] || {};
+
+    return (
+      <CarouselItem key={`${index}-${nft_id}`}>
+        <HighlightedNFTCard
+          href={`/nft/${chain}/${contract_address}/${token_id}`}
+          variant="nft"
+          collectionName={collection?.name}
+          nftName={name || ""}
+          avatarImage={{
+            src: collection?.image_url || "",
+            alt: collection?.name || "",
+          }}
+          cardImage={{
+            src: image_url || "",
+            alt: name || "nft-img",
+          }}
+        />
+      </CarouselItem>
+    );
+  });
 };

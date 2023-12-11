@@ -14,7 +14,10 @@ export default function DiscoverLayoutPage({
         title="Discover our NFTs and Collections"
         subTitle="Browse through top sold and trending NTFs and our weekly top collection."
         sectionStyles="base:px-[3rem] md:px-[10rem] lg:px-[5rem]"
-        titleProps={{ titleStyles: "heading2" }}
+        titleProps={{
+          titleStyles: "base:heading3 md:heading2",
+          subtitleStyles: "lowercase first-letter:uppercase font-normal",
+        }}
       >
         <DiscoverTab discoverTabsMap={discoverTabsMaps} />
         {children}

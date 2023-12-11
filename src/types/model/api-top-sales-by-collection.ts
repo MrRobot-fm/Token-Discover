@@ -123,6 +123,7 @@ interface NFTDetails {
   rarity: RarityDetails;
   royalty: RoyaltyDetails[];
   extra_metadata: ExtraMetadata;
+  last_sale: LastSaleDetails;
 }
 
 interface Previews {
@@ -161,7 +162,6 @@ interface TopSale {
   batch_transfer_index: number;
   sale_details: SaleDetails;
   nft_details: NFTDetails;
-  last_sale: LastSaleDetails;
   first_created: FirstCreatedDetails;
 }
 

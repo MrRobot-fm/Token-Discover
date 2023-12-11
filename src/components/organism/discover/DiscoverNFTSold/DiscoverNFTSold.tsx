@@ -26,25 +26,35 @@ export const DiscoverNFTSold = ({
       ?.map((item) => {
         const { top_sales = [] } = item || {};
 
-        const { nft_details, sale_details } = top_sales[0] || [];
+        const { nft_details } = top_sales[0] || {};
+
+        const {
+          name,
+          token_id,
+          chain,
+          contract_address,
+          image_url,
+          collection,
+          last_sale,
+        } = nft_details || {};
 
         return {
-          nftName: nft_details?.name || `#${nft_details?.token_id}`,
-
+          nftName: name || `#${token_id}`,
+          href: `/nft/${chain}/${contract_address}/${token_id}`,
           image: {
-            src: nft_details?.image_url,
-            alt: nft_details?.token_id,
+            src: image_url,
+            alt: name,
           },
           collection: {
             image: {
-              src: nft_details?.collection?.image_url,
-              alt: nft_details?.collection?.name,
+              src: collection?.image_url,
+              alt: collection?.name,
             },
-            name: nft_details?.collection?.name,
+            name: collection?.name,
           },
           avatarStyle: { size: { base: "md", md: "lg" } },
-          criptoCurrency: sale_details?.payment_token?.symbol,
-          price: sale_details?.unit_price || 0,
+          criptoCurrency: last_sale?.payment_token?.symbol,
+          price: last_sale?.unit_price || 0,
         };
       });
   }, [topNftSales]);

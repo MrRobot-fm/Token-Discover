@@ -135,6 +135,22 @@ type Collection = {
   top_contracts: string[];
 };
 
+interface LastSale {
+  from_address: string;
+  to_address: string;
+  quantity: number;
+  quantity_string: string;
+  timestamp: string;
+  transaction: string;
+  marketplace_id: string;
+  marketplace_name: string;
+  is_bundle_sale: boolean;
+  payment_token: PaymentToken;
+  unit_price: number;
+  total_price: number;
+  unit_price_usd_cents: number;
+}
+
 export interface GetNftByTokenIdResponseModel {
   nft_id: string;
   chain: string;
@@ -162,7 +178,7 @@ export interface GetNftByTokenIdResponseModel {
   owners: Owner[];
   contract: Contract;
   collection: Collection;
-  last_sale: null;
+  last_sale: LastSale;
   first_created: FirstCreated;
   rarity: Rarity;
   royalty: Royalty[];
