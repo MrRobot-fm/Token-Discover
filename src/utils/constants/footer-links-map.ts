@@ -8,21 +8,9 @@ export const footerLinksMap = [
     links: [
       {
         id: 2,
-        label: "Marketplace",
+        label: "Discover",
         type: "link",
-        route: "/marketplace",
-      },
-      {
-        id: 3,
-        label: "Rankings",
-        type: "link",
-        route: "/rankings",
-      },
-      {
-        id: 4,
-        label: "Connect",
-        type: "link",
-        route: "/connect",
+        route: "/discover/top-collections",
       },
     ],
   },

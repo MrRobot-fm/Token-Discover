@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={workSans.variable}>
-      <body className="w-full bg-background-black">
+      <body>
         <TanstackQUeryProvider>
           <Navbar />
           {children}
