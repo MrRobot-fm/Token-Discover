@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply overflow-x-hidden font-workSans text-[1.6rem] font-normal leading-[140%] text-label-white;
+    @apply w-full overflow-x-hidden bg-background-black font-workSans text-[1.6rem] font-normal leading-[140%] text-label-white;
   }
 
   h1,

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { discoverTabsMaps } from "@/utils/constants/discover-tabs-object-map";
 import { DiscoverTab } from "@/components/atoms/DiscoverTab/DiscoverTab";
+import { ScrollToTop } from "@/components/atoms/ScrollToTop/ScrollToTop";
 import { Section } from "@/components/molecules/Section/Section";
 
 export default function DiscoverLayoutPage({
@@ -22,6 +23,7 @@ export default function DiscoverLayoutPage({
         <DiscoverTab discoverTabsMap={discoverTabsMaps} />
         {children}
       </Section>
+      <ScrollToTop />
     </div>
   );
 }
