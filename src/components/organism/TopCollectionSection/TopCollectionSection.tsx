@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { PAGES_PATH } from "@/utils/constants/pages-path";
 import { useGetTopCollections } from "@/api/collections/hooks/use-get-top-collections";
 import { Section } from "@/components/molecules/Section/Section";
-import TopCollectionList from "@/components/molecules/TopCollectionList/TopCollectionList";
+import { TopCollectionList } from "@/components/molecules/TopCollectionList/TopCollectionList";
 import { styles } from "./top-collection-section.styles";
 
 export const TopCollectionSection = () => {

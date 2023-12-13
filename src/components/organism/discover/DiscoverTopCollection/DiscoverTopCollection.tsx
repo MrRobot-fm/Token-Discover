@@ -1,6 +1,8 @@
 import { useGetNftByCollectionByIdCombined } from "@/api/NFT/hooks/use-get-nft-by-collection-id-combined";
+import { Input } from "@/components/atoms/Forms/Input/Input";
 import { TopCollectionCard } from "@/components/molecules/cards/TopCollectionCard/TopCollectionCard";
 import { DiscoverIndexList } from "@/components/organism/discover/DiscoverIndexList/DiscoverIndexList";
+import { useDiscoverTopCollection } from "./use-discover-top-collection";
 
 export const DiscoverTopCollection = ({
   collectionId,
@@ -12,16 +14,27 @@ export const DiscoverTopCollection = ({
       collectionsIds: collectionId,
     });
 
+  const { filteredItems, handleInputChange, value } = useDiscoverTopCollection({
+    data: nftByCollection,
+  });
+
   return (
-    <div className="w-full py-[8rem]">
+    <div className="w-full py-[8rem] base:space-y-[5rem] xl:space-y-[8rem]">
+      <div className="mx-auto lg:max-w-[50rem]">
+        <Input
+          label="search"
+          placeholder="Search your favourite collections"
+          type="search"
+          value={value}
+          onChange={handleInputChange}
+        />
+      </div>
       <DiscoverIndexList
         skeletonVariant="fluid"
         isLoading={isLoading}
-        items={(nftByCollection || [])
-          ?.filter((item) => item?.nfts[0]?.image_url !== null)
-          ?.map((collection, index) => (
-            <TopCollectionCard key={index} data={collection} />
-          ))}
+        items={filteredItems?.map((collection, index) => (
+          <TopCollectionCard key={index} data={collection} />
+        ))}
       />
     </div>
   );

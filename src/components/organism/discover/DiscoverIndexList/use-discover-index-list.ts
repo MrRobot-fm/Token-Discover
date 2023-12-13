@@ -16,8 +16,6 @@ export const useDiscoverIndexList = () => {
     if (isBase || isMobile || isTablet) {
       return itemToLoad;
     }
-
-    return -1;
   }, [isBase, isMobile, isTablet, itemToLoad]);
 
   return {
