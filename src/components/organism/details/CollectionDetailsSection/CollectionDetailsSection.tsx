@@ -1,14 +1,14 @@
 "use client";
 
-import { useMemo } from "react";
 import { useGetNftCollectionById } from "@/api/NFT/hooks/use-get-nft-by-collection-id";
 import { useGetCollectionById } from "@/api/collections/hooks/use-get-collection-by-id";
+import { Input } from "@/components/atoms/Forms/Input/Input";
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
-import type { HighlightNFTedCardProps } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard.props";
 import { CollectionDetailsInfo } from "@/components/molecules/details/CollectionDetailsInfo/CollectionDetailsInfo";
 import { DetailsPageCover } from "@/components/molecules/details/DetailsPageCover/DetailsPageCover";
 import { DiscoverIndexList } from "@/components/organism/discover/DiscoverIndexList/DiscoverIndexList";
 import { styles } from "./collection-details-section.styles";
+import { useCollectionDetails } from "./use-collection-details";
 
 export const CollectionDetailsSection = ({ id }: { id: string }) => {
   const { data: collectionById, isLoading } = useGetCollectionById({
@@ -18,38 +18,9 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
     collectionId: id,
   });
 
-  const parsedItems: HighlightNFTedCardProps[] = useMemo(() => {
-    if (!nftByCollectionId) return [];
-
-    return nftByCollectionId?.nfts
-      ?.filter((item) => item?.image_url !== null)
-      ?.map((nft) => {
-        const {
-          collection,
-          image_url,
-          previews,
-          name,
-          token_id,
-          chain,
-          contract_address,
-        } = nft || {};
-
-        return {
-          variant: "nft",
-          collectionName: collection?.name,
-          nftName: name || `#${token_id}`,
-          href: `/nft/${chain}/${contract_address}/${token_id}`,
-          avatarImage: {
-            src: collection?.image_url,
-            alt: collection?.name,
-          },
-          cardImage: {
-            src: image_url || previews?.image_medium_url,
-            alt: name || "nft-img",
-          },
-        };
-      });
-  }, [nftByCollectionId]);
+  const { filteredItems, handleInputChange, value } = useCollectionDetails({
+    data: nftByCollectionId,
+  });
 
   return (
     <div className={styles.collectionDetailsSection}>
@@ -66,10 +37,19 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
       />
       <CollectionDetailsInfo data={collectionById} />
       <div className={styles.collectionDetails_list}>
+        <div className="mx-auto lg:max-w-[50rem]">
+          <Input
+            placeholder="Search your favorite NFTs"
+            type="search"
+            value={value}
+            onChange={handleInputChange}
+          />
+        </div>
+
         <DiscoverIndexList
           skeletonVariant="fluid"
           isLoading={isLoading}
-          items={(parsedItems || [])?.map((item, index) => (
+          items={(filteredItems || [])?.map((item, index) => (
             <HighlightedNFTCard key={index} {...item} />
           ))}
         />

@@ -19,7 +19,7 @@ export const InputPassword = (props: InputProps) => {
     setShowPassword((prev) => !prev);
   };
 
-  const passwordIcon = useMemo(() => {
+  const passwordIcon: IconName = useMemo(() => {
     return showPassword ? "eye" : "eyeSlash";
   }, [showPassword]);
 
@@ -29,12 +29,13 @@ export const InputPassword = (props: InputProps) => {
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
         className={styles.input}
-        {...register(name, validationRules && validationRules)}
+        {...(register &&
+          name && { ...register(name, validationRules && validationRules) })}
       />
       <Icon name="lockKey" className={styles.input_icon} />
       <Button
         type="button"
-        icon={passwordIcon as IconName}
+        icon={passwordIcon}
         className={styles.input_password_icon}
         onClick={togglePassword}
       />

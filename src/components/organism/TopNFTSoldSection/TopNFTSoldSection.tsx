@@ -5,7 +5,7 @@ import { PAGES_PATH } from "@/utils/constants/pages-path";
 import { useGetTopCollections } from "@/api/collections/hooks/use-get-top-collections";
 import { Section } from "@/components/molecules/Section/Section";
 import { TopSalesList } from "@/components/molecules/TopSalesList/TopSalesList";
-import { styles } from "./top-nft-sold-secton.styles";
+import { styles } from "./top-nft-sold-section.styles";
 
 export const TopNFTSoldSection = () => {
   const { data: topCollection } = useGetTopCollections({

@@ -5,7 +5,11 @@ import { CarouselItem } from "@/components/atoms/Carousel/CarouselItem";
 import { Skeleton } from "@/components/molecules/Skeleton/Skeleton";
 import { TopCollectionCard } from "@/components/molecules/cards/TopCollectionCard/TopCollectionCard";
 
-const TopCollectionList = ({ collectionId }: { collectionId: string[] }) => {
+export const TopCollectionList = ({
+  collectionId,
+}: {
+  collectionId: string[];
+}) => {
   const { isBase, isMobile } = useBreakpoints();
 
   const { data: nftByCollection, isLoading } =
@@ -42,5 +46,3 @@ const TopCollectionList = ({ collectionId }: { collectionId: string[] }) => {
       )
     );
 };
-
-export default TopCollectionList;

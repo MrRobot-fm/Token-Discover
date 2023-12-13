@@ -15,9 +15,9 @@ export interface SignInValues {
 }
 
 type ReactHookFormInputProps = {
-  name: Path<SignUpValues>;
+  name?: Path<SignUpValues>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  register: UseFormRegister<any>;
+  register?: UseFormRegister<any>;
 };
 
 export interface InputProps

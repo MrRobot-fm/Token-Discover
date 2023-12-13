@@ -4,7 +4,7 @@ export type AvatarVariants = VariantProps<typeof avatar>;
 
 export const avatar = tv(
   {
-    base: "overflow-hidden rounded-full",
+    base: "shrink-0 overflow-hidden rounded-full",
     variants: {
       size: {
         xs: "h-[2.4rem] w-[2.4rem]",

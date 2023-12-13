@@ -11,25 +11,39 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
     imageWrapperStyles,
     cardImage,
     variant,
-    href = "/",
+    href,
     ...rest
   } = props;
 
   const { linkWrapper, cardWrapper, imageWrapper } = highlightedNftCard();
 
-  return (
-    <Link {...{ href }} className={linkWrapper({ variant })}>
-      <div className={cardWrapper({ className: cardWrapperStyles, variant })}>
-        <div
-          className={imageWrapper({ className: imageWrapperStyles, variant })}
-        >
-          <CustomImage
-            src={cardImage?.src || DEFAULT_IMG_URL_FALLBACK}
-            alt={cardImage?.alt || "nft-img"}
-          />
+  if (href) {
+    return (
+      <Link {...{ href }} className={linkWrapper({ variant })}>
+        <div className={cardWrapper({ className: cardWrapperStyles, variant })}>
+          <div
+            className={imageWrapper({ className: imageWrapperStyles, variant })}
+          >
+            <CustomImage
+              src={cardImage?.src || DEFAULT_IMG_URL_FALLBACK}
+              alt={cardImage?.alt || "nft-img"}
+            />
+          </div>
+          <NftCardFooter {...rest} />
         </div>
-        <NftCardFooter {...rest} />
+      </Link>
+    );
+  }
+
+  return (
+    <div className={cardWrapper({ className: cardWrapperStyles, variant })}>
+      <div className={imageWrapper({ className: imageWrapperStyles, variant })}>
+        <CustomImage
+          src={cardImage?.src || DEFAULT_IMG_URL_FALLBACK}
+          alt={cardImage?.alt || "nft-img"}
+        />
       </div>
-    </Link>
+      <NftCardFooter {...rest} />
+    </div>
   );
 };
