@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import TanstackQUeryProvider from "@/utils/providers/tanstack-query-provider";
+import { Cursor } from "@/components/atoms/Cursor/Cursor";
 import { Navbar } from "@/components/molecules/nav/Navbar/Navbar";
 import { Footer } from "@/components/organism/Footer/Footer";
 import { workSans } from "@/public/fonts/fonts";
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className={workSans.variable}>
       <body>
         <TanstackQUeryProvider>
+          <Cursor />
           <Navbar />
           {children}
           <Footer />

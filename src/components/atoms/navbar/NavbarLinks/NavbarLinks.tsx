@@ -26,7 +26,7 @@ export const NavbarLinks = ({
             key={link?.text}
             href={link?.route}
             className={`paragraph font-semibold transition duration-500 hover:opacity-70 ${
-              isActive && "scale-110 text-callToAction"
+              isActive && "scale-110 bg-purpleRed bg-clip-text text-transparent"
             }`}
           >
             {link?.text}
