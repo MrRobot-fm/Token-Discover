@@ -23,7 +23,7 @@ export const DiscoverTab = ({
             href={tab.url}
             className={`${
               pathname === tab.url &&
-              "scale-110 text-callToAction transition duration-500 hover:text-purple-500"
+              "scale-110 bg-purpleBlue bg-clip-text text-transparent transition duration-500 hover:text-purple-500"
             } transition duration-500 hover:text-label-grey`}
           />
           <div className={styles.discoverTab_mobileBorder} />
