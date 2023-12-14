@@ -14,7 +14,7 @@ export const DiscoverTopCollection = ({
       collectionsIds: collectionId,
     });
 
-  const { filteredItems, handleInputChange, value } = useDiscoverTopCollection({
+  const { filteredItems, register } = useDiscoverTopCollection({
     data: nftByCollection,
   });
 
@@ -25,8 +25,8 @@ export const DiscoverTopCollection = ({
           label="search"
           placeholder="Search your favourite collections"
           type="search"
-          value={value}
-          onChange={handleInputChange}
+          name="collectionSearchValue"
+          register={register}
         />
       </div>
       <DiscoverIndexList

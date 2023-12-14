@@ -18,7 +18,7 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
     collectionId: id,
   });
 
-  const { filteredItems, handleInputChange, value } = useCollectionDetails({
+  const { filteredItems, register } = useCollectionDetails({
     data: nftByCollectionId,
   });
 
@@ -41,8 +41,8 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
           <Input
             placeholder="Search your favorite NFTs"
             type="search"
-            value={value}
-            onChange={handleInputChange}
+            name="nftSearchValue"
+            register={register}
           />
         </div>
 

@@ -1,4 +1,5 @@
-import { ChangeEvent, useMemo, useState } from "react";
+import { useMemo } from "react";
+import { useForm } from "react-hook-form";
 import type { GetTopSalesByCollectionResponseModel } from "@/types/model/api-top-sales-by-collection";
 import type { TopNftSoldCardProps } from "@/components/molecules/cards/TopNftSoldCard/TopNftSoldCard.props";
 
@@ -7,7 +8,11 @@ export const useDiscoverNftSold = ({
 }: {
   data: (GetTopSalesByCollectionResponseModel | undefined)[];
 }) => {
-  const [value, setValue] = useState<string>("");
+  const { register, watch } = useForm<{ nftSearchValue: string }>({
+    defaultValues: { nftSearchValue: "" },
+  });
+
+  const { nftSearchValue } = watch();
 
   const parsedItems: TopNftSoldCardProps[] = useMemo(() => {
     if (!data) return [];
@@ -54,13 +59,9 @@ export const useDiscoverNftSold = ({
         item?.image.src !== "" &&
         item?.collection?.image.src !== "" &&
         item?.nftName !== null &&
-        item?.nftName.toLowerCase().includes(value.toLowerCase())
+        item?.nftName.toLowerCase().includes(nftSearchValue.toLowerCase())
     );
-  }, [parsedItems, value]);
+  }, [parsedItems, nftSearchValue]);
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
-
-  return { filteredItems, handleInputChange, value };
+  return { filteredItems, register };
 };
