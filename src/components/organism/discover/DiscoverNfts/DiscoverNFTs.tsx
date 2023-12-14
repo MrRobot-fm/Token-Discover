@@ -10,7 +10,7 @@ export const DiscoverNFTs = ({ collectionId }: { collectionId: string[] }) => {
       collectionsIds: collectionId,
     });
 
-  const { filteredItems, handleInputChange, value } = useDiscoverNfts({
+  const { filteredItems, register } = useDiscoverNfts({
     data: nftByCollectionId,
   });
 
@@ -21,8 +21,8 @@ export const DiscoverNFTs = ({ collectionId }: { collectionId: string[] }) => {
           label="search"
           placeholder="Search your favorite NFTs"
           type="search"
-          value={value}
-          onChange={handleInputChange}
+          name="nftSearchValue"
+          register={register}
         />
       </div>
       <DiscoverIndexList

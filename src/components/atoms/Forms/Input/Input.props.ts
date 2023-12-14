@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { HTMLProps } from "react";
 import type { Path, RegisterOptions, UseFormRegister } from "react-hook-form";
 import type { InputWrapperProps } from "@/components/atoms/Forms/InputWrapper/InputWrapper.props";
@@ -15,8 +16,7 @@ export interface SignInValues {
 }
 
 type ReactHookFormInputProps = {
-  name?: Path<SignUpValues>;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  name?: Path<any>;
   register?: UseFormRegister<any>;
 };
 

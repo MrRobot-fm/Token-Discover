@@ -1,4 +1,5 @@
-import { ChangeEvent, useMemo, useState } from "react";
+import { useMemo } from "react";
+import { useForm } from "react-hook-form";
 import type { GetNftByCollectionsIdResponseModel } from "@/types/model/api-nft-by-collection-id";
 import type { HighlightNFTedCardProps } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard.props";
 
@@ -7,7 +8,11 @@ export const useCollectionDetails = ({
 }: {
   data: GetNftByCollectionsIdResponseModel | undefined;
 }) => {
-  const [value, setValue] = useState<string>("");
+  const { register, watch } = useForm({
+    defaultValues: { nftSearchValue: "" },
+  });
+
+  const { nftSearchValue } = watch();
 
   const parsedItems: HighlightNFTedCardProps[] = useMemo(() => {
     if (!data) return [];
@@ -45,13 +50,9 @@ export const useCollectionDetails = ({
       (item) =>
         item?.cardImage?.src !== "" &&
         item?.avatarImage?.src !== "" &&
-        item?.nftName?.toLowerCase()?.includes(value.toLowerCase())
+        item?.nftName?.toLowerCase()?.includes(nftSearchValue.toLowerCase())
     );
-  }, [parsedItems, value]);
+  }, [parsedItems, nftSearchValue]);
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
-
-  return { filteredItems, handleInputChange, value };
+  return { filteredItems, register };
 };

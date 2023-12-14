@@ -14,7 +14,7 @@ export const DiscoverNFTSold = ({
     nftDetails: "1",
   });
 
-  const { filteredItems, handleInputChange, value } = useDiscoverNftSold({
+  const { filteredItems, register } = useDiscoverNftSold({
     data: topNftSales,
   });
 
@@ -25,8 +25,8 @@ export const DiscoverNFTSold = ({
           label="search"
           placeholder="Search your favorite NFTs"
           type="search"
-          value={value}
-          onChange={handleInputChange}
+          name="nftSearchValue"
+          register={register}
         />
       </div>
       <DiscoverIndexList
