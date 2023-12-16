@@ -6,7 +6,7 @@ import type { HighlightNFTedCardProps } from "@/components/molecules/cards/Highl
 export const useCollectionDetails = ({
   data,
 }: {
-  data: GetNftByCollectionsIdResponseModel | undefined;
+  data: GetNftByCollectionsIdResponseModel["nfts"] | undefined;
 }) => {
   const { register, watch } = useForm({
     defaultValues: { nftSearchValue: "" },
@@ -17,7 +17,7 @@ export const useCollectionDetails = ({
   const parsedItems: HighlightNFTedCardProps[] = useMemo(() => {
     if (!data) return [];
 
-    return data?.nfts?.map((nft) => {
+    return data?.map((nft) => {
       const {
         collection,
         image_url,

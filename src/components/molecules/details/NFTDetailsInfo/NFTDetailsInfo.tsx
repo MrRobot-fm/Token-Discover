@@ -28,6 +28,7 @@ export const NFTDetailsInfo = ({
           {getFormattedCryptoCurrency({
             value: data?.last_sale?.unit_price || 0,
             currency: data?.last_sale?.payment_token?.symbol || "-",
+            decimals: data?.last_sale?.payment_token?.decimals || 0,
           })}
         </p>
       </div>

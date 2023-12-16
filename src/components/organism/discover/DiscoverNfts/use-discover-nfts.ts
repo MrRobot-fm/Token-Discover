@@ -51,7 +51,7 @@ export const useDiscoverNfts = ({
       (item) =>
         item?.cardImage?.src !== "" &&
         item?.avatarImage?.src !== "" &&
-        item?.nftName?.toLowerCase()?.includes(nftSearchValue.toLowerCase())
+        item?.nftName?.toLowerCase()?.includes(nftSearchValue?.toLowerCase())
     );
   }, [parsedItems, nftSearchValue]);
 

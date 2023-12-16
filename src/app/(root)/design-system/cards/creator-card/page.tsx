@@ -10,6 +10,7 @@ export default function ArtistCardPage() {
         criptoCurrency="ETH"
         avatarStyle={{ size: { base: "md", lg: "lg" } }}
         image={{ src: "", alt: "" }}
+        decimals={18}
       />
       <TopNftSoldCard
         nftName="GravityOne"
@@ -18,6 +19,7 @@ export default function ArtistCardPage() {
         criptoCurrency="ETH"
         avatarStyle={{ size: { base: "md", lg: "lg" } }}
         image={{ src: "", alt: "" }}
+        decimals={18}
       />
     </div>
   );

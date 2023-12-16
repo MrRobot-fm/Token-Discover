@@ -12,6 +12,7 @@ export const TopNftSoldCard = (props: TopNftSoldCardProps) => {
     nftName,
     price,
     criptoCurrency,
+    decimals,
     href = "/",
     image,
     collection,
@@ -35,6 +36,7 @@ export const TopNftSoldCard = (props: TopNftSoldCardProps) => {
               {getFormattedCryptoCurrency({
                 value: price,
                 currency: criptoCurrency,
+                decimals,
               })}
             </span>
           </p>

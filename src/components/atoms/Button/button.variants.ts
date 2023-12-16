@@ -4,7 +4,8 @@ export type ButtonVariants = VariantProps<typeof button>;
 
 export const button = tv({
   slots: {
-    buttonWrapper: "flex items-center justify-center gap-[1.2rem] px-[5rem]",
+    buttonWrapper:
+      "flex w-full items-center justify-center gap-[1.2rem] px-[5rem]",
     buttonLabel: "text-white",
   },
   variants: {
@@ -22,7 +23,7 @@ export const button = tv({
       },
       link: {
         buttonWrapper:
-          "h-fit border-none bg-transparent p-0 text-inherit transition duration-500 hover:text-white",
+          "h-fit w-fit border-none bg-transparent p-0 text-inherit transition duration-500 hover:text-white",
         buttonLabel: " text-current",
       },
       carouselNavigation: {

@@ -18,8 +18,8 @@ export const useDiscoverTopCollection = ({
       return (
         item?.nfts[0]?.image_url !== null &&
         item?.nfts[0]?.collection?.name
-          .toLowerCase()
-          .includes(collectionSearchValue.toLowerCase())
+          ?.toLowerCase()
+          ?.includes(collectionSearchValue?.toLowerCase())
       );
     });
   }, [data, collectionSearchValue]);

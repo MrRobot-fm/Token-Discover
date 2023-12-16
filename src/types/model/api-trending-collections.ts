@@ -54,6 +54,9 @@ type Collection = {
 };
 
 export type GetTrendingCollectionsResponseModel = {
+  next: string;
+  next_cursor: string;
+  previous: string;
   collections: Collection[];
 };
 
@@ -62,6 +65,7 @@ export type GetTrendingCollectionsSearchParams = {
   time_period?: string;
   include_top_contract_details?: string;
   limit?: number;
+  cursor?: string;
 };
 
 export type UseGetTrendingCollectionsApiParams = {
@@ -69,4 +73,5 @@ export type UseGetTrendingCollectionsApiParams = {
   interval?: string;
   includeContractDetails?: string;
   limit?: number;
+  cursor?: string;
 };

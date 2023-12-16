@@ -12,5 +12,6 @@ export type TopNftSoldCardProps = {
   price: number;
   image: ImageProps;
   criptoCurrency: string;
+  decimals: number;
   href?: LinkProps["href"];
 };
