@@ -6,7 +6,7 @@ export interface ButtonProps
   extends ButtonVariants,
     Pick<
       HTMLProps<HTMLButtonElement>,
-      "onClick" | "className" | "value" | "name" | "defaultValue"
+      "onClick" | "className" | "value" | "name" | "defaultValue" | "ref"
     > {
   href?: string;
   label?: string;

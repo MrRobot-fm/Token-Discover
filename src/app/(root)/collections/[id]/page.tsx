@@ -11,6 +11,7 @@ export default async function CollectionsDetailsPage({
   const { dehydrateState: dehydrateNftCollectionById } =
     await prefetchNFTCollectionById({
       collectionId: params?.id,
+      limit: 20,
     });
 
   const { dehydrateState: dehydrateCollectionById } =

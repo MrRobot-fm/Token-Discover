@@ -11,11 +11,13 @@ export const useGetTrendingCollections = (
   apiParams?: UseGetTrendingCollectionsApiParams,
   queryOptions?: UseQueryOptions<GetTrendingCollectionsResponseModel>
 ) => {
-  const { chain, interval, limit, includeContractDetails } = apiParams || {};
+  const { chain, interval, limit, includeContractDetails, cursor } =
+    apiParams || {};
 
   const parsedParams: GetTrendingCollectionsSearchParams = useMemo(() => {
     return {
       ...(chain && { chain }),
+      ...(cursor && { cursor }),
       ...(interval && { time_period: interval }),
       ...(limit && { limit }),
       ...(includeContractDetails && {

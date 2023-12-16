@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import { useFetchNextPage } from "@/hooks/use-fetch-next-page";
 import { useGetNftCollectionById } from "@/api/NFT/hooks/use-get-nft-by-collection-id";
 import { useGetCollectionById } from "@/api/collections/hooks/use-get-collection-by-id";
-import { Input } from "@/components/atoms/Forms/Input/Input";
+import { GetNftByCollectionsIdResponseModel } from "@/types/model/api-nft-by-collection-id";
+import { SearchBar } from "@/components/atoms/Forms/SearchBar/SearchBar";
+import { LoadMore } from "@/components/atoms/LoadMore/LoadMore";
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 import { CollectionDetailsInfo } from "@/components/molecules/details/CollectionDetailsInfo/CollectionDetailsInfo";
 import { DetailsPageCover } from "@/components/molecules/details/DetailsPageCover/DetailsPageCover";
@@ -11,15 +15,28 @@ import { styles } from "./collection-details-section.styles";
 import { useCollectionDetails } from "./use-collection-details";
 
 export const CollectionDetailsSection = ({ id }: { id: string }) => {
+  const [nextPage, setNextPage] = useState("");
+
   const { data: collectionById, isLoading } = useGetCollectionById({
     collectionId: id,
   });
-  const { data: nftByCollectionId } = useGetNftCollectionById({
-    collectionId: id,
+
+  const { data: nftByCollectionId, isLoading: isNFTLoading } =
+    useGetNftCollectionById({
+      collectionId: id,
+      cursor: nextPage,
+      limit: 20,
+    });
+
+  const { itemsLoaded, handleFetchNextPage } = useFetchNextPage({
+    data: nftByCollectionId,
+    nextCursor: nftByCollectionId?.next_cursor || nextPage,
+    setNextPage,
+    keyValue: "nfts",
   });
 
   const { filteredItems, register } = useCollectionDetails({
-    data: nftByCollectionId,
+    data: itemsLoaded as GetNftByCollectionsIdResponseModel["nfts"],
   });
 
   return (
@@ -37,22 +54,19 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
       />
       <CollectionDetailsInfo data={collectionById} />
       <div className={styles.collectionDetails_list}>
-        <div className="mx-auto lg:max-w-[50rem]">
-          <Input
-            placeholder="Search your favorite NFTs"
-            type="search"
-            name="nftSearchValue"
-            register={register}
-          />
-        </div>
-
+        <SearchBar
+          name="nftSearchValue"
+          placeholder="Search your favorite NFTs"
+          register={register}
+        />
         <DiscoverIndexList
           skeletonVariant="fluid"
-          isLoading={isLoading}
-          items={(filteredItems || [])?.map((item, index) => (
+          isLoading={isNFTLoading}
+          items={(filteredItems || []).map((item, index) => (
             <HighlightedNFTCard key={index} {...item} />
           ))}
         />
+        {!!filteredItems?.length && <LoadMore loadMore={handleFetchNextPage} />}
       </div>
     </div>
   );

@@ -49,6 +49,7 @@ export const useDiscoverNftSold = ({
         avatarStyle: { size: { base: "md", md: "lg" } },
         criptoCurrency: last_sale?.payment_token?.symbol,
         price: last_sale?.unit_price || 0,
+        decimals: last_sale?.payment_token?.decimals || 0,
       };
     });
   }, [data]);
@@ -59,7 +60,7 @@ export const useDiscoverNftSold = ({
         item?.image.src !== "" &&
         item?.collection?.image.src !== "" &&
         item?.nftName !== null &&
-        item?.nftName.toLowerCase().includes(nftSearchValue.toLowerCase())
+        item?.nftName?.toLowerCase()?.includes(nftSearchValue?.toLowerCase())
     );
   }, [parsedItems, nftSearchValue]);
 

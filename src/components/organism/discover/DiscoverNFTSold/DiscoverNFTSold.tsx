@@ -1,13 +1,16 @@
 import { useGetTopSalesByCollection } from "@/api/top-sales/hooks/use-get-top-sales-by-collection";
-import { Input } from "@/components/atoms/Forms/Input/Input";
+import { SearchBar } from "@/components/atoms/Forms/SearchBar/SearchBar";
+import { LoadMore } from "@/components/atoms/LoadMore/LoadMore";
 import { TopNftSoldCard } from "@/components/molecules/cards/TopNftSoldCard/TopNftSoldCard";
 import { DiscoverIndexList } from "@/components/organism/discover/DiscoverIndexList/DiscoverIndexList";
 import { useDiscoverNftSold } from "./use-discover-nft-sold";
 
 export const DiscoverNFTSold = ({
   collectionId,
+  fetchNextPage,
 }: {
   collectionId: string[];
+  fetchNextPage: () => void;
 }) => {
   const { data: topNftSales, isLoading } = useGetTopSalesByCollection({
     collectionId,
@@ -20,15 +23,11 @@ export const DiscoverNFTSold = ({
 
   return (
     <div className="w-full py-[8rem] base:space-y-[5rem] xl:space-y-[8rem]">
-      <div className="mx-auto lg:max-w-[50rem]">
-        <Input
-          label="search"
-          placeholder="Search your favorite NFTs"
-          type="search"
-          name="nftSearchValue"
-          register={register}
-        />
-      </div>
+      <SearchBar
+        name="nftSearchValue"
+        placeholder="Search your favorite NFTs"
+        register={register}
+      />
       <DiscoverIndexList
         skeletonVariant="fluid"
         isLoading={isLoading}
@@ -36,6 +35,7 @@ export const DiscoverNFTSold = ({
           <TopNftSoldCard key={index} {...item} />
         ))}
       />
+      {!!filteredItems?.length && <LoadMore loadMore={fetchNextPage} />}
     </div>
   );
 };
