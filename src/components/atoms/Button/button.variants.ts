@@ -23,7 +23,7 @@ export const button = tv({
       },
       link: {
         buttonWrapper:
-          "h-fit w-fit border-none bg-transparent p-0 text-inherit transition duration-500 hover:text-white",
+          "h-fit w-fit border-none bg-transparent p-0 text-inherit shadow-none transition duration-500 hover:text-white",
         buttonLabel: " text-current",
       },
       carouselNavigation: {
