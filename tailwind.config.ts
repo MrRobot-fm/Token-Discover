@@ -35,6 +35,12 @@ const config: Config = withTV({
         purpleBlue: "linear-gradient(128deg, #A259FF 49.75%, #377DF7 136.56%)",
         purpleRed: "linear-gradient(101deg, #A259FF 13.57%, #FF6250 97.65%)",
       },
+      boxShadow: {
+        alpha3: "5px 5px 16px 0px rgba(0, 0, 0, 0.3)",
+      },
+      dropShadow: {
+        alpha4: "1px 2px 3px rgba(0, 0, 0, 0.4)",
+      },
     },
   },
   plugins: [],

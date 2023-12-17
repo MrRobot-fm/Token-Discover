@@ -15,6 +15,7 @@ export const TopCollectionList = ({
   const { data: nftByCollection, isLoading } =
     useGetNftByCollectionByIdCombined({
       collectionsIds: collectionId,
+      limit: 4,
     });
 
   if (!isBase && !isMobile) {

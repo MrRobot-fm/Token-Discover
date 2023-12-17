@@ -5,7 +5,7 @@ export type ButtonVariants = VariantProps<typeof button>;
 export const button = tv({
   slots: {
     buttonWrapper:
-      "flex w-full items-center justify-center gap-[1.2rem] px-[5rem]",
+      "flex w-full items-center justify-center gap-[1.2rem] px-[5rem] shadow-alpha3",
     buttonLabel: "text-white",
   },
   variants: {
