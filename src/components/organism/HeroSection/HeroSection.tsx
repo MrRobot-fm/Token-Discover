@@ -1,4 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { PAGES_PATH } from "@/utils/constants/pages-path";
+import { useParallax } from "@/hooks/use-parallax";
 import { HeroTitle } from "@/components/atoms/HeroTitle/HeroTitle";
 import { SectionCta } from "@/components/atoms/SectionCta/SectionCta";
 import { HeroCard } from "@/components/molecules/HeroCard/HeroCard";
@@ -7,9 +11,14 @@ import { statsValue } from "@/public/mock/stats-value";
 import { styles } from "./hero-section.styles";
 
 export const HeroSection = () => {
+  const { ref, backgroundY } = useParallax();
+
   return (
-    <main className={styles.main}>
-      <div className={styles.mobileSectionWrapper}>
+    <main className={styles.main} ref={ref}>
+      <motion.div
+        className={styles.mobileSectionWrapper}
+        style={{ y: backgroundY }}
+      >
         <HeroTitle />
         <div className={styles.mobileSectionWrapper_cardWrapper}>
           <HeroCard />
@@ -20,10 +29,13 @@ export const HeroSection = () => {
             <StatsCard key={value.id} stats={value.stat} label={value.label} />
           ))}
         </div>
-      </div>
-      <div className={styles.desktopCardWrapper}>
+      </motion.div>
+      <motion.div
+        className={styles.desktopCardWrapper}
+        style={{ y: backgroundY }}
+      >
         <HeroCard />
-      </div>
+      </motion.div>
     </main>
   );
 };
