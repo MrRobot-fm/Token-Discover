@@ -7,8 +7,8 @@ export const HeroTitle = ({
 }) => {
   return (
     <div className="flex flex-col gap-[1rem]">
-      <h1 className="base:heading2  md:heading1">{title}</h1>
-      <h3 className="heading5 font-normal lowercase first-letter:uppercase">
+      <h1 className="base:heading2 md:heading1 drop-shadow-alpha4">{title}</h1>
+      <h3 className="heading5 font-normal lowercase drop-shadow-alpha4 first-letter:uppercase">
         {subTitle}
       </h3>
     </div>

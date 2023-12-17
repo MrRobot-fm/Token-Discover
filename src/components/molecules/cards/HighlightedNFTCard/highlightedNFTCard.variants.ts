@@ -7,8 +7,9 @@ export type highlightedNftCardVariants = VariantProps<
 export const highlightedNftCard = tv({
   slots: {
     linkWrapper: "group",
-    cardWrapper: "h-fit overflow-hidden rounded-[2rem] bg-background-grey ",
-    imageWrapper: "overflow-hidden ",
+    cardWrapper:
+      "h-fit overflow-hidden rounded-[2rem] bg-background-grey shadow-alpha3",
+    imageWrapper: "overflow-hidden",
     footerWrapper: "flex flex-col justify-between gap-[1rem] p-[2rem]",
     authorWrapper: "flex items-center gap-[1.2rem]",
     detailsWrapper: "mt-[1rem] flex w-full justify-between",

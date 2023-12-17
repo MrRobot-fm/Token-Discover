@@ -15,6 +15,7 @@ export const DiscoverTopCollection = ({
   const { data: nftByCollection, isLoading } =
     useGetNftByCollectionByIdCombined({
       collectionsIds: collectionId,
+      limit: 4,
     });
 
   const { filteredItems, register } = useDiscoverTopCollection({
