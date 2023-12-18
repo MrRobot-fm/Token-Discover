@@ -1,6 +1,6 @@
 import localFont from 'next/font/local';
 
-export const workSans = localFont({
+export const proximaNova = localFont({
   src: [
     {
       style: 'normal',
@@ -18,7 +18,7 @@ export const workSans = localFont({
       path: './proxima-nova/ProximaNova-Bold.woff'
     }
   ],
-  variable: '--font-works-sans'
+  variable: '--proxima-nova'
 });
 
 
