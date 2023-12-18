@@ -1,4 +1,4 @@
 export type NavbarMenuProps = {
-  onClose: () => void;
-  isOpen: boolean;
+  toggleMenu: () => void;
+  isMenuOpen: boolean;
 };
