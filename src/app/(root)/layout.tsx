@@ -3,7 +3,7 @@ import TanstackQUeryProvider from "@/utils/providers/tanstack-query-provider";
 import { Cursor } from "@/components/atoms/Cursor/Cursor";
 import { Navbar } from "@/components/molecules/nav/Navbar/Navbar";
 import { Footer } from "@/components/organism/Footer/Footer";
-import { workSans } from "@/public/fonts/fonts";
+import { proximaNova } from "@/public/fonts/fonts";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={workSans.variable}>
+    <html lang="en" className={proximaNova.variable}>
       <body>
         <TanstackQUeryProvider>
           <Cursor />
