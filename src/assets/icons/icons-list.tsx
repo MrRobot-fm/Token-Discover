@@ -1,25 +1,25 @@
-import { Icon, type IconProps } from "@chakra-ui/react";
+import type { SVGProps } from "react";
 
-export const Github = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Github = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Linkedin = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Linkedin = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533c2.987,0,3.539,1.966,3.539,4.522V22z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Whatsapp = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Whatsapp = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <g>
       <g>
         <path
@@ -30,11 +30,11 @@ export const Whatsapp = (props: IconProps) => (
         />
       </g>
     </g>
-  </Icon>
+  </svg>
 );
 
-export const Rocket = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Rocket = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -59,11 +59,11 @@ export const Rocket = (props: IconProps) => (
       d="M9.32317 7.92491L9.33741 7.9248H17.4124C17.9647 7.9248 18.4124 8.37252 18.4124 8.9248C18.4124 9.47709 17.9647 9.9248 17.4124 9.9248H9.35155L9.34347 9.93305L9.34342 9.933L5.29492 13.969L5.29647 13.9693L10.534 15.0193C11.0755 15.1279 11.4265 15.6549 11.3179 16.1964C11.2093 16.7379 10.6824 17.0889 10.1408 16.9803L4.90489 15.9306C4.90459 15.9305 4.90429 15.9305 4.90399 15.9304C4.5492 15.8597 4.22022 15.6941 3.9521 15.4512C3.68376 15.2081 3.48645 14.8967 3.38123 14.5502C3.27601 14.2037 3.26682 13.8352 3.35464 13.4839C3.44246 13.1326 3.624 12.8118 3.87989 12.5556L3.88139 12.5541L3.8814 12.5541L7.92796 8.52003C8.29678 8.14622 8.79791 7.93239 9.32317 7.92491Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const RocketLaunch = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const RocketLaunch = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -92,11 +92,11 @@ export const RocketLaunch = (props: IconProps) => (
       d="M16 13.5C16.8284 13.5 17.5 12.8284 17.5 12C17.5 11.1716 16.8284 10.5 16 10.5C15.1716 10.5 14.5 11.1716 14.5 12C14.5 12.8284 15.1716 13.5 16 13.5Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const User = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const User = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -109,11 +109,11 @@ export const User = (props: IconProps) => (
       d="M15.9999 20.999C13.7177 20.999 11.4758 21.5998 9.4994 22.741C7.52303 23.8822 5.8819 25.5235 4.74099 27.5001C4.4649 27.9784 3.85332 28.1423 3.375 27.8662C2.89668 27.5901 2.73275 26.9785 3.00885 26.5002C4.32528 24.2196 6.21889 22.3257 8.49932 21.009C10.7798 19.6922 13.3666 18.999 15.9999 18.999C18.6332 18.999 21.2201 19.6922 23.5005 21.009C25.781 22.3257 27.6746 24.2196 28.991 26.5002C29.2671 26.9785 29.1032 27.5901 28.6248 27.8662C28.1465 28.1423 27.535 27.9784 27.2589 27.5001C26.1179 25.5235 24.4768 23.8822 22.5004 22.741C20.5241 21.5998 18.2821 20.999 15.9999 20.999Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const MailLetter = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const MailLetter = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -126,11 +126,11 @@ export const MailLetter = (props: IconProps) => (
       d="M3.26285 6.32428C3.63604 5.91716 4.26861 5.88966 4.67573 6.26285L16 16.6434L27.3243 6.26285C27.7314 5.88966 28.364 5.91716 28.7372 6.32428C29.1104 6.7314 29.0828 7.36397 28.6757 7.73716L16.6757 18.7372C16.2934 19.0876 15.7066 19.0876 15.3243 18.7372L3.32428 7.73716C2.91716 7.36397 2.88966 6.7314 3.26285 6.32428Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const LockKey = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const LockKey = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -155,11 +155,11 @@ export const LockKey = (props: IconProps) => (
       d="M16 3C15.0717 3 14.1815 3.36875 13.5251 4.02513C12.8687 4.6815 12.5 5.57174 12.5 6.5V11C12.5 11.5523 12.0523 12 11.5 12C10.9477 12 10.5 11.5523 10.5 11V6.5C10.5 5.04131 11.0795 3.64236 12.1109 2.61091C13.1424 1.57946 14.5413 1 16 1C17.4587 1 18.8576 1.57946 19.8891 2.61091C20.9205 3.64236 21.5 5.04131 21.5 6.5V11C21.5 11.5523 21.0523 12 20.5 12C19.9477 12 19.5 11.5523 19.5 11V6.5C19.5 5.57174 19.1313 4.6815 18.4749 4.02513C17.8185 3.36875 16.9283 3 16 3Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Eye = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Eye = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -172,11 +172,11 @@ export const Eye = (props: IconProps) => (
       d="M16 12C13.7909 12 12 13.7909 12 16C12 18.2091 13.7909 20 16 20C18.2091 20 20 18.2091 20 16C20 13.7909 18.2091 12 16 12ZM10 16C10 12.6863 12.6863 10 16 10C19.3137 10 22 12.6863 22 16C22 19.3137 19.3137 22 16 22C12.6863 22 10 19.3137 10 16Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const EyeSlash = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const EyeSlash = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -207,11 +207,11 @@ export const EyeSlash = (props: IconProps) => (
       d="M15.9549 10.9019C16.0577 10.3593 16.581 10.0027 17.1236 10.1056C18.4001 10.3474 19.5633 10.9979 20.4377 11.9589C21.312 12.9199 21.8501 14.1392 21.9706 15.4328C22.0219 15.9827 21.6176 16.47 21.0677 16.5213C20.5178 16.5725 20.0305 16.1683 19.9793 15.6184C19.899 14.7569 19.5406 13.9448 18.9583 13.3049C18.376 12.6649 17.6014 12.2317 16.7513 12.0706C16.2086 11.9678 15.8521 11.4445 15.9549 10.9019Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const ArrowRight = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const ArrowRight = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -224,11 +224,11 @@ export const ArrowRight = (props: IconProps) => (
       d="M17.2929 6.29289C17.6834 5.90237 18.3166 5.90237 18.7071 6.29289L27.7071 15.2929C28.0976 15.6834 28.0976 16.3166 27.7071 16.7071L18.7071 25.7071C18.3166 26.0976 17.6834 26.0976 17.2929 25.7071C16.9024 25.3166 16.9024 24.6834 17.2929 24.2929L25.5858 16L17.2929 7.70711C16.9024 7.31658 16.9024 6.68342 17.2929 6.29289Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const ArrowLeft = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const ArrowLeft = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -241,11 +241,11 @@ export const ArrowLeft = (props: IconProps) => (
       d="M14.7071 6.29289C15.0976 6.68342 15.0976 7.31658 14.7071 7.70711L6.41421 16L14.7071 24.2929C15.0976 24.6834 15.0976 25.3166 14.7071 25.7071C14.3166 26.0976 13.6834 26.0976 13.2929 25.7071L4.29289 16.7071C3.90237 16.3166 3.90237 15.6834 4.29289 15.2929L13.2929 6.29289C13.6834 5.90237 14.3166 5.90237 14.7071 6.29289Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Globe = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Globe = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -270,11 +270,11 @@ export const Globe = (props: IconProps) => (
       d="M13.3837 8.13841C12.5439 10.0995 12 12.8783 12 16.0002C12 19.1221 12.5439 21.9009 13.3837 23.862C13.8044 24.8443 14.2797 25.5753 14.7565 26.0462C15.229 26.5129 15.6481 26.6752 16 26.6752C16.3519 26.6752 16.771 26.5129 17.2435 26.0462C17.7203 25.5753 18.1956 24.8443 18.6163 23.862C19.4561 21.9009 20 19.1221 20 16.0002C20 12.8783 19.4561 10.0995 18.6163 8.13841C18.1956 7.15609 17.7203 6.42507 17.2435 5.95417C16.771 5.4875 16.3519 5.3252 16 5.3252C15.6481 5.3252 15.229 5.4875 14.7565 5.95417C14.2797 6.42507 13.8044 7.15609 13.3837 8.13841ZM13.3511 4.53118C14.075 3.81627 14.9712 3.3252 16 3.3252C17.0288 3.3252 17.9251 3.81627 18.6489 4.53118C19.3685 5.24186 19.9707 6.2206 20.4548 7.35104C21.4246 9.61551 22 12.6741 22 16.0002C22 19.3263 21.4246 22.3849 20.4548 24.6493C19.9707 25.7798 19.3685 26.7585 18.6489 27.4692C17.925 28.1841 17.0288 28.6752 16 28.6752C14.9712 28.6752 14.075 28.1841 13.3511 27.4692C12.6315 26.7585 12.0293 25.7798 11.5452 24.6493C10.5754 22.3849 10 19.3263 10 16.0002C10 12.6741 10.5754 9.61551 11.5452 7.35104C12.0293 6.2206 12.6315 5.24186 13.3511 4.53118Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const TrendUp = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const TrendUp = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -287,11 +287,11 @@ export const TrendUp = (props: IconProps) => (
       d="M20 7C20 6.44772 20.4477 6 21 6H29C29.5523 6 30 6.44772 30 7V15C30 15.5523 29.5523 16 29 16C28.4477 16 28 15.5523 28 15V8H21C20.4477 8 20 7.55228 20 7Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const UserCircle = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const UserCircle = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -310,11 +310,11 @@ export const UserCircle = (props: IconProps) => (
       d="M16.0003 20.999C14.523 20.999 13.0745 21.4081 11.8154 22.1809C10.5563 22.9538 9.53577 24.0602 8.86698 25.3775C8.61696 25.8699 8.01507 26.0665 7.52262 25.8165C7.03017 25.5664 6.83363 24.9646 7.08365 24.4721C7.91963 22.8255 9.19526 21.4425 10.7691 20.4764C12.343 19.5104 14.1536 18.999 16.0003 18.999C17.847 18.999 19.6576 19.5104 21.2315 20.4764C22.8054 21.4425 24.081 22.8255 24.917 24.4721C25.167 24.9646 24.9705 25.5664 24.478 25.8165C23.9855 26.0665 23.3837 25.8699 23.1336 25.3775C22.4649 24.0602 21.4444 22.9538 20.1853 22.1809C18.9262 21.4081 17.4777 20.999 16.0003 20.999Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Plus = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Plus = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -327,11 +327,11 @@ export const Plus = (props: IconProps) => (
       d="M16 4C16.5523 4 17 4.44772 17 5V27C17 27.5523 16.5523 28 16 28C15.4477 28 15 27.5523 15 27V5C15 4.44772 15.4477 4 16 4Z"
       fill="colorscheme"
     />
-  </Icon>
+  </svg>
 );
 
-export const Search = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Search = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -344,11 +344,11 @@ export const Search = (props: IconProps) => (
       d="M21.2177 21.2177C21.6082 20.8272 22.2414 20.8272 22.6319 21.2177L28.7069 27.2927C29.0974 27.6832 29.0974 28.3164 28.7069 28.7069C28.3164 29.0974 27.6832 29.0974 27.2927 28.7069L21.2177 22.6319C20.8272 22.2414 20.8272 21.6082 21.2177 21.2177Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const List = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const List = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -367,11 +367,11 @@ export const List = (props: IconProps) => (
       d="M4 24C4 23.4477 4.44772 23 5 23H20C20.5523 23 21 23.4477 21 24C21 24.5523 20.5523 25 20 25H5C4.44772 25 4 24.5523 4 24Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Store = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Store = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -402,11 +402,11 @@ export const Store = (props: IconProps) => (
       d="M20 7C20.5523 7 21 7.44772 21 8V10C21 10.7956 21.3161 11.5587 21.8787 12.1213C22.4413 12.6839 23.2044 13 24 13C24.7956 13 25.5587 12.6839 26.1213 12.1213C26.6839 11.5587 27 10.7956 27 10V8C27 7.44772 27.4477 7 28 7C28.5523 7 29 7.44772 29 8V10C29 11.3261 28.4732 12.5979 27.5355 13.5355C26.5979 14.4732 25.3261 15 24 15C22.6739 15 21.4021 14.4732 20.4645 13.5355C19.5268 12.5979 19 11.3261 19 10V8C19 7.44772 19.4477 7 20 7Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Wallet = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Wallet = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -417,11 +417,11 @@ export const Wallet = (props: IconProps) => (
       d="M22.5 19.5C23.3284 19.5 24 18.8284 24 18C24 17.1716 23.3284 16.5 22.5 16.5C21.6716 16.5 21 17.1716 21 18C21 18.8284 21.6716 19.5 22.5 19.5Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Copy = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Copy = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -434,11 +434,11 @@ export const Copy = (props: IconProps) => (
       d="M4 11C4 10.4477 4.44772 10 5 10H21C21.5523 10 22 10.4477 22 11V27C22 27.5523 21.5523 28 21 28H5C4.44772 28 4 27.5523 4 27V11ZM6 12V26H20V12H6Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Discord = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Discord = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       d="M12 19.5C12.8284 19.5 13.5 18.8284 13.5 18C13.5 17.1716 12.8284 16.5 12 16.5C11.1716 16.5 10.5 17.1716 10.5 18C10.5 18.8284 11.1716 19.5 12 19.5Z"
       fill="white"
@@ -503,11 +503,11 @@ export const Discord = (props: IconProps) => (
       d="M10.7977 6.55337C10.795 6.55186 10.7919 6.55139 10.7889 6.55205L10.7867 6.55252C9.57939 6.81412 8.39743 7.18148 7.25453 7.65037C7.251 7.65182 7.24746 7.65324 7.24392 7.65465L3.00794 21.7996C3.00725 21.8019 3.00715 21.8046 3.00781 21.8069C3.0084 21.809 3.00951 21.8108 3.01103 21.8123C4.79072 23.3593 7.28311 24.5949 10.2185 25.3147L10.2195 25.3125L11.732 22.3125C11.9807 21.8194 12.582 21.6211 13.0752 21.8698C13.5683 22.1184 13.7665 22.7197 13.5179 23.2129L12.0097 26.2045C11.8118 26.6132 11.479 26.9414 11.0672 27.1336C10.6537 27.3265 10.1863 27.3703 9.74432 27.2577C6.56239 26.4777 3.76102 25.1161 1.69355 23.3171L1.68837 23.3126C1.3999 23.0581 1.19044 22.7262 1.08476 22.3563C0.979102 21.9865 0.981619 21.5942 1.092 21.2258C1.09198 21.2259 1.09203 21.2257 1.092 21.2258L5.3279 7.08117C5.41243 6.78887 5.56377 6.52019 5.77003 6.29638C5.97408 6.07496 6.2263 5.90352 6.50711 5.79524C7.75497 5.28409 9.04529 4.88344 10.3632 4.59788C10.8456 4.49279 11.3499 4.5687 11.78 4.81121C12.2108 5.05409 12.537 5.44708 12.6965 5.91518L12.6995 5.92385L13.6869 8.91136C13.8603 9.43574 13.5757 10.0013 13.0513 10.1747C12.5269 10.348 11.9613 10.0634 11.788 9.53905L10.8031 6.55937C10.802 6.55684 10.8001 6.55473 10.7977 6.55337Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Youtube = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Youtube = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -520,20 +520,20 @@ export const Youtube = (props: IconProps) => (
       d="M15.9985 5.04985L15.9816 5.0498L15.9188 5.04983C15.8643 5.04996 15.785 5.05035 15.6831 5.05143C15.4794 5.05359 15.1856 5.0585 14.8206 5.06945C14.0912 5.09135 13.0746 5.13749 11.9237 5.23466C9.64733 5.42685 6.74928 5.82571 4.51808 6.67823L4.50338 6.68398C4.06511 6.85941 3.6742 7.13539 3.36218 7.48966C3.05016 7.84393 2.82577 8.26657 2.70711 8.7235L2.70614 8.72726C2.39473 9.94582 2 12.2055 2 15.9999C2 19.7942 2.39473 22.0539 2.70614 23.2725L2.70711 23.2762C2.82577 23.7332 3.05016 24.1558 3.36218 24.5101C3.6742 24.8643 4.06511 25.1403 4.50338 25.3157L4.51808 25.3215C6.74928 26.174 9.64733 26.5729 11.9237 26.7651C13.0746 26.8622 14.0912 26.9084 14.8206 26.9303C15.1856 26.9412 15.4794 26.9461 15.6831 26.9483C15.785 26.9494 15.8643 26.9498 15.9188 26.9499L15.9816 26.9499L15.9985 26.9499H16.0015L16.0184 26.9499L16.0812 26.9499C16.1357 26.9498 16.215 26.9494 16.3169 26.9483C16.5206 26.9461 16.8144 26.9412 17.1794 26.9303C17.9088 26.9084 18.9254 26.8622 20.0763 26.7651C22.3527 26.5729 25.2507 26.174 27.4819 25.3215L27.4966 25.3157C27.9349 25.1403 28.3258 24.8643 28.6378 24.5101C28.9498 24.1558 29.1742 23.7332 29.2929 23.2762L29.2939 23.2725C29.6053 22.0539 30 19.7942 30 15.9999C30 12.2055 29.6053 9.94582 29.2939 8.72726L29.2929 8.7235C29.1742 8.26657 28.9498 7.84393 28.6378 7.48966C28.3258 7.13539 27.9349 6.85941 27.4966 6.68398L27.4819 6.67823C25.2507 5.82571 22.3527 5.42685 20.0763 5.23466C18.9254 5.13749 17.9088 5.09135 17.1794 5.06945C16.8144 5.0585 16.5206 5.05359 16.3169 5.05143C16.215 5.05035 16.1357 5.04996 16.0812 5.04983L16.0184 5.0498L16.0015 5.04985H15.9985ZM15.9947 24.9499L16.0054 24.9498L16.0086 24.9499L16.0217 24.9499L16.0767 24.9499C16.1259 24.9498 16.1996 24.9494 16.2957 24.9484C16.4877 24.9464 16.7686 24.9417 17.1194 24.9312C17.8216 24.9101 18.8011 24.8656 19.9081 24.7722C22.1441 24.5834 24.8041 24.2018 26.7596 23.4565C26.9044 23.3974 27.0336 23.3056 27.1369 23.1882C27.2414 23.0695 27.3167 22.928 27.3567 22.7751C27.6203 21.7429 28 19.6529 28 15.9999C28 12.3468 27.6203 10.2568 27.3567 9.22464C27.3167 9.07168 27.2414 8.9302 27.1369 8.81154C27.0336 8.69415 26.9044 8.60233 26.7596 8.54326C24.8041 7.79791 22.1441 7.41635 19.9081 7.22757C18.8011 7.13411 17.8216 7.08963 17.1194 7.06855C16.7686 7.05802 16.4877 7.05336 16.2957 7.05132C16.1996 7.0503 16.1259 7.04994 16.0767 7.04983L16.0217 7.0498L16.0086 7.04983L16.0058 7.04985L15.9946 7.04991L15.9914 7.04983L15.9783 7.0498L15.9233 7.04983C15.8741 7.04994 15.8004 7.0503 15.7043 7.05132C15.5123 7.05336 15.2314 7.05802 14.8806 7.06855C14.1784 7.08963 13.1989 7.13411 12.0919 7.22757C9.8559 7.41635 7.1959 7.79791 5.24039 8.54327C5.09561 8.60234 4.96645 8.69415 4.86306 8.81154C4.75855 8.9302 4.6833 9.07168 4.64331 9.22464C4.37974 10.2569 4 12.3468 4 15.9999C4 19.6529 4.37973 21.7429 4.6433 22.7751C4.68329 22.928 4.75855 23.0695 4.86306 23.1882C4.96645 23.3056 5.09561 23.3974 5.24038 23.4565C7.1959 24.2018 9.8559 24.5834 12.0919 24.7722C13.1989 24.8656 14.1784 24.9101 14.8806 24.9312C15.2314 24.9417 15.5123 24.9464 15.7043 24.9484C15.8004 24.9494 15.8741 24.9498 15.9233 24.9499L15.9783 24.9499L15.9914 24.9499L15.9947 24.9499Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const TwitterX = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const TwitterX = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       d="M4.53657 4.98047L10.3279 12.724L4.5 19.0199H5.81163L10.9139 13.5078L15.0365 19.0199H19.5L13.3828 10.8407L18.8074 4.98047H17.4958L12.7968 10.057L9.00009 4.98047H4.53657ZM6.46542 5.94662H8.51597L17.5709 18.0536H15.5203L6.46542 5.94662Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
-export const Instagram = (props: IconProps) => (
-  <Icon viewBox="0 0 32 32" fill="inherit" {...props}>
+export const Instagram = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="inherit" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -550,11 +550,11 @@ export const Instagram = (props: IconProps) => (
       d="M22.5 11C23.3284 11 24 10.3284 24 9.5C24 8.67157 23.3284 8 22.5 8C21.6716 8 21 8.67157 21 9.5C21 10.3284 21.6716 11 22.5 11Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
 export const Metamask = () => (
-  <Icon viewBox="0 0 40 40" w={40} h={40}>
+  <svg viewBox="0 0 40 40" width={40} height={40}>
     <g clipPath="url(#clip0_1951_3556)">
       <path
         d="M38.008 1.5625L22.4001 13.1547L25.2864 6.31544L38.008 1.5625Z"
@@ -794,11 +794,11 @@ export const Metamask = () => (
         <rect width="40" height="40" fill="white" />
       </clipPath>
     </defs>
-  </Icon>
+  </svg>
 );
 
 export const WalletConnect = () => (
-  <Icon viewBox="0 0 40 40" w={40} h={40}>
+  <svg viewBox="0 0 40 40" width={40} height={40}>
     <g clipPath="url(#clip0_1951_3557)">
       <path
         d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z"
@@ -825,11 +825,11 @@ export const WalletConnect = () => (
         <rect width="40" height="40" fill="white" />
       </clipPath>
     </defs>
-  </Icon>
+  </svg>
 );
 
 export const Coinbase = () => (
-  <Icon viewBox="0 0 40 40" w={40} h={40}>
+  <svg viewBox="0 0 40 40" width={40} height={40}>
     <g clipPath="url(#clip0_1951_3558)">
       <path
         d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z"
@@ -847,11 +847,11 @@ export const Coinbase = () => (
         <rect width="40" height="40" fill="white" />
       </clipPath>
     </defs>
-  </Icon>
+  </svg>
 );
 
-export const PaintBrush = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const PaintBrush = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M7.8125 84.375H35.9375C39.9549 84.375 43.8821 83.1837 47.2225 80.9517C50.5629 78.7198 53.1664 75.5474 54.7038 71.8358C56.2412 68.1241 56.6435 64.04 55.8597 60.0997C55.0759 56.1595 53.1414 52.5402 50.3006 49.6994C47.4598 46.8586 43.8405 44.9241 39.9003 44.1403C35.96 43.3565 31.8759 43.7588 28.1642 45.2962C24.4526 46.8336 21.2802 49.4371 19.0483 52.7775C16.8163 56.1179 15.625 60.0451 15.625 64.0625C15.625 78.125 7.8125 84.375 7.8125 84.375Z"
       stroke="currentcolor"
@@ -873,11 +873,11 @@ export const PaintBrush = (props: IconProps) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </Icon>
+  </svg>
 );
 
-export const MusicNotes = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const MusicNotes = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M70.3125 78.125C76.3531 78.125 81.25 73.2281 81.25 67.1875C81.25 61.1469 76.3531 56.25 70.3125 56.25C64.2719 56.25 59.375 61.1469 59.375 67.1875C59.375 73.2281 64.2719 78.125 70.3125 78.125Z"
       stroke="currentcolor"
@@ -906,11 +906,11 @@ export const MusicNotes = (props: IconProps) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </Icon>
+  </svg>
 );
 
-export const Camera = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const Camera = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M81.25 81.25H18.75C17.0924 81.25 15.5027 80.5915 14.3306 79.4194C13.1585 78.2473 12.5 76.6576 12.5 75V31.25C12.5 29.5924 13.1585 28.0027 14.3306 26.8306C15.5027 25.6585 17.0924 25 18.75 25H31.25L37.5 15.625H62.5L68.75 25H81.25C82.9076 25 84.4973 25.6585 85.6694 26.8306C86.8415 28.0027 87.5 29.5924 87.5 31.25V75C87.5 76.6576 86.8415 78.2473 85.6694 79.4194C84.4973 80.5915 82.9076 81.25 81.25 81.25Z"
       stroke="currentcolor"
@@ -925,11 +925,11 @@ export const Camera = (props: IconProps) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </Icon>
+  </svg>
 );
 
-export const VideoCamera = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const VideoCamera = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M9.375 23.4375H59.375C62.6902 23.4375 65.8696 24.7545 68.2138 27.0987C70.558 29.4429 71.875 32.6223 71.875 35.9375V73.4375C71.875 74.2663 71.5458 75.0612 70.9597 75.6472C70.3737 76.2333 69.5788 76.5625 68.75 76.5625H18.75C15.4348 76.5625 12.2554 75.2455 9.91117 72.9013C7.56696 70.5571 6.25 67.3777 6.25 64.0625V26.5625C6.25 25.7337 6.57924 24.9388 7.16529 24.3528C7.75134 23.7667 8.5462 23.4375 9.375 23.4375V23.4375Z"
       stroke="currentcolor"
@@ -944,11 +944,11 @@ export const VideoCamera = (props: IconProps) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </Icon>
+  </svg>
 );
 
-export const Basket = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const Basket = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M50 87.5C70.7107 87.5 87.5 70.7107 87.5 50C87.5 29.2893 70.7107 12.5 50 12.5C29.2893 12.5 12.5 29.2893 12.5 50C12.5 70.7107 29.2893 87.5 50 87.5Z"
       stroke="currentcolor"
@@ -984,11 +984,11 @@ export const Basket = (props: IconProps) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </Icon>
+  </svg>
 );
 
-export const MagicWand = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const MagicWand = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M84.375 50V68.75"
       stroke="currentcolor"
@@ -1045,11 +1045,11 @@ export const MagicWand = (props: IconProps) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </Icon>
+  </svg>
 );
 
-export const Planet = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const Planet = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M50 84.375C68.9848 84.375 84.375 68.9848 84.375 50C84.375 31.0152 68.9848 15.625 50 15.625C31.0152 15.625 15.625 31.0152 15.625 50C15.625 68.9848 31.0152 84.375 50 84.375Z"
       stroke="currentcolor"
@@ -1064,11 +1064,11 @@ export const Planet = (props: IconProps) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </Icon>
+  </svg>
 );
 
-export const Bookmark = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const Bookmark = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M65.625 87.5L43.75 71.875L21.875 87.5V28.125C21.875 27.2962 22.2042 26.5013 22.7903 25.9153C23.3763 25.3292 24.1712 25 25 25H62.5C63.3288 25 64.1237 25.3292 64.7097 25.9153C65.2958 26.5013 65.625 27.2962 65.625 28.125V87.5Z"
       stroke="currentcolor"
@@ -1083,11 +1083,11 @@ export const Bookmark = (props: IconProps) => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </Icon>
+  </svg>
 );
 
-export const Swatches = (props: IconProps) => (
-  <Icon viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
+export const Swatches = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 100 100" fill="none" stroke="inherit" {...props}>
     <path
       d="M14.3355 67.5774L23.7887 14.0227C23.8547 13.6185 24.0006 13.2315 24.2178 12.8843C24.4349 12.537 24.719 12.2365 25.0535 12.0002C25.388 11.7638 25.7662 11.5964 26.166 11.5078C26.5659 11.4191 26.9794 11.4109 27.3824 11.4837L48.9449 15.2727C49.7596 15.425 50.482 15.891 50.9568 16.5703C51.4316 17.2496 51.6209 18.0881 51.484 18.9055L41.9918 72.7727C41.3417 76.3999 39.2977 79.6285 36.2972 81.7676C33.2966 83.9066 29.578 84.7862 25.9371 84.218C18.1637 82.968 12.9684 75.3508 14.3355 67.5774Z"
       stroke="currentcolor"
@@ -1113,7 +1113,7 @@ export const Swatches = (props: IconProps) => (
       d="M28.125 75C30.7138 75 32.8125 72.9013 32.8125 70.3125C32.8125 67.7237 30.7138 65.625 28.125 65.625C25.5362 65.625 23.4375 67.7237 23.4375 70.3125C23.4375 72.9013 25.5362 75 28.125 75Z"
       fill="currentcolor"
     />
-  </Icon>
+  </svg>
 );
 
 export const IconsList = {
