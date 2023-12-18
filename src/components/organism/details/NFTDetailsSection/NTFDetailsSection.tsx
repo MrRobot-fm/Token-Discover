@@ -20,7 +20,7 @@ export const NTFDetailsSection = ({
   });
 
   return (
-    <div className="flex flex-col gap-[5rem]">
+    <div className="flex flex-col">
       <DetailsPageCover
         isLoading={isLoading}
         bannerProps={{

@@ -11,13 +11,13 @@ import { statsValue } from "@/public/mock/stats-value";
 import { styles } from "./hero-section.styles";
 
 export const HeroSection = () => {
-  const { ref, backgroundY } = useParallax();
+  const { ref, background } = useParallax();
 
   return (
     <main className={styles.main} ref={ref}>
       <motion.div
         className={styles.mobileSectionWrapper}
-        style={{ y: backgroundY }}
+        style={{ y: background }}
       >
         <HeroTitle />
         <div className={styles.mobileSectionWrapper_cardWrapper}>
@@ -32,7 +32,7 @@ export const HeroSection = () => {
       </motion.div>
       <motion.div
         className={styles.desktopCardWrapper}
-        style={{ y: backgroundY }}
+        style={{ y: background }}
       >
         <HeroCard />
       </motion.div>

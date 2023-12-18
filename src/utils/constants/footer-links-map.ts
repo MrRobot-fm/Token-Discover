@@ -1,4 +1,4 @@
-import type { IconName } from "@/types/icons";
+import { FooterSocialLinks } from "@/types/model/footer-social-links";
 import type { ButtonVariants } from "@/components/atoms/Button/button.variants";
 
 export const footerLinksMap = [
@@ -16,35 +16,35 @@ export const footerLinksMap = [
   },
 ];
 
-export const footerSocialLinksMap = [
+export const footerSocialLinksMap: FooterSocialLinks[] = [
   {
-    icon: "github" as IconName,
+    icon: "github",
     size: "xl" as ButtonVariants["size"],
-    variant: "link" as ButtonVariants["variant"],
+    variant: "link",
     url: "https://github.com/MrRobot-fm",
   },
   {
-    icon: "linkedin" as IconName,
+    icon: "linkedin",
     size: "xl" as ButtonVariants["size"],
-    variant: "link" as ButtonVariants["variant"],
+    variant: "link",
     url: "https://www.linkedin.com/in/federicomigliore/",
   },
   {
-    icon: "instagram" as IconName,
+    icon: "instagram",
     size: "xl" as ButtonVariants["size"],
-    variant: "link" as ButtonVariants["variant"],
+    variant: "link",
     url: "https://www.instagram.com/federix_aegon/",
   },
   {
-    icon: "whatsapp" as IconName,
+    icon: "whatsapp",
     size: "xl" as ButtonVariants["size"],
-    variant: "link" as ButtonVariants["variant"],
+    variant: "link",
     url: "https://wa.me/+393792302349",
   },
   {
-    icon: "mailLetter" as IconName,
+    icon: "mailLetter",
     size: "xl" as ButtonVariants["size"],
-    variant: "link" as ButtonVariants["variant"],
+    variant: "link",
     url: "mailto:federicomiglioredev@gmail.com",
   },
 ];
