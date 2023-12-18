@@ -13,17 +13,17 @@
 
   h1,
   .heading1 {
-    @apply text-[6.7rem] font-semibold capitalize leading-[110%];
+    @apply text-[6.7rem] font-bold capitalize leading-[110%];
   }
 
   h2,
   .heading2 {
-    @apply text-[5.1rem] font-semibold capitalize leading-[110%];
+    @apply text-[5.1rem] font-bold capitalize leading-[110%];
   }
 
   h3,
   .heading3 {
-    @apply text-[3.8rem] font-semibold capitalize leading-[120%];
+    @apply text-[3.8rem] font-bold capitalize leading-[120%];
   }
 
   h4,

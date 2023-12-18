@@ -5,12 +5,17 @@ export const workSans = localFont({
     {
       style: 'normal',
       weight: '400',
-      path: './WorkSans/WorkSans-Regular.woff'
+      path: './proxima-nova/ProximaNova-Regular.woff'
     },
     {
       style: 'normal',
       weight: '600',
-      path: './WorkSans/WorkSans-SemiBold.woff'
+      path: './proxima-nova/ProximaNova-SemiBold.woff'
+    },
+    {
+      style: 'normal',
+      weight: '700',
+      path: './proxima-nova/ProximaNova-Bold.woff'
     }
   ],
   variable: '--font-works-sans'
