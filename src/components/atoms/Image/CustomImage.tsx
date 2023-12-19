@@ -21,19 +21,7 @@ export const CustomImage = (props: CustomImageProps) => {
   if (isLoading) {
     return (
       <div className={customImage({ size, className })}>
-        <Skeleton variant="image">
-          <Image
-            fill={fill}
-            priority={priority}
-            quality={quality}
-            placeholder={placeholder}
-            blurDataURL={blurDataURL}
-            sizes={sizes}
-            alt={alt}
-            src={src}
-            style={{ objectFit: "cover" }}
-          />
-        </Skeleton>
+        <Skeleton variant="image" />
       </div>
     );
   }
