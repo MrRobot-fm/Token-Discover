@@ -14,7 +14,7 @@ export default function DiscoverLayoutPage({
       <Section
         title="Discover our NFTs and Collections"
         subTitle="Browse through top sold and trending NTFs and our weekly top collection."
-        sectionStyles="base:px-[3rem] md:px-[10rem] lg:px-[5rem]"
+        sectionStyles="base:px-[3rem] md:px-[10rem] lg:px-[5rem] base:py-[3.5rem] md:py-[7rem]"
         titleProps={{
           titleStyles: "base:heading3 md:heading2",
           subtitleStyles: "lowercase first-letter:uppercase font-normal",
