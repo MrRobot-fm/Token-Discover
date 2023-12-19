@@ -20,6 +20,7 @@ export const HeroCard = () => {
       cardImage={{
         src: nftData?.image_url || "",
         alt: nftData?.token_id || "",
+        priority: true,
       }}
       avatarImage={{
         src: nftData?.collection?.image_url || "",

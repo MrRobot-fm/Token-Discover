@@ -15,6 +15,7 @@ export const DiscoverNFTSold = ({
   const { data: topNftSales, isLoading } = useGetTopSalesByCollection({
     collectionId,
     nftDetails: "1",
+    limit: 1,
   });
 
   const { filteredItems, register } = useDiscoverNftSold({

@@ -9,10 +9,10 @@ export const prefetchTrendingCollections = async (
 }> => {
   const queryClient = new QueryClient();
 
-  const { chain, interval, limit, includeContractDetails } = apiParams || {};
+  const { chains, interval, limit, includeContractDetails } = apiParams || {};
 
   const parsedParams: UseGetTrendingCollectionsApiParams = {
-    ...(chain && { chain }),
+    ...(chains && { chains }),
     ...(interval && { time_period: interval }),
     ...(limit && { limit }),
     ...(includeContractDetails && {

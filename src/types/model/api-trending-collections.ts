@@ -61,7 +61,7 @@ export type GetTrendingCollectionsResponseModel = {
 };
 
 export type GetTrendingCollectionsSearchParams = {
-  chain?: string;
+  chains?: string;
   time_period?: string;
   include_top_contract_details?: string;
   limit?: number;
@@ -69,7 +69,7 @@ export type GetTrendingCollectionsSearchParams = {
 };
 
 export type UseGetTrendingCollectionsApiParams = {
-  chain?: string;
+  chains?: string;
   interval?: string;
   includeContractDetails?: string;
   limit?: number;
