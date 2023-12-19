@@ -17,7 +17,7 @@ export default async function Home() {
   const { dehydrateState: dehydrateTrendingCollections } =
     await prefetchTrendingCollections({
       limit: 10,
-      chain: "ethereum",
+      chains: "ethereum,polygon,solana",
       interval: "24h",
     });
 

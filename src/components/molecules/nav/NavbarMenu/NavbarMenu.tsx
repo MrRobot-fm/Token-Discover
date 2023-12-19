@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { links } from "@/utils/constants/links-object-map";
+import { useScrollBehavior } from "@/hooks/use-scroll-behavior";
 import { Button } from "@/components/atoms/Button/Button";
 import type { NavbarMenuProps } from "./NavbarMenu.props";
 import { styles } from "./NavbarMenu.styles";
@@ -7,13 +8,15 @@ import { styles } from "./NavbarMenu.styles";
 export const NavbarMenu = (props: NavbarMenuProps) => {
   const { isMenuOpen, toggleMenu } = props;
 
+  const { disableScroll, enableScroll } = useScrollBehavior();
+
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflowY = "hidden";
+      disableScroll();
     } else {
-      document.body.style.overflowY = "visible";
+      enableScroll();
     }
-  }, [isMenuOpen]);
+  }, [disableScroll, enableScroll, isMenuOpen]);
 
   return (
     <div

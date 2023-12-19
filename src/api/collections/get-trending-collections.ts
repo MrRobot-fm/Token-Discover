@@ -1,4 +1,4 @@
-import {
+import type {
   GetTrendingCollectionsResponseModel,
   GetTrendingCollectionsSearchParams,
 } from "@/types/model/api-trending-collections";

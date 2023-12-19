@@ -15,6 +15,7 @@ export const DiscoverNFTs = ({
   const { data: nftByCollectionId, isLoading } =
     useGetNftByCollectionByIdCombined({
       collectionsIds: collectionId,
+      limit: 1,
     });
 
   const { filteredItems, register } = useDiscoverNfts({

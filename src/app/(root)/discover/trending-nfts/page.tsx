@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { useFetchNextPage } from "@/hooks/use-fetch-next-page";
 import { useGetTrendingCollections } from "@/api/collections/hooks/use-get-trending-collections";
@@ -14,29 +14,23 @@ export default function TrendingNftsPage() {
   const limitValue = isBase || isMobile || isTablet ? 10 : 20;
 
   const { data: trendingCollection } = useGetTrendingCollections({
-    chain: "ethereum",
+    chains: "ethereum,polygon,solana",
     interval: "24h",
     limit: limitValue,
     cursor: nextPage,
   });
 
-  const { itemsLoaded, handleFetchNextPage } = useFetchNextPage({
+  const { handleFetchNextPage, collectionIds } = useFetchNextPage({
     data: trendingCollection,
     nextCursor: trendingCollection?.next_cursor || "",
     setNextPage,
     keyValue: "collections",
   });
 
-  const trendingCollectionIds = useMemo(() => {
-    return itemsLoaded?.map((collection) => collection?.collection_id);
-  }, [itemsLoaded]);
-
   return (
-    <div>
-      <DiscoverNFTs
-        collectionId={trendingCollectionIds || []}
-        fetchNextPage={handleFetchNextPage}
-      />
-    </div>
+    <DiscoverNFTs
+      collectionId={collectionIds || []}
+      fetchNextPage={handleFetchNextPage}
+    />
   );
 }

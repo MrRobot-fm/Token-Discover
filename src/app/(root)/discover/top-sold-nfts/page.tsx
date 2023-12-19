@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { useFetchNextPage } from "@/hooks/use-fetch-next-page";
 import { useGetTopCollections } from "@/api/collections/hooks/use-get-top-collections";
@@ -20,23 +20,17 @@ export default function TopSoldNFTsPage() {
     cursor: nextPage,
   });
 
-  const { itemsLoaded, handleFetchNextPage } = useFetchNextPage({
+  const { collectionIds, handleFetchNextPage } = useFetchNextPage({
     data: topCollection,
     nextCursor: topCollection?.next_cursor || "",
     setNextPage,
     keyValue: "collections",
   });
 
-  const topCollectionIds = useMemo(() => {
-    return itemsLoaded?.map((collection) => collection?.collection_id);
-  }, [itemsLoaded]);
-
   return (
-    <div>
-      <DiscoverNFTSold
-        collectionId={topCollectionIds || []}
-        fetchNextPage={handleFetchNextPage}
-      />
-    </div>
+    <DiscoverNFTSold
+      collectionId={collectionIds || []}
+      fetchNextPage={handleFetchNextPage}
+    />
   );
 }

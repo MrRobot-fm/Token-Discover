@@ -27,6 +27,7 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
             <CustomImage
               src={cardImage?.src || DEFAULT_IMG_URL_FALLBACK}
               alt={cardImage?.alt || "nft-img"}
+              {...cardImage}
             />
           </div>
           <NftCardFooter {...rest} />
@@ -41,6 +42,7 @@ export const HighlightedNFTCard = (props: HighlightNFTedCardProps) => {
         <CustomImage
           src={cardImage?.src || DEFAULT_IMG_URL_FALLBACK}
           alt={cardImage?.alt || "nft-img"}
+          {...cardImage}
         />
       </div>
       <NftCardFooter {...rest} />

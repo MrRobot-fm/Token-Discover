@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from "react";
 
 export const useFetchNextPage = ({
   nextCursor,
@@ -29,12 +29,17 @@ export const useFetchNextPage = ({
     }
   }, [data[keyValue]]);
 
+  const collectionIds = useMemo(() => {
+    return itemsLoaded?.map((collection) => collection?.collection_id);
+  }, [itemsLoaded]);
+
   const handleFetchNextPage = () => {
     if (nextCursor !== null) return setNextPage(nextCursor);
   };
 
   return {
-    itemsLoaded,
     handleFetchNextPage,
+    collectionIds,
+    itemsLoaded,
   };
 };

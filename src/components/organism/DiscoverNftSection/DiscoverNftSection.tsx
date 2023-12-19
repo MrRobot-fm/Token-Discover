@@ -10,7 +10,7 @@ import { styles } from "./discover-nft-section.styles";
 export const DiscoverNftSection = () => {
   const { data: trendingCollection } = useGetTrendingCollections({
     limit: 10,
-    chain: "ethereum",
+    chains: "ethereum,polygon,solana",
     interval: "24h",
   });
 
