@@ -2,7 +2,7 @@ import type { SkeletonProps } from "./Skeleton.props";
 import { skeleton } from "./skeleton.variants";
 
 export const Skeleton = (props: SkeletonProps) => {
-  const { variant, barCount = 4, children, className } = props;
+  const { variant, barCount = 4, className } = props;
 
   const {
     skeletonRoot,
@@ -21,7 +21,6 @@ export const Skeleton = (props: SkeletonProps) => {
             <div key={index} className={skeletonBar()} />
           ))}
         </div>
-        {children}
       </div>
       <div className={skeletonBody()}>
         {Array.from({ length: barCount }).map((_, index) => (
