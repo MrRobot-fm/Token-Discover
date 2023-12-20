@@ -22,8 +22,8 @@ export const TopNftSoldCard = (props: TopNftSoldCardProps) => {
       <div className={styles.cardWrapper}>
         <div>
           <Avatar
-            src={image.src || DEFAULT_IMG_URL_FALLBACK}
-            alt={image.alt || "nft-img"}
+            src={image?.src || DEFAULT_IMG_URL_FALLBACK}
+            alt={image?.alt || "nft-img"}
             {...(avatarStyle && { size: avatarStyle?.size })}
           />
         </div>

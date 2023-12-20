@@ -17,7 +17,7 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
         <TopCollectionContent
           image={{
             src: data?.nfts[0]?.image_url || "",
-            alt: data?.nfts[0]?.name || "nft-img",
+            alt: `${data?.nfts[0]?.name}-img` || "nft-img",
             priority: true,
           }}
           size="md"
@@ -28,7 +28,7 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
               key={`${index}-${item?.nft_id}`}
               image={{
                 src: item?.previews?.image_small_url,
-                alt: item?.collection?.name,
+                alt: `${item?.collection?.name}-img`,
               }}
               size="sm"
             />
@@ -38,7 +38,7 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
         <NftCardFooter
           avatarImage={{
             src: data?.nfts[0]?.collection?.image_url || "",
-            alt: data?.nfts[0]?.collection?.name || "collection-img",
+            alt: `${data?.nfts[0]?.collection?.name}-img` || "collection-img",
           }}
           collectionName={data?.nfts[0]?.collection?.name || ""}
           footerWrapperStyles="p-0"

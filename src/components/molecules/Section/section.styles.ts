@@ -6,5 +6,5 @@ export const styles = {
   section_mobileCtaWrapper: "flex w-full flex-col lg:hidden",
   section_childrenWrapper: "flex flex-col w-full",
   section_title: "drop-shadow-alpha4",
-  section_subTitle: "drop-shadow-alpha4",
+  section_subTitle: "drop-shadow-alpha4 heading5",
 };

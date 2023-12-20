@@ -35,11 +35,11 @@ export const useCollectionDetails = ({
         href: `/nft/${chain}/${contract_address}/${token_id}`,
         avatarImage: {
           src: collection?.image_url,
-          alt: collection?.name,
+          alt: ` ${collection?.name}-img`,
         },
         cardImage: {
           src: image_url || previews?.image_medium_url,
-          alt: name || "nft-img",
+          alt: `${name}-img`,
         },
       };
     });

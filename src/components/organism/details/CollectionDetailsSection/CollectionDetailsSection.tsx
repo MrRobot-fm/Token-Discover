@@ -44,11 +44,11 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
       <DetailsPageCover
         bannerProps={{
           src: collectionById?.collections[0]?.banner_image_url || "",
-          alt: collectionById?.collections[0]?.name || "",
+          alt: `${collectionById?.collections[0]?.collection_id}-img`,
         }}
         avatarProps={{
           src: collectionById?.collections[0]?.image_url || "",
-          alt: collectionById?.collections[0]?.name || "",
+          alt: `${collectionById?.collections[0]?.name}-img`,
         }}
         isLoading={isLoading}
       />
