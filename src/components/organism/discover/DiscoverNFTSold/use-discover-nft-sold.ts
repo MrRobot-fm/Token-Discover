@@ -37,12 +37,12 @@ export const useDiscoverNftSold = ({
         href: `/nft/${chain}/${contract_address}/${token_id}`,
         image: {
           src: image_url,
-          alt: name,
+          alt: `${name}-img` || `#${token_id}-img`,
         },
         collection: {
           image: {
             src: collection?.image_url,
-            alt: collection?.name,
+            alt: `${collection?.name}-img`,
           },
           name: collection?.name,
         },

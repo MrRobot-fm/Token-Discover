@@ -48,12 +48,12 @@ export const HighlightedNftList = ({
                   collectionName={collection?.name}
                   nftName={name || ""}
                   avatarImage={{
-                    src: collection?.image_url || "",
-                    alt: collection?.name || "",
+                    src: collection?.image_url,
+                    alt: `${collection?.name}-img`,
                   }}
                   cardImage={{
-                    src: image_url || "",
-                    alt: name || "nft-img",
+                    src: image_url,
+                    alt: `${name}-img`,
                   }}
                 />
               </CarouselItem>
@@ -83,12 +83,12 @@ export const HighlightedNftList = ({
           collectionName={collection?.name}
           nftName={name || ""}
           avatarImage={{
-            src: collection?.image_url || "",
-            alt: collection?.name || "",
+            src: collection?.image_url,
+            alt: `${collection?.name}-img`,
           }}
           cardImage={{
-            src: image_url || "",
-            alt: name || "nft-img",
+            src: image_url,
+            alt: `${name}-img`,
           }}
         />
       </CarouselItem>

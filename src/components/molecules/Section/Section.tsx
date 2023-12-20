@@ -20,11 +20,11 @@ export const Section = (props: SectionProps) => {
           <h3 className={`${titleProps?.titleStyles} ${styles.section_title}`}>
             {title}
           </h3>
-          <h5
+          <h4
             className={`${titleProps?.subtitleStyles} ${styles.section_subTitle}`}
           >
             {subTitle}
-          </h5>
+          </h4>
         </div>
         {hasCta && (
           <div className={styles.section_desktopCtaWrapper}>

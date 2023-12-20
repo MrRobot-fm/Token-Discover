@@ -13,9 +13,9 @@ export const FooterLinks = () => {
           <div className="flex flex-col gap-[2rem] text-gray-300">
             {item.links.map((link, index) => (
               <Button
-                key={`${index}-${link?.label}`}
-                href={link?.route || ""}
-                label={link?.label}
+                key={`${index}-${link.label}`}
+                href={link.route || ""}
+                label={link.label}
                 variant="link"
               />
             ))}

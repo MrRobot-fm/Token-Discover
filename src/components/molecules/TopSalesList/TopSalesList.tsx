@@ -36,12 +36,12 @@ export const TopSalesList = ({ collectionId }: { collectionId: string[] }) => {
         href: `/nft/${chain}/${contract_address}/${token_id}`,
         image: {
           src: image_url,
-          alt: token_id,
+          alt: `#${token_id}-img`,
         },
         collection: {
           image: {
             src: collection?.image_url,
-            alt: collection?.name,
+            alt: `${collection?.name}-img`,
           },
           name: collection?.name,
         },
