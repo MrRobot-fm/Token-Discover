@@ -18,6 +18,7 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
           image={{
             src: data?.nfts[0]?.image_url || "",
             alt: data?.nfts[0]?.name || "nft-img",
+            priority: true,
           }}
           size="md"
         />

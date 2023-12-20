@@ -1,30 +1,19 @@
-"use client";
-
-import { useGetNftByTokenId } from "@/api/NFT/hooks/use-get-nft-by-token-id";
-import { Skeleton } from "@/components/molecules/Skeleton/Skeleton";
+import { HERO_CARD_AVATAR_IMG, HERO_CARD_IMG } from "@/utils/constants/global";
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 
 export const HeroCard = () => {
-  const { data: nftData, isLoading } = useGetNftByTokenId({
-    chain: "ethereum",
-    contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
-    tokenId: "4160",
-  });
-
-  return isLoading ? (
-    <Skeleton />
-  ) : (
+  return (
     <HighlightedNFTCard
-      nftName={`#${nftData?.token_id}` || ""}
-      collectionName={nftData?.collection?.name || ""}
+      nftName="#26"
+      collectionName="Mutant Ape Yacht Club"
       cardImage={{
-        src: nftData?.image_url || "",
-        alt: nftData?.token_id || "",
+        src: HERO_CARD_IMG,
+        alt: "#26-img",
         priority: true,
       }}
       avatarImage={{
-        src: nftData?.collection?.image_url || "",
-        alt: nftData?.collection?.name || "",
+        src: HERO_CARD_AVATAR_IMG,
+        alt: "collection-img",
       }}
     />
   );
