@@ -35,4 +35,5 @@ export type IconName =
   | "magicWand"
   | "planet"
   | "bookmark"
-  | "swatches";
+  | "swatches"
+  | "siteLogo";
