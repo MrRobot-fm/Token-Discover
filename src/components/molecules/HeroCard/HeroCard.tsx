@@ -1,30 +1,18 @@
-"use client";
-
-import { useGetNftByTokenId } from "@/api/NFT/hooks/use-get-nft-by-token-id";
-import { Skeleton } from "@/components/molecules/Skeleton/Skeleton";
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 
 export const HeroCard = () => {
-  const { data: nftData, isLoading } = useGetNftByTokenId({
-    chain: "ethereum",
-    contractAddress: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
-    tokenId: "4160",
-  });
-
-  return isLoading ? (
-    <Skeleton />
-  ) : (
+  return (
     <HighlightedNFTCard
-      nftName={`#${nftData?.token_id}` || ""}
-      collectionName={nftData?.collection?.name || ""}
+      nftName="#26"
+      collectionName="Mutant Ape Yacht Club"
       cardImage={{
-        src: nftData?.image_url || "",
-        alt: nftData?.token_id || "",
+        src: "https://cdn.simplehash.com/assets/5d3fd2e902eb5ff4a8f2a8f6dfb27f70dcf73527358f8fae013c6088f1d3a33d.png",
+        alt: "#26-img",
         priority: true,
       }}
       avatarImage={{
-        src: nftData?.collection?.image_url || "",
-        alt: nftData?.collection?.name || "",
+        src: "https://lh3.googleusercontent.com/C_fjl1iM5iRwuk74N9DBrOmU-1-_lc_8x66BsWU8votTb3iwXiVJwmqJ2qd8BUI1DSDo_9KxcNcNJrdpnnxebLwpeJB7eiYSeI8",
+        alt: "collection-img",
       }}
     />
   );
