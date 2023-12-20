@@ -1,3 +1,4 @@
+import { HERO_CARD_AVATAR_IMG, HERO_CARD_IMG } from "@/utils/constants/global";
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 
 export const HeroCard = () => {
@@ -6,12 +7,12 @@ export const HeroCard = () => {
       nftName="#26"
       collectionName="Mutant Ape Yacht Club"
       cardImage={{
-        src: "https://cdn.simplehash.com/assets/5d3fd2e902eb5ff4a8f2a8f6dfb27f70dcf73527358f8fae013c6088f1d3a33d.png",
+        src: HERO_CARD_IMG,
         alt: "#26-img",
         priority: true,
       }}
       avatarImage={{
-        src: "https://lh3.googleusercontent.com/C_fjl1iM5iRwuk74N9DBrOmU-1-_lc_8x66BsWU8votTb3iwXiVJwmqJ2qd8BUI1DSDo_9KxcNcNJrdpnnxebLwpeJB7eiYSeI8",
+        src: HERO_CARD_AVATAR_IMG,
         alt: "collection-img",
       }}
     />
