@@ -1,13 +1,17 @@
 import { Fragment } from "react";
-import { footerLinksMap } from "@/utils/constants/footer-links-map";
+import type { FooterLinksModel } from "@/types/model/links";
 import { Button } from "@/components/atoms/Button/Button";
 
-export const FooterLinks = () => {
+export const FooterLinks = ({
+  footerLinks,
+}: {
+  footerLinks: FooterLinksModel;
+}) => {
   return (
     <div className="flex flex-col gap-[2.5rem]">
-      {footerLinksMap?.map((item) => (
-        <Fragment key={item.id}>
-          <p key={`${item?.id}-${item?.title} `} className="heading5">
+      {footerLinks?.map((item, index) => (
+        <Fragment key={index}>
+          <p key={`${index}-${item?.title} `} className="heading5">
             {item.title}
           </p>
           <div className="flex flex-col gap-[2rem] text-gray-300">

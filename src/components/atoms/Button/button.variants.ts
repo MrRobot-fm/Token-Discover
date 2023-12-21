@@ -44,6 +44,8 @@ export const button = tv({
         buttonWrapper: "h-[7.2rem]",
         buttonLabel: "heading5 capitalize",
       },
+      xl: "",
+      xxl: "",
     },
   },
   compoundSlots: [

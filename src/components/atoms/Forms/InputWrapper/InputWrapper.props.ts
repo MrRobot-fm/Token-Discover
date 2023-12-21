@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { HTMLProps, ReactNode } from "react";
 import type { FieldError } from "react-hook-form";
 
 export type InputWrapperProps = {
@@ -6,4 +6,5 @@ export type InputWrapperProps = {
   isError?: boolean;
   error?: FieldError;
   errorMessage?: string;
+  inputWrapperStyles?: HTMLProps<HTMLInputElement>["className"];
 };

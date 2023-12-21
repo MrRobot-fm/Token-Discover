@@ -1,1 +1,1 @@
-export const INPUT_MIN_LENGTH = 6;
+export const INPUT_MIN_LENGTH = 4;

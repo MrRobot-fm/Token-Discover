@@ -1,49 +1,51 @@
-import { FooterSocialLinks } from "@/types/model/footer-social-links";
-import type { ButtonVariants } from "@/components/atoms/Button/button.variants";
+import type { FooterLinksModel, SocialLinksModel } from "@/types/model/links";
 
-export const footerLinksMap = [
+export const footerLinksMap: FooterLinksModel = [
   {
-    id: 1,
     title: "Explore",
     links: [
       {
-        id: 2,
         label: "Discover",
         type: "link",
         route: "/discover/top-collections",
+      },
+      {
+        label: "Get in touch",
+        type: "link",
+        route: "/contact-me",
       },
     ],
   },
 ];
 
-export const footerSocialLinksMap: FooterSocialLinks[] = [
+export const socialLinksMap: SocialLinksModel[] = [
   {
     icon: "github",
-    size: "xl" as ButtonVariants["size"],
+    size: "xl",
     variant: "link",
     url: "https://github.com/MrRobot-fm",
   },
   {
     icon: "linkedin",
-    size: "xl" as ButtonVariants["size"],
+    size: "xl",
     variant: "link",
     url: "https://www.linkedin.com/in/federicomigliore/",
   },
   {
     icon: "instagram",
-    size: "xl" as ButtonVariants["size"],
+    size: "xl",
     variant: "link",
     url: "https://www.instagram.com/federix_aegon/",
   },
   {
     icon: "whatsapp",
-    size: "xl" as ButtonVariants["size"],
+    size: "xl",
     variant: "link",
     url: "https://wa.me/+393792302349",
   },
   {
     icon: "mailLetter",
-    size: "xl" as ButtonVariants["size"],
+    size: "xl",
     variant: "link",
     url: "mailto:federicomiglioredev@gmail.com",
   },

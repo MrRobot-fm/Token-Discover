@@ -14,7 +14,7 @@ export const sharedFormValidation: {
 export const textFormValidation: RegisterOptions = {
   minLength: {
     value: INPUT_MIN_LENGTH,
-    message: "Field must be at least 6 characters",
+    message: "Field must be at least 4 characters",
   },
   ...sharedFormValidation,
 };

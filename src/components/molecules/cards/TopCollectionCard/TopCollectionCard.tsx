@@ -27,7 +27,7 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
             <TopCollectionContent
               key={`${index}-${item?.nft_id}`}
               image={{
-                src: item?.previews?.image_small_url,
+                src: item?.previews?.image_small_url || "",
                 alt: `${item?.collection?.name}-img`,
               }}
               size="sm"

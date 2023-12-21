@@ -35,12 +35,13 @@ export const useDiscoverNfts = ({
         nftName: name || `#${token_id}`,
         href: `/nft/${chain}/${contract_address}/${token_id}`,
         avatarImage: {
-          src: collection?.image_url,
+          src: collection?.image_url || "",
           alt: `${collection?.name}-img` || `#${token_id}-img`,
         },
         cardImage: {
-          src: image_url || previews?.image_medium_url,
+          src: image_url || previews?.image_medium_url || "",
           alt: `${name}-img`,
+          priority: true,
         },
       };
     });
