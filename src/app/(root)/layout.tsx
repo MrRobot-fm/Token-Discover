@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import TanstackQUeryProvider from "@/utils/providers/tanstack-query-provider";
 import { Cursor } from "@/components/atoms/Cursor/Cursor";
 import { Navbar } from "@/components/molecules/nav/Navbar/Navbar";
@@ -23,6 +25,7 @@ export default function RootLayout({
           <Cursor />
           <Navbar />
           {children}
+          <ToastContainer position="top-right" autoClose={3000} />
           <Footer />
         </TanstackQUeryProvider>
       </body>

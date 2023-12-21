@@ -14,9 +14,9 @@ export const links = [
     targetSegment: "discover",
   },
   {
-    text: "Rankings",
-    route: "/rankings",
-    icon: "trendUp" as IconName,
-    targetSegment: "rankings",
+    text: "Get in touch",
+    route: "/contact-me",
+    icon: "mailLetter" as IconName,
+    targetSegment: "contact-me",
   },
 ];

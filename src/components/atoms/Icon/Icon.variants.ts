@@ -10,7 +10,7 @@ export const icon = tv({
       md: "h-[2.1rem] w-[2.1rem]",
       lg: "h-[2.5rem] w-[2.5rem]",
       xl: "h-[3.2rem] w-[3.2rem]",
-      xxl: "h-[10rem] w-[10rem]",
+      xxl: "h-[4.2rem] w-[4.2rem]",
     },
   },
   defaultVariants: {

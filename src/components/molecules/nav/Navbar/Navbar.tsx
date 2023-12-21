@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { links } from "@/utils/constants/links-object-map";
+import { links } from "@/utils/constants/navbar-links-map";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { NavbarLinks } from "@/components/atoms/navbar/NavbarLinks/NavbarLinks";
 import { NavLogo } from "@/components/atoms/navbar/NavbarLogo/NavbarLogo";
@@ -28,7 +28,7 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <NavLogo />
+      <NavLogo text="Token Discover" />
       <div className={styles.desktopNavLinksWrapper}>
         <NavbarLinks {...{ links }} />
       </div>

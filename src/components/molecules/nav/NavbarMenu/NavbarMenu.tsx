@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { links } from "@/utils/constants/links-object-map";
+import { links } from "@/utils/constants/navbar-links-map";
 import { useScrollBehavior } from "@/hooks/use-scroll-behavior";
 import { Button } from "@/components/atoms/Button/Button";
 import type { NavbarMenuProps } from "./NavbarMenu.props";

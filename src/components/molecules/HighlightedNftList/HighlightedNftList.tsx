@@ -48,11 +48,11 @@ export const HighlightedNftList = ({
                   collectionName={collection?.name}
                   nftName={name || ""}
                   avatarImage={{
-                    src: collection?.image_url,
+                    src: collection?.image_url || "",
                     alt: `${collection?.name}-img`,
                   }}
                   cardImage={{
-                    src: image_url,
+                    src: image_url || "",
                     alt: `${name}-img`,
                   }}
                 />
@@ -71,11 +71,13 @@ export const HighlightedNftList = ({
       contract_address,
       token_id,
       collection,
-      image_url,
+      previews,
       name,
     } = nfts[0] || {};
 
-    return (
+    return isLoading ? (
+      <Skeleton key={index} variant="nfts" />
+    ) : (
       <CarouselItem key={`${index}-${nft_id}`}>
         <HighlightedNFTCard
           href={`/nft/${chain}/${contract_address}/${token_id}`}
@@ -83,11 +85,11 @@ export const HighlightedNftList = ({
           collectionName={collection?.name}
           nftName={name || ""}
           avatarImage={{
-            src: collection?.image_url,
+            src: collection?.image_url || "",
             alt: `${collection?.name}-img`,
           }}
           cardImage={{
-            src: image_url,
+            src: previews?.image_medium_url || "",
             alt: `${name}-img`,
           }}
         />
