@@ -27,14 +27,14 @@ export const CollectionDetailsInfo = ({
           variant="link"
           icon="globe"
           label="marketplace url"
-          href={data?.collections[0].marketplace_pages[0]?.collection_url}
+          href={data?.collections[0]?.marketplace_pages[0]?.collection_url}
         />
         <Button
           size="lg"
           variant="link"
           icon="globe"
           label="discord url"
-          href={data?.collections[0].discord_url}
+          href={data?.collections[0]?.discord_url}
         />
       </div>
     </div>

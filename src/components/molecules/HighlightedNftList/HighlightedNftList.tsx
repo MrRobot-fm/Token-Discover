@@ -43,7 +43,7 @@ export const HighlightedNftList = ({
             ) : (
               <CarouselItem key={`${index}-${nft_id}`}>
                 <HighlightedNFTCard
-                  href={`/nft/${chain}/${contract_address}/${token_id}`}
+                  href={`/nft/?chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection?.collection_id}`}
                   variant="nft"
                   collectionName={collection?.name}
                   nftName={name || ""}

@@ -6,3 +6,9 @@ export const PAGES_PATH = {
   SIGN_IN: "/sign-in",
   SIGN_UP: "/sign-up",
 };
+
+export const DISCOVER_PARAMS = {
+  TOP_COLLECTIONS: "top-collections",
+  TOP_SOLD_NFTS: "top-sold-nfts",
+  TRENDING_NFTS: "trending-nfts",
+};

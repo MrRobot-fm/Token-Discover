@@ -33,7 +33,7 @@ export const useDiscoverNfts = ({
         variant: "nft",
         collectionName: collection?.name,
         nftName: name || `#${token_id}`,
-        href: `/nft/${chain}/${contract_address}/${token_id}`,
+        href: `/nft/?chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection?.collection_id}`,
         avatarImage: {
           src: collection?.image_url || "",
           alt: `${collection?.name}-img` || `#${token_id}-img`,
