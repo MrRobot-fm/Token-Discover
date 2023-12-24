@@ -41,5 +41,10 @@ export const getNftDetailsParams = async ({
     ...(nftByCollectionArray || []),
   ];
 
-  return topSalesByCollectionParams?.concat(nftParams);
+  const mergedArray = [
+    ...(topSalesByCollectionParams || []),
+    ...(nftParams || []),
+  ];
+
+  return mergedArray;
 };
