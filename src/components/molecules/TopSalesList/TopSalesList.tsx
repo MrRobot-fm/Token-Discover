@@ -16,10 +16,10 @@ export const TopSalesList = ({ collectionId }: { collectionId: string[] }) => {
   const parsedItems: TopNftSoldCardProps[] = useMemo(() => {
     if (!topNftSales) return [];
 
-    return topNftSales.map((item) => {
+    return topNftSales?.map((item) => {
       const { top_sales = [] } = item || {};
 
-      const { nft_details } = top_sales[0] || [];
+      const { nft_details, collection_id } = top_sales[0] || [];
 
       const {
         name,
@@ -33,7 +33,7 @@ export const TopSalesList = ({ collectionId }: { collectionId: string[] }) => {
 
       return {
         nftName: name || `#${token_id}`,
-        href: `/nft/${chain}/${contract_address}/${token_id}`,
+        href: `/nft/?chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection_id}`,
         image: {
           src: image_url || "",
           alt: `#${token_id}-img`,

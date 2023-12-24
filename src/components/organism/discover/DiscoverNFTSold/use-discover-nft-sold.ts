@@ -20,7 +20,7 @@ export const useDiscoverNftSold = ({
     return data?.map((item) => {
       const { top_sales = [] } = item || {};
 
-      const { nft_details } = top_sales[0] || {};
+      const { nft_details, collection_id } = top_sales[0] || {};
 
       const {
         name,
@@ -34,7 +34,7 @@ export const useDiscoverNftSold = ({
 
       return {
         nftName: name || `#${token_id}`,
-        href: `/nft/${chain}/${contract_address}/${token_id}`,
+        href: `/nft/?chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection_id}`,
         image: {
           src: image_url || "",
           alt: `${name}-img` || `#${token_id}-img`,

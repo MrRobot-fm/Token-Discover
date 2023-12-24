@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { GetTopCollectionsSearchParams } from "@/types/model/api-top-collections";
 import {
   GetTopSalesByCollectionResponseModel,
@@ -20,5 +21,5 @@ export const getTopSalesByCollection = async ({
     }
   );
 
-  return response.data;
+  return response?.data;
 };

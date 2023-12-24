@@ -3,34 +3,34 @@
 import { useState } from "react";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { useFetchNextPage } from "@/hooks/use-fetch-next-page";
-import { useGetTopCollections } from "@/api/collections/hooks/use-get-top-collections";
-import { DiscoverNFTSold } from "@/components/organism/discover/DiscoverNFTSold/DiscoverNFTSold";
+import { useGetTrendingCollections } from "@/api/collections/hooks/use-get-trending-collections";
+import { DiscoverNFTs } from "@/components/organism/discover/DiscoverNfts/DiscoverNFTs";
 
-export default function TopSoldNFTsPage() {
+export const DiscoverTrendingNftsSection = () => {
   const [nextPage, setNextPage] = useState("");
 
   const { isBase, isMobile, isTablet } = useBreakpoints();
 
   const limitValue = isBase || isMobile || isTablet ? 10 : 20;
 
-  const { data: topCollection } = useGetTopCollections({
+  const { data: trendingCollection } = useGetTrendingCollections({
     chains: "ethereum,polygon,solana",
-    period: "7d",
+    interval: "24h",
     limit: limitValue,
     cursor: nextPage,
   });
 
-  const { collectionIds, handleFetchNextPage } = useFetchNextPage({
-    data: topCollection,
-    nextCursor: topCollection?.next_cursor || "",
+  const { handleFetchNextPage, collectionIds } = useFetchNextPage({
+    data: trendingCollection,
+    nextCursor: trendingCollection?.next_cursor || "",
     setNextPage,
     keyValue: "collections",
   });
 
   return (
-    <DiscoverNFTSold
+    <DiscoverNFTs
       collectionId={collectionIds || []}
       fetchNextPage={handleFetchNextPage}
     />
   );
-}
+};

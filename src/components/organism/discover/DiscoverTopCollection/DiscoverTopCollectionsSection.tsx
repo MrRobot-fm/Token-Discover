@@ -6,7 +6,7 @@ import { useFetchNextPage } from "@/hooks/use-fetch-next-page";
 import { useGetTopCollections } from "@/api/collections/hooks/use-get-top-collections";
 import { DiscoverTopCollection } from "@/components/organism/discover/DiscoverTopCollection/DiscoverTopCollection";
 
-export default function DiscoverTopCollectionsPage() {
+export const DiscoverTopCollectionsSection = () => {
   const [nextPage, setNextPage] = useState("");
 
   const { isBase, isMobile, isTablet } = useBreakpoints();
@@ -33,4 +33,4 @@ export default function DiscoverTopCollectionsPage() {
       fetchNextPage={handleFetchNextPage}
     />
   );
-}
+};

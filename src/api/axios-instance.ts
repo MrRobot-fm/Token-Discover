@@ -7,3 +7,10 @@ export const axiosInstance = axios.create({
     "X-API-KEY": process.env.NEXT_PUBLIC_API_KEY,
   },
 });
+
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error(error.response.data.detail);
+  }
+);
