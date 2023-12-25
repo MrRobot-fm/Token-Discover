@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
+import v from "voca";
 import type { GetTopSalesByCollectionResponseModel } from "@/types/model/api-top-sales-by-collection";
 import type { TopNftSoldCardProps } from "@/components/molecules/cards/TopNftSoldCard/TopNftSoldCard.props";
 
@@ -34,7 +35,9 @@ export const useDiscoverNftSold = ({
 
       return {
         nftName: name || `#${token_id}`,
-        href: `/nft/?chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection_id}`,
+        href: `/nft/?nftName=${
+          v.kebabCase(name) || null
+        }&chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection_id}`,
         image: {
           src: image_url || "",
           alt: `${name}-img` || `#${token_id}-img`,

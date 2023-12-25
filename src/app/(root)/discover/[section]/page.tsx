@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { useCallback } from "react";
+import v from "voca";
 import { discoverTabsMaps } from "@/utils/constants/discover-tabs-object-map";
 import { DISCOVER_PARAMS } from "@/utils/constants/pages-path";
 import { DiscoverTab } from "@/components/atoms/DiscoverTab/DiscoverTab";
@@ -8,6 +9,17 @@ import { Section } from "@/components/molecules/Section/Section";
 import { DiscoverTopSoldNftsSection } from "@/components/organism/discover/DiscoverNFTSold/DiscoverTopSoldNftsSection";
 import { DiscoverTrendingNftsSection } from "@/components/organism/discover/DiscoverNfts/DiscoverTrendingNftsSection";
 import { DiscoverTopCollectionsSection } from "@/components/organism/discover/DiscoverTopCollection/DiscoverTopCollectionsSection";
+
+export const generateMetadata = ({
+  params,
+}: {
+  params: { section: string };
+}) => {
+  const { section } = params || {};
+  return {
+    title: `${v.titleCase(section).replaceAll("-", " ")} | Token Discover`,
+  };
+};
 
 export default function DiscoverPage({
   params,

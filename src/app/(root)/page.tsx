@@ -1,10 +1,15 @@
 import { HydrationBoundary } from "@tanstack/react-query";
+import type { Metadata } from "next";
 import { prefetchTopCollections } from "@/api/collections/prefetch/prefetch-top-collections";
 import { prefetchTrendingCollections } from "@/api/collections/prefetch/prefetch-trending-collections";
 import { DiscoverNftSection } from "@/components/organism/DiscoverNftSection/DiscoverNftSection";
 import { HeroSection } from "@/components/organism/HeroSection/HeroSection";
 import { TopCollectionSection } from "@/components/organism/TopCollectionSection/TopCollectionSection";
 import { TopNFTSoldSection } from "@/components/organism/TopNFTSoldSection/TopNFTSoldSection";
+
+export const metadata: Metadata = {
+  title: "Home | Token Discover",
+};
 
 export default async function Home() {
   const { dehydrateState: dehydrateTopCollections } =

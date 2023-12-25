@@ -1,3 +1,4 @@
+import v from "voca";
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { useGetNftByCollectionByIdCombined } from "@/api/NFT/hooks/use-get-nft-by-collection-id-combined";
 import { Carousel } from "@/components/atoms/Carousel/Carousel";
@@ -43,7 +44,9 @@ export const HighlightedNftList = ({
             ) : (
               <CarouselItem key={`${index}-${nft_id}`}>
                 <HighlightedNFTCard
-                  href={`/nft/?chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection?.collection_id}`}
+                  href={`/nft/?nftName=${
+                    v.kebabCase(name) || null
+                  }&chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection?.collection_id}`}
                   variant="nft"
                   collectionName={collection?.name}
                   nftName={name || ""}

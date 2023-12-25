@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import v from "voca";
 import { useGetTopSalesByCollection } from "@/api/top-sales/hooks/use-get-top-sales-by-collection";
 import { Skeleton } from "@/components/molecules/Skeleton/Skeleton";
 import { TopNftSoldCard } from "@/components/molecules/cards/TopNftSoldCard/TopNftSoldCard";
@@ -33,7 +34,9 @@ export const TopSalesList = ({ collectionId }: { collectionId: string[] }) => {
 
       return {
         nftName: name || `#${token_id}`,
-        href: `/nft/?chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection_id}`,
+        href: `/nft/?nftName=${
+          v.kebabCase(name) || null
+        }&chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection_id}`,
         image: {
           src: image_url || "",
           alt: `#${token_id}-img`,

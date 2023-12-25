@@ -1,3 +1,4 @@
+import v from "voca";
 import { getNftByCollectionId } from "@/api/NFT/get-nft-by-collection-id";
 import { getTopSalesByCollection } from "@/api/top-sales/get-top-sales-by-collection";
 
@@ -19,21 +20,40 @@ export const getNftDetailsParams = async ({
 
   const topSalesByCollectionArray = topSalesByCollection?.top_sales?.map(
     (nft) => {
-      const { chain, contract_address, token_id, collection_id } = nft || {};
+      const {
+        nft_details: { name },
+        chain,
+        contract_address,
+        token_id,
+        collection_id,
+      } = nft || {};
 
-      return [chain, contract_address, token_id, collection_id];
+      return [
+        v.kebabCase(name),
+        chain,
+        contract_address,
+        token_id,
+        collection_id,
+      ];
     }
   );
 
   const nftByCollectionArray = nftByCollection?.nfts?.map((nft) => {
     const {
+      name,
       chain,
       contract_address,
       token_id,
       collection: { collection_id },
     } = nft || {};
 
-    return [chain, contract_address, token_id, collection_id];
+    return [
+      v.kebabCase(name),
+      chain,
+      contract_address,
+      token_id,
+      collection_id,
+    ];
   });
 
   const [topSalesByCollectionParams, nftParams] = [

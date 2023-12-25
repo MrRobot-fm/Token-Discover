@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/atoms/Button/Button";
+
+export const metadata: Metadata = {
+  title: "Not Found",
+};
 
 export default function NotFound() {
   return (
