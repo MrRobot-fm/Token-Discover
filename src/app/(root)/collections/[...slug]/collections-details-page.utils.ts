@@ -11,7 +11,7 @@ export const getCollectionDetailsParams = async () => {
     (collection) => collection?.collection_id
   );
   const topCollectionsNameArray = data?.collections?.map(
-    (collection) => v.kebabCase(collection?.collection_details?.name) || null
+    (collection) => v.kebabCase(collection?.collection_details?.name) || "null"
   );
 
   const mergedArray = [

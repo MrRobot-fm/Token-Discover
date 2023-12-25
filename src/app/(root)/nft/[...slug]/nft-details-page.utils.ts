@@ -29,10 +29,10 @@ export const getNftDetailsParams = async ({
       } = nft || {};
 
       return [
-        v.kebabCase(name),
+        v.kebabCase(name) || "null",
         chain,
         contract_address,
-        token_id,
+        token_id || "null",
         collection_id,
       ];
     }
@@ -48,10 +48,10 @@ export const getNftDetailsParams = async ({
     } = nft || {};
 
     return [
-      v.kebabCase(name),
+      v.kebabCase(name) || "null",
       chain,
       contract_address,
-      token_id,
+      token_id || "null",
       collection_id,
     ];
   });
