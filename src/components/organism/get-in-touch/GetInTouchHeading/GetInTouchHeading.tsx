@@ -1,13 +1,13 @@
 import { useMemo } from "react";
 import type { SocialLinksModel } from "@/types/model/links";
 import { SocialCta } from "@/components/molecules/footer/SocialCta/SocialCta";
-import type { GetInTouchProps } from "./GetInTouch.props";
+import type { GetInTouchHeadingProps } from "./GetInTouchHeading.props";
 
-export const GetInTouch = ({
+export const GetInTouchHeading = ({
   title,
   subTitle,
   socialLinks,
-}: GetInTouchProps) => {
+}: GetInTouchHeadingProps) => {
   const parsedSocialLinks: SocialLinksModel[] = useMemo(() => {
     return socialLinks.map((item) => {
       return {

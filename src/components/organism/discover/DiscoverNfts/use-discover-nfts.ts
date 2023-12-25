@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
+import v from "voca";
 import type { GetNftByCollectionsIdResponseModel } from "@/types/model/api-nft-by-collection-id";
 import type { HighlightNFTedCardProps } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard.props";
 
@@ -33,7 +34,9 @@ export const useDiscoverNfts = ({
         variant: "nft",
         collectionName: collection?.name,
         nftName: name || `#${token_id}`,
-        href: `/nft/?chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection?.collection_id}`,
+        href: `/nft/?${`nftName=${
+          v.kebabCase(name) || null
+        }`}&chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection?.collection_id}`,
         avatarImage: {
           src: collection?.image_url || "",
           alt: `${collection?.name}-img` || `#${token_id}-img`,

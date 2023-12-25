@@ -136,7 +136,7 @@ type NftModel = {
   chain: string;
   contract_address: string;
   token_id: string;
-  name: string | null;
+  name: string;
   description: string | null;
   previews: PreviewImages;
   image_url: string;
