@@ -7,11 +7,11 @@ import { NTFDetailsSection } from "@/components/organism/details/NFTDetailsSecti
 import { getNftDetailsParams } from "./nft-details-page.utils";
 
 export const generateMetadata = async ({
-  searchParams,
+  params,
 }: {
-  searchParams: { nftName: string; tokenId: string; collectionId: string };
+  params: { slug: string[] };
 }): Promise<Metadata> => {
-  const { nftName, tokenId, collectionId } = searchParams || {};
+  const [nftName, , , tokenId, collectionId] = params?.slug || [];
 
   const pageParams = await getNftDetailsParams({
     collectionId: collectionId,
@@ -22,12 +22,12 @@ export const generateMetadata = async ({
 
   const parsedNftName = v.titleCase(nftName).replaceAll("-", " ");
 
-  if (nameParams) {
+  if (nameParams && nftName !== "null") {
     return {
       title: `${parsedNftName} | Details Page`,
     };
   }
-  if (tokenIdParams) {
+  if (tokenIdParams && tokenId !== "null") {
     return {
       title: `#${tokenId} | Details Page`,
     };
@@ -39,18 +39,14 @@ export const generateMetadata = async ({
 };
 
 export default async function NFTDetailsPage({
-  searchParams,
+  params,
 }: {
-  searchParams: {
-    nftName: string;
-    chain: string;
-    contractAddress: string;
-    tokenId: string;
-    collectionId: string;
+  params: {
+    slug: string[];
   };
 }) {
-  const { nftName, chain, contractAddress, tokenId, collectionId } =
-    searchParams || {};
+  const [nftName, chain, contractAddress, tokenId, collectionId] =
+    params?.slug || [];
 
   const pageParams = await getNftDetailsParams({
     collectionId: collectionId,
@@ -62,14 +58,13 @@ export default async function NFTDetailsPage({
     tokenId,
   });
 
-  const emptySearchParam = !chain || !contractAddress || !tokenId;
-
-  const wrongSearchParam =
+  const wrongParams =
     !pageParams?.includes(contractAddress) ||
     !pageParams?.includes(chain) ||
-    !pageParams?.some((el) => el === tokenId || el === nftName);
+    !pageParams.includes(tokenId) ||
+    !pageParams?.includes(nftName);
 
-  if (emptySearchParam || wrongSearchParam) {
+  if (wrongParams) {
     return notFound();
   }
 

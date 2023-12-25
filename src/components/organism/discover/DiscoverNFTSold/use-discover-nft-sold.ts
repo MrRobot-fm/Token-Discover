@@ -35,9 +35,9 @@ export const useDiscoverNftSold = ({
 
       return {
         nftName: name || `#${token_id}`,
-        href: `/nft/?nftName=${
+        href: `/nft/${
           v.kebabCase(name) || null
-        }&chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection_id}`,
+        }/${chain}/${contract_address}/${token_id}/${collection_id}`,
         image: {
           src: image_url || "",
           alt: `${name}-img` || `#${token_id}-img`,

@@ -34,9 +34,9 @@ export const useDiscoverNfts = ({
         variant: "nft",
         collectionName: collection?.name,
         nftName: name || `#${token_id}`,
-        href: `/nft/?${`nftName=${
+        href: `/nft/${
           v.kebabCase(name) || null
-        }`}&chain=${chain}&contractAddress=${contract_address}&tokenId=${token_id}&collectionId=${collection?.collection_id}`,
+        }/${chain}/${contract_address}/${token_id}/${collection?.collection_id}`,
         avatarImage: {
           src: collection?.image_url || "",
           alt: `${collection?.name}-img` || `#${token_id}-img`,
