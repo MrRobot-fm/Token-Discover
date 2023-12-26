@@ -7,7 +7,7 @@ export const NavLogo = ({ text }: { text: string }) => {
         name="siteLogo"
         className="h-[3.2rem] w-[3.2rem] text-callToAction"
       />
-      <span className="heading5 font-bold">{text}</span>
+      <span className="heading5 font-bold text-white">{text}</span>
     </div>
   );
 };

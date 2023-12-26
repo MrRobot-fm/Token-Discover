@@ -1,5 +1,6 @@
 "use client";
 
+import { notFound } from "next/navigation";
 import { useGetNftByTokenId } from "@/api/NFT/hooks/use-get-nft-by-token-id";
 import { DetailsPageCover } from "@/components/molecules/details/DetailsPageCover/DetailsPageCover";
 import { NFTDetailsInfo } from "@/components/molecules/details/NFTDetailsInfo/NFTDetailsInfo";
@@ -18,6 +19,10 @@ export const NTFDetailsSection = ({
     contractAddress,
     tokenId,
   });
+
+  if (!Object.keys(data || {}).length) {
+    return notFound();
+  }
 
   return (
     <div className="flex flex-col">

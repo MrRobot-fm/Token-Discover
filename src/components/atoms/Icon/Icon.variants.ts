@@ -11,6 +11,7 @@ export const icon = tv({
       lg: "h-[2.5rem] w-[2.5rem]",
       xl: "h-[3.2rem] w-[3.2rem]",
       xxl: "h-[4.2rem] w-[4.2rem]",
+      fluid: "",
     },
   },
   defaultVariants: {

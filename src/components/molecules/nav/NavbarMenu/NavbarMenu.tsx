@@ -1,12 +1,17 @@
+import { useSelectedLayoutSegment } from "next/navigation";
 import { useEffect } from "react";
 import { links } from "@/utils/constants/navbar-links-map";
 import { useScrollBehavior } from "@/hooks/use-scroll-behavior";
 import { Button } from "@/components/atoms/Button/Button";
+import { NavLogo } from "@/components/atoms/navbar/NavbarLogo/NavbarLogo";
+import { NavbarMenuButton } from "@/components/atoms/navbar/NavbarMenuButton/NavMenuButton";
 import type { NavbarMenuProps } from "./NavbarMenu.props";
 import { styles } from "./NavbarMenu.styles";
 
 export const NavbarMenu = (props: NavbarMenuProps) => {
   const { isMenuOpen, toggleMenu } = props;
+
+  const segment = useSelectedLayoutSegment();
 
   const { disableScroll, enableScroll } = useScrollBehavior();
 
@@ -34,12 +39,13 @@ export const NavbarMenu = (props: NavbarMenuProps) => {
         } ${styles.navbarMenu}`}
       >
         <div className={styles.navbarMenu_header}>
-          <Button
-            label="close menu"
-            icon="arrowLeft"
+          <NavLogo text="token discover" />
+          <NavbarMenuButton
+            icon="close"
             variant="link"
-            size="md"
+            size="lg"
             onClick={toggleMenu}
+            buttonWrapperStyles="gap-0"
           />
         </div>
 
@@ -53,6 +59,11 @@ export const NavbarMenu = (props: NavbarMenuProps) => {
               variant="link"
               size="lg"
               onClick={toggleMenu}
+              buttonWrapperStyles={
+                link.targetSegment === segment
+                  ? "scale-110 text-callToAction"
+                  : ""
+              }
             />
           ))}
           <Button

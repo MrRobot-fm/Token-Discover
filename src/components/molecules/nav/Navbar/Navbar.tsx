@@ -11,16 +11,16 @@ import { NavbarMenu } from "@/components/molecules/nav/NavbarMenu/NavbarMenu";
 import { styles } from "./navbar.styles";
 
 export const Navbar = () => {
-  const { isTablet, isMobile } = useBreakpoints();
+  const { isTablet, isBase, isMobile } = useBreakpoints();
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    if (isTablet || isMobile) {
+    if (isTablet || isBase || isMobile) {
       return;
     }
     setIsMenuOpen(false);
-  }, [isMobile, isTablet, setIsMenuOpen]);
+  }, [isBase, isMobile, isTablet, setIsMenuOpen]);
 
   const handleToggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -34,7 +34,13 @@ export const Navbar = () => {
       </div>
 
       <div className={styles.mobileNavLinksWrapper}>
-        <NavbarMenuButton toggleMenu={handleToggleMenu} />
+        <NavbarMenuButton
+          icon="list"
+          variant="link"
+          size="xxl"
+          onClick={handleToggleMenu}
+          buttonWrapperStyles="gap-0"
+        />
         <Portal>
           <NavbarMenu isMenuOpen={isMenuOpen} toggleMenu={handleToggleMenu} />
         </Portal>

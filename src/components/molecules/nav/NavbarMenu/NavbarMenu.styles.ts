@@ -5,9 +5,9 @@ export const styles = {
     "bg-background-grey px-[3rem] py-[3.9rem] transition duration-500 base:w-full md:w-[70%]",
   navbarMenu_translateXToOrigin: "-translate-x-[0%]",
   navbarMenu_translateXToHidden: "translate-x-[100%]",
-  navbarMenu_header: "mb-[4rem] text-callToAction",
+  navbarMenu_header: "mb-[4rem]  flex justify-between items-center",
   navbarMenu_body:
-    "flex h-[80%] flex-col items-start gap-[8rem] py-[5rem] text-callToAction",
+    "flex h-[80%] flex-col items-start gap-[8rem] py-[5rem] text-white",
   opacity_0: "opacity-0",
   opacity_1: "opacity-100",
 };

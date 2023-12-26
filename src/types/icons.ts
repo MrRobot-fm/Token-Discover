@@ -36,4 +36,6 @@ export type IconName =
   | "planet"
   | "bookmark"
   | "swatches"
-  | "siteLogo";
+  | "siteLogo"
+  | "close"
+  | "hamburger";

@@ -1,5 +1,6 @@
 "use client";
 
+import { notFound } from "next/navigation";
 import { useState } from "react";
 import { useFetchNextPage } from "@/hooks/use-fetch-next-page";
 import { useGetNftCollectionById } from "@/api/NFT/hooks/use-get-nft-by-collection-id";
@@ -38,6 +39,14 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
   const { filteredItems, register } = useCollectionDetails({
     data: itemsLoaded as GetNftByCollectionsIdResponseModel["nfts"],
   });
+
+  if (
+    !isLoading &&
+    !isNFTLoading &&
+    (!collectionById?.collections?.length || !nftByCollectionId?.nfts?.length)
+  ) {
+    return notFound();
+  }
 
   return (
     <div className={styles.collectionDetailsSection}>

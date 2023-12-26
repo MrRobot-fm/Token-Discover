@@ -45,4 +45,10 @@
   .span {
     @apply text-[1.2rem] font-normal leading-[110%];
   }
+  .discoverTab::-webkit-scrollbar {
+    @apply h-[0.8rem] rounded-[2rem] bg-label-grey;
+  }
+  .discoverTab::-webkit-scrollbar-thumb:horizontal {
+    @apply rounded-[2rem] bg-callToAction;
+  }
 }

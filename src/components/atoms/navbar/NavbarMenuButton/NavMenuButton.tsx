@@ -1,13 +1,7 @@
-import { Icon } from "@/components/atoms/Icon/Icon";
+import { Button } from "@/components/atoms/Button/Button";
+import type { ButtonProps } from "@/components/atoms/Button/Button.props";
 
-export const NavbarMenuButton = ({
-  toggleMenu,
-}: {
-  toggleMenu: () => void;
-}) => {
-  return (
-    <div className="flex cursor-pointer" onClick={toggleMenu}>
-      <Icon name="list" className="h-[3.2rem] w-[3.2rem]" />
-    </div>
-  );
+export const NavbarMenuButton = (props: ButtonProps) => {
+  const { icon, variant, size, onClick, buttonWrapperStyles } = props;
+  return <Button {...{ icon, variant, size, onClick, buttonWrapperStyles }} />;
 };

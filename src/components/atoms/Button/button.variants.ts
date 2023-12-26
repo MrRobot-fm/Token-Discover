@@ -30,6 +30,10 @@ export const button = tv({
         buttonWrapper:
           "w-[6rem] gap-0 rounded-full bg-label-grey p-0 text-white base:hidden lg:flex",
       },
+      segmentControl: {
+        buttonWrapper:
+          "rounded-[2rem] p-[1rem] shadow-none transition-all duration-300 data-[selected=true]:bg-callToAction data-[selected=true]:shadow-alpha3",
+      },
     },
     size: {
       sm: {
@@ -43,6 +47,11 @@ export const button = tv({
       lg: {
         buttonWrapper: "h-[7.2rem]",
         buttonLabel: "heading5 capitalize",
+      },
+      fluid: {
+        buttonWrapper: "h-fit base:w-[11rem]   md:w-[16.8rem]",
+        buttonLabel:
+          "base:span md:paragraph capitalize base:font-bold md:font-semibold",
       },
       xl: "",
       xxl: "",

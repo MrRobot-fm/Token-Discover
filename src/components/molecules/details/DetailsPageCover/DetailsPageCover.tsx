@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { DEFAULT_IMG_URL_FALLBACK } from "@/utils/constants/global";
 import { useParallax } from "@/hooks/use-parallax";
 import { Avatar } from "@/components/atoms/Avatar/Avatar";
 import { CustomImage } from "@/components/atoms/Image/CustomImage";
@@ -17,7 +18,7 @@ export const DetailsPageCover = (props: DetailsPageCoverProps) => {
         style={{ y: background }}
       >
         <CustomImage
-          src={bannerProps?.src}
+          src={bannerProps?.src || DEFAULT_IMG_URL_FALLBACK}
           alt={bannerProps?.alt}
           isLoading={isLoading}
           priority
