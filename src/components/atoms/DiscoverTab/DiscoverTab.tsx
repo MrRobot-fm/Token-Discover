@@ -1,10 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Fragment } from "react";
 import type { DiscoverTabsModel } from "@/types/model/discover-tabs-model";
-import { Button } from "@/components/atoms/Button/Button";
-import { styles } from "./discover-tab.styles";
+import { SegmentControl } from "@/components/molecules/SegmentControl/SegmentControl";
 
 export const DiscoverTab = ({
   discoverTabsMap,
@@ -14,21 +12,8 @@ export const DiscoverTab = ({
   const pathname = usePathname();
 
   return (
-    <div className={styles.discoverTabWrapper}>
-      {discoverTabsMap.map((tab, index) => (
-        <Fragment key={`${index}-${tab.label}`}>
-          <Button
-            variant="link"
-            label={tab.label}
-            href={tab.url}
-            className={`${
-              pathname === tab.url &&
-              "scale-110 bg-purpleBlue bg-clip-text text-transparent transition duration-500 hover:text-purple-500"
-            } transition duration-500 hover:text-label-grey`}
-          />
-          <div className={styles.discoverTab_mobileBorder} />
-        </Fragment>
-      ))}
+    <div className="discoverTab mt-[3.5rem] grid w-full place-items-center overflow-x-auto pr-[-5rem]">
+      <SegmentControl options={discoverTabsMap} pathname={pathname} />
     </div>
   );
 };

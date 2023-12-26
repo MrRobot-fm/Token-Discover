@@ -18,8 +18,8 @@ export const highlightedNftCard = tv({
     variant: {
       hero: {
         linkWrapper: "base:w-full lg:w-fit",
-        cardWrapper: "base:w-full lg:min-w-[48rem] lg:max-w-[51rem]",
-        imageWrapper: "base:h-[20.6rem] md:h-[40.1rem]",
+        cardWrapper: "base:w-full lg:min-w-[45rem] lg:max-w-[48rem]",
+        imageWrapper: "base:h-[23.6rem] md:h-[44rem] lg:h-[38rem]",
       },
       nft: {
         linkWrapper: "w-full",

@@ -23,7 +23,7 @@ export const DiscoverTopCollection = ({
   });
 
   return (
-    <div className="w-full py-[8rem] base:space-y-[5rem] xl:space-y-[8rem]">
+    <div className="w-full py-[6rem] base:space-y-[4rem] xl:space-y-[6rem]">
       <SearchBar
         name="collectionSearchValue"
         placeholder="Search your favorite collections"

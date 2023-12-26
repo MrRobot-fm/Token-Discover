@@ -1136,6 +1136,30 @@ export const SiteLogo = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+export const Close = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 40 40" {...props}>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      fill="none"
+      d="m4 4 32 32M4 36 36 4"
+      stroke="currentColor"
+      strokeWidth="4"
+    />
+  </svg>
+);
+
+export const Hamburger = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 40 20" {...props}>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M0 4h40V0H0v4Zm0 16h40v-4H0v4Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 export const IconsList = {
   Rocket,
   RocketLaunch,
@@ -1175,4 +1199,6 @@ export const IconsList = {
   Linkedin,
   Whatsapp,
   SiteLogo,
+  Close,
+  Hamburger,
 };
