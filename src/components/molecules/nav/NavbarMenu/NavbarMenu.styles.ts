@@ -7,7 +7,7 @@ export const styles = {
   navbarMenu_translateXToHidden: "translate-x-[100%]",
   navbarMenu_header: "mb-[4rem]  flex justify-between items-center",
   navbarMenu_body:
-    "flex h-[80%] flex-col items-start gap-[8rem] py-[5rem] text-white",
+    "flex h-[80%] flex-col items-start base:gap-[6rem] md:gap-[8rem] py-[5rem] text-white",
   opacity_0: "opacity-0",
   opacity_1: "opacity-100",
 };

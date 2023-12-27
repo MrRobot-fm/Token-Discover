@@ -62,17 +62,10 @@ export const NavbarMenu = (props: NavbarMenuProps) => {
               buttonWrapperStyles={
                 link.targetSegment === segment
                   ? "scale-110 text-callToAction"
-                  : ""
+                  : "text-[5rem]"
               }
             />
           ))}
-          <Button
-            href="/sign-up"
-            label="Sign Up"
-            icon="user"
-            size="sm"
-            buttonWrapperStyles="px-[2rem]"
-          />
         </div>
       </aside>
     </div>

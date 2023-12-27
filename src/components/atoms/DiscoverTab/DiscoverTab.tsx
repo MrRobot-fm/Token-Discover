@@ -13,7 +13,11 @@ export const DiscoverTab = ({
 
   return (
     <div className="discoverTab mt-[3.5rem] grid w-full place-items-center overflow-x-auto pr-[-5rem]">
-      <SegmentControl options={discoverTabsMap} pathname={pathname} />
+      <SegmentControl
+        options={discoverTabsMap}
+        pathname={pathname}
+        isDiscoverSection
+      />
     </div>
   );
 };

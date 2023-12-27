@@ -23,8 +23,8 @@ export const button = tv({
       },
       link: {
         buttonWrapper:
-          "h-fit w-fit border-none bg-transparent p-0 text-inherit shadow-none transition duration-500 hover:text-white",
-        buttonLabel: " text-current",
+          "h-fit w-fit border-none bg-transparent bg-clip-text p-0 text-inherit shadow-none transition duration-500 hover:text-white data-[selected=true]:scale-110 data-[selected=true]:bg-purpleRed data-[selected=true]:text-transparent",
+        buttonLabel: "text-current",
       },
       carouselNavigation: {
         buttonWrapper:
@@ -53,7 +53,9 @@ export const button = tv({
         buttonLabel:
           "base:span md:paragraph capitalize base:font-bold md:font-semibold",
       },
-      xl: "",
+      xl: {
+        buttonLabel: "heading4 capitalize",
+      },
       xxl: "",
     },
   },
