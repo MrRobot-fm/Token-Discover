@@ -5,6 +5,7 @@ export const PAGES_PATH = {
   DISCOVER_TRENDING_NFTS: "/discover/trending-nfts",
   SIGN_IN: "/sign-in",
   SIGN_UP: "/sign-up",
+  GET_IN_TOUCH: "/contact-me",
 };
 
 export const DISCOVER_PARAMS = {

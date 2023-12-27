@@ -1,4 +1,8 @@
+import { IconName } from "../icons";
+
 export type DiscoverTabsModel = {
-  label: string;
-  url: string;
+  text?: string;
+  route?: string;
+  icon?: IconName;
+  targetSegment?: string | null;
 };
