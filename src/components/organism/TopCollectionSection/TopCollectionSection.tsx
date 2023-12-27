@@ -15,8 +15,8 @@ export const TopCollectionSection = () => {
   });
 
   const collectionIds = useMemo(() => {
-    return topCollection?.collections.map(
-      (collection) => collection.collection_id
+    return topCollection?.collections?.map(
+      (collection) => collection?.collection_id
     );
   }, [topCollection?.collections]);
 
