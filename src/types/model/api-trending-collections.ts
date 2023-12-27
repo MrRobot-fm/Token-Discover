@@ -60,6 +60,11 @@ export type GetTrendingCollectionsResponseModel = {
   collections: Collection[];
 };
 
+export type GetInfiniteTrendingCollectionsResponseModel = {
+  pageParams: string[];
+  pages: GetTrendingCollectionsResponseModel[];
+};
+
 export type GetTrendingCollectionsSearchParams = {
   chains?: string;
   time_period?: string;

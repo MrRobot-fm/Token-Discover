@@ -1,9 +1,7 @@
 "use client";
 
 import { notFound } from "next/navigation";
-import { useState } from "react";
-import { useFetchNextPage } from "@/hooks/use-fetch-next-page";
-import { useGetNftCollectionById } from "@/api/NFT/hooks/use-get-nft-by-collection-id";
+import { useGetInfiniteNftCollectionById } from "@/api/NFT/hooks/use-infinite-nft-by-collection-id";
 import { useGetCollectionById } from "@/api/collections/hooks/use-get-collection-by-id";
 import { GetNftByCollectionsIdResponseModel } from "@/types/model/api-nft-by-collection-id";
 import { SearchBar } from "@/components/atoms/Forms/SearchBar/SearchBar";
@@ -16,25 +14,20 @@ import { styles } from "./collection-details-section.styles";
 import { useCollectionDetails } from "./use-collection-details";
 
 export const CollectionDetailsSection = ({ id }: { id: string }) => {
-  const [nextPage, setNextPage] = useState("");
-
   const { data: collectionById, isLoading } = useGetCollectionById({
     collectionId: id,
   });
 
-  const { data: nftByCollectionId, isLoading: isNFTLoading } =
-    useGetNftCollectionById({
-      collectionId: id,
-      cursor: nextPage,
-      limit: 20,
-    });
-
-  const { itemsLoaded, handleFetchNextPage } = useFetchNextPage({
+  const {
     data: nftByCollectionId,
-    nextCursor: nftByCollectionId?.next_cursor || nextPage,
-    setNextPage,
-    keyValue: "nfts",
+    isFetching: isNFTLoading,
+    fetchNextPage,
+  } = useGetInfiniteNftCollectionById({
+    collectionId: id,
+    limit: 20,
   });
+
+  const itemsLoaded = nftByCollectionId?.pages?.flatMap((item) => item?.nfts);
 
   const { filteredItems, register } = useCollectionDetails({
     data: itemsLoaded as GetNftByCollectionsIdResponseModel["nfts"],
@@ -43,7 +36,7 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
   if (
     !isLoading &&
     !isNFTLoading &&
-    (!collectionById?.collections?.length || !nftByCollectionId?.nfts?.length)
+    (!collectionById?.collections?.length || !nftByCollectionId?.pages?.length)
   ) {
     return notFound();
   }
@@ -75,7 +68,7 @@ export const CollectionDetailsSection = ({ id }: { id: string }) => {
             <HighlightedNFTCard key={index} {...item} />
           ))}
         />
-        {!!filteredItems?.length && <LoadMore loadMore={handleFetchNextPage} />}
+        {!!filteredItems?.length && <LoadMore loadMore={fetchNextPage} />}
       </div>
     </div>
   );

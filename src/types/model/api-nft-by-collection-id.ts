@@ -172,6 +172,11 @@ export type GetNftByCollectionsIdResponseModel = {
   nfts: NftModel[];
 };
 
+export type GetInfiniteNftByCollectionsIdResponseModel = {
+  pageParams: string[];
+  pages: GetNftByCollectionsIdResponseModel[];
+};
+
 export type UseGetNftByCollectionsIdApiParams = {
   collectionId?: string;
   collectionsIds?: string[];

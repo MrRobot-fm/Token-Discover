@@ -73,6 +73,11 @@ export type GetTopCollectionsResponseModel = {
   collections: CollectionModel[];
 };
 
+export type GetInfiniteTopCollectionsResponseModel = {
+  pageParams: string[];
+  pages: GetTopCollectionsResponseModel[];
+};
+
 export type UseGetTopCollectionsApiParams = {
   chains: string;
   period?: string;

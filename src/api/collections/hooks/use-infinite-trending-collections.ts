@@ -1,15 +1,22 @@
-import { UseQueryOptions, useQuery } from "@tanstack/react-query";
+import {
+  UseInfiniteQueryOptions,
+  useInfiniteQuery,
+} from "@tanstack/react-query";
 import { useMemo } from "react";
 import { getTrendingCollections } from "@/api/collections/get-trending-collections";
 import type {
+  GetInfiniteTrendingCollectionsResponseModel,
   GetTrendingCollectionsResponseModel,
   GetTrendingCollectionsSearchParams,
   UseGetTrendingCollectionsApiParams,
 } from "@/types/model/api-trending-collections";
 
-export const useGetTrendingCollections = (
+export const useGetInfiniteTrendingCollections = (
   apiParams?: UseGetTrendingCollectionsApiParams,
-  queryOptions?: UseQueryOptions<GetTrendingCollectionsResponseModel>
+  queryOptions?: UseInfiniteQueryOptions<
+    GetTrendingCollectionsResponseModel &
+      GetInfiniteTrendingCollectionsResponseModel
+  >
 ) => {
   const { chains, interval, limit, includeContractDetails, cursor } =
     apiParams || {};
@@ -19,16 +26,22 @@ export const useGetTrendingCollections = (
       ...(chains && { chains }),
       ...(cursor && { cursor }),
       ...(interval && { time_period: interval }),
-      ...(limit && { limit }),
       ...(includeContractDetails && {
         include_top_contract_details: includeContractDetails,
       }),
     };
   }, [apiParams]);
 
-  return useQuery({
-    queryKey: ["trending-collections", parsedParams],
-    queryFn: () => getTrendingCollections(parsedParams),
+  return useInfiniteQuery({
+    queryKey: ["trending-collections", limit, parsedParams],
+    queryFn: ({ pageParam }) =>
+      getTrendingCollections({
+        cursor: pageParam as string,
+        limit,
+        ...parsedParams,
+      }),
     ...queryOptions,
+    initialPageParam: cursor,
+    getNextPageParam: (lastPage, _pages) => lastPage?.next_cursor,
   });
 };
