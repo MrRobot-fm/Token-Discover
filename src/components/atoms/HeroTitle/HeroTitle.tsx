@@ -1,6 +1,6 @@
 export const HeroTitle = ({
   title = "Discover digital art & Collect NFTs",
-  subTitle = "NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.",
+  subTitle = "Digital platform for crypto collectibles and non-fungible tokens, get started and discover your exclusive digital assets.",
 }: {
   title?: string;
   subTitle?: string;
