@@ -94,4 +94,5 @@ export type GetTopCollectionsSearchParams = {
   include_top_contract_details?: string;
   limit?: number;
   cursor?: string;
+  filter?: string;
 };
