@@ -39,7 +39,7 @@ export const useGetInfiniteTopCollections = (
   }, [apiParams]);
 
   return useInfiniteQuery({
-    queryKey: ["top-collections", limit, parsedParams],
+    queryKey: ["top-collections", { limit }, parsedParams],
     queryFn: ({ pageParam }) =>
       getTopCollections({
         cursor: pageParam as string,

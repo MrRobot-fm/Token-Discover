@@ -33,7 +33,7 @@ export const useGetInfiniteTrendingCollections = (
   }, [apiParams]);
 
   return useInfiniteQuery({
-    queryKey: ["trending-collections", limit, parsedParams],
+    queryKey: ["trending-collections", { limit }, parsedParams],
     queryFn: ({ pageParam }) =>
       getTrendingCollections({
         cursor: pageParam as string,
