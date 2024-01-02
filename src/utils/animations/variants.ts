@@ -31,10 +31,6 @@ export const heroRotate = {
     rotate: "30deg",
     opacity: 0,
     originX: 0,
-    transition: {
-      duration: 0.4,
-      type: "tween",
-    },
   },
   rotate: {
     rotate: "0deg",
