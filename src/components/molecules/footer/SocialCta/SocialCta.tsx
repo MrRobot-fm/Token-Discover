@@ -21,7 +21,7 @@ export const SocialCta = ({
           <Button
             key={`${index}-${item?.icon}`}
             icon={item?.icon}
-            size={item?.size}
+            iconSize={item?.size}
             variant={item?.variant}
             href={item?.url || ""}
             buttonWrapperStyles="gap-0"

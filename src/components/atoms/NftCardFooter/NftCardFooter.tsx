@@ -32,7 +32,7 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
         <span
           className={`${
             avatarSize === "xs" ? "base:span md:paragraph" : "paragraph"
-          } capitalize lg:whitespace-nowrap`}
+          } truncate capitalize lg:whitespace-nowrap`}
         >
           {collectionName}
         </span>
