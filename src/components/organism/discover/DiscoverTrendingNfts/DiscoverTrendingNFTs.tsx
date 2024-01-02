@@ -1,11 +1,10 @@
 import { useGetNftByCollectionByIdCombined } from "@/api/NFT/hooks/use-get-nft-by-collection-id-combined";
-import { SearchBar } from "@/components/atoms/Forms/SearchBar/SearchBar";
 import { LoadMore } from "@/components/atoms/LoadMore/LoadMore";
 import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard";
 import { DiscoverIndexList } from "@/components/organism/discover/DiscoverIndexList/DiscoverIndexList";
-import { useDiscoverNfts } from "./use-discover-nfts";
+import { useDiscoverTrendingNfts } from "./use-discover-trending-nfts";
 
-export const DiscoverNFTs = ({
+export const DiscoverTrendingNFTs = ({
   collectionId,
   fetchNextPage,
 }: {
@@ -18,17 +17,12 @@ export const DiscoverNFTs = ({
       limit: 1,
     });
 
-  const { filteredItems, register } = useDiscoverNfts({
+  const { filteredItems } = useDiscoverTrendingNfts({
     data: nftByCollectionId,
   });
 
   return (
     <div className="w-full py-[6rem] base:space-y-[4rem] xl:space-y-[6rem]">
-      <SearchBar
-        name="nftSearchValue"
-        placeholder="Search your favorite NFTs"
-        register={register}
-      />
       <DiscoverIndexList
         skeletonVariant="fluid"
         isLoading={isLoading}

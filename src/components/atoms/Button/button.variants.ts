@@ -48,10 +48,13 @@ export const button = tv({
         buttonWrapper: "h-[7.2rem]",
         buttonLabel: "heading5 capitalize",
       },
-      fluid: {
-        buttonWrapper: "h-fit base:w-[11rem]   md:w-[16.8rem]",
-        buttonLabel:
-          "base:span md:paragraph capitalize base:font-bold md:font-semibold",
+      segmentControlSm: {
+        buttonWrapper: "h-fit w-[11rem]",
+        buttonLabel: "span font-semibold capitalize",
+      },
+      segmentControlMd: {
+        buttonWrapper: "h-fit w-[16.8rem]",
+        buttonLabel: " paragraph font-semibold capitalize",
       },
       xl: {
         buttonLabel: "heading4 capitalize",

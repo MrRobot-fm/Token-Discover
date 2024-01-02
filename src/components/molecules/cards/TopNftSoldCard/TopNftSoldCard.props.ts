@@ -4,14 +4,18 @@ import type { AvatarVariants } from "@/components/atoms/Avatar/avatar.variants";
 
 export type TopNftSoldCardProps = {
   avatarStyle?: AvatarVariants;
-  collection: {
+  collection?: {
     name: string;
     image: ImageProps;
   };
   nftName: string;
-  price: number;
+  price?: number;
+  totalSupply?: number;
   image: ImageProps;
-  criptoCurrency: string;
-  decimals: number;
+  criptoCurrency?: string;
+  decimals?: number;
   href?: LinkProps["href"];
+  hasFooter?: boolean;
+  hasPrice?: boolean;
+  hasSupply?: boolean;
 };

@@ -1,9 +1,10 @@
-import { HTMLProps } from "react";
+import type { HTMLProps } from "react";
 import type { IconName } from "@/types/icons";
-import { IconVariants } from "./Icon.variants";
+import type { IconVariants } from "./Icon.variants";
 
 export interface IconProps
   extends Omit<HTMLProps<HTMLElement>, "size">,
-    IconVariants {
+    Omit<IconVariants, "size"> {
   name: IconName;
+  size?: IconVariants["size"];
 }

@@ -9,7 +9,7 @@ export const links = [
   },
   {
     text: "Discover",
-    route: "/discover/top-collections",
+    route: "/discover/collections",
     icon: "store" as IconName,
     targetSegment: "discover",
   },

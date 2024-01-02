@@ -2,7 +2,7 @@
 
 import useBreakpoints from "@/hooks/use-breakpoints";
 import { useGetInfiniteTrendingCollections } from "@/api/collections/hooks/use-infinite-trending-collections";
-import { DiscoverNFTs } from "@/components/organism/discover/DiscoverNfts/DiscoverNFTs";
+import { DiscoverTrendingNFTs } from "@/components/organism/discover/DiscoverTrendingNfts/DiscoverTrendingNFTs";
 
 export const DiscoverTrendingNftsSection = () => {
   const { isBase, isMobile, isTablet } = useBreakpoints();
@@ -20,7 +20,7 @@ export const DiscoverTrendingNftsSection = () => {
   );
 
   return (
-    <DiscoverNFTs
+    <DiscoverTrendingNFTs
       collectionId={collectionIds || []}
       fetchNextPage={fetchNextPage}
     />

@@ -3,6 +3,10 @@ import { PAGES_PATH } from "./pages-path";
 
 export const discoverTabsMaps: DiscoverTabsModel[] = [
   {
+    text: "Find Collections",
+    route: PAGES_PATH.DISCOVER_COLLECTIONS,
+  },
+  {
     text: "Top collections",
     route: PAGES_PATH.DISCOVER_TOP_COLLECTIONS,
   },

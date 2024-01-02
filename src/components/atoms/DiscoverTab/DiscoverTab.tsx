@@ -16,6 +16,7 @@ export const DiscoverTab = ({
       <SegmentControl
         options={discoverTabsMap}
         pathname={pathname}
+        size="segmentControlSm"
         isDiscoverSection
       />
     </div>

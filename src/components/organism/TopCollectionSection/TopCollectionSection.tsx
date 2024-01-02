@@ -9,7 +9,7 @@ import { styles } from "./top-collection-section.styles";
 
 export const TopCollectionSection = () => {
   const { data: topCollection } = useGetTopCollections({
-    chains: "ethereum,polygon,solana",
+    chains: "ethereum",
     period: "7d",
     limit: 10,
   });

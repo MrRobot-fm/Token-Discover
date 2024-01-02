@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { useForm } from "react-hook-form";
 import v from "voca";
 import type { GetTopSalesByCollectionResponseModel } from "@/types/model/api-top-sales-by-collection";
 import type { TopNftSoldCardProps } from "@/components/molecules/cards/TopNftSoldCard/TopNftSoldCard.props";
@@ -9,12 +8,6 @@ export const useDiscoverNftSold = ({
 }: {
   data: (GetTopSalesByCollectionResponseModel | undefined)[];
 }) => {
-  const { register, watch } = useForm<{ nftSearchValue: string }>({
-    defaultValues: { nftSearchValue: "" },
-  });
-
-  const { nftSearchValue } = watch();
-
   const parsedItems: TopNftSoldCardProps[] = useMemo(() => {
     if (!data) return [];
 
@@ -62,10 +55,9 @@ export const useDiscoverNftSold = ({
       (item) =>
         item?.image.src !== "" &&
         item?.collection?.image.src !== "" &&
-        item?.nftName !== null &&
-        item?.nftName?.toLowerCase()?.includes(nftSearchValue?.toLowerCase())
+        item?.nftName !== null
     );
-  }, [parsedItems, nftSearchValue]);
+  }, [parsedItems]);
 
-  return { filteredItems, register };
+  return { filteredItems };
 };

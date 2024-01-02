@@ -23,7 +23,7 @@ export const HeroSection = () => {
         <div className={styles.mobileSectionWrapper_cardWrapper}>
           <HeroCard />
         </div>
-        <SectionCta href={PAGES_PATH.DISCOVER_TOP_COLLECTIONS} />
+        <SectionCta href={PAGES_PATH.DISCOVER_COLLECTIONS} />
         <div className={styles.mobileSectionWrapper_statsCardWrapper}>
           {statsValue.map((value) => (
             <StatsCard key={value.id} stats={value.stat} label={value.label} />

@@ -1,15 +1,9 @@
-import { DiscoverTabsModel } from "@/types/model/discover-tabs-model";
 import { Button } from "@/components/atoms/Button/Button";
+import type { SegmentControlProps } from "./SegmentControl.props";
 
-export const SegmentControl = ({
-  options,
-  pathname,
-  isDiscoverSection = false,
-}: {
-  options: DiscoverTabsModel[];
-  pathname: string | null;
-  isDiscoverSection?: boolean;
-}) => {
+export const SegmentControl = (props: SegmentControlProps) => {
+  const { options, isDiscoverSection, pathname, size } = props;
+
   return (
     <div
       className={`${
@@ -22,7 +16,7 @@ export const SegmentControl = ({
           href={tab.route}
           label={tab.text}
           variant="segmentControl"
-          size="fluid"
+          size={size}
           buttonWrapperStyles={
             isDiscoverSection ? "data-[selected=true]:bg-purpleRed" : ""
           }

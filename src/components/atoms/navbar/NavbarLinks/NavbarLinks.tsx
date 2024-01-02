@@ -16,7 +16,11 @@ export const NavbarLinks = ({
 
   return (
     <div className="flex items-center justify-between gap-[10rem]">
-      <SegmentControl options={links} pathname={segment} />
+      <SegmentControl
+        options={links}
+        pathname={segment}
+        size="segmentControlMd"
+      />
     </div>
   );
 };

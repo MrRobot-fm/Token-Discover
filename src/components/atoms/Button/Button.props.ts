@@ -1,9 +1,10 @@
-import { HTMLProps } from "react";
+import type { HTMLProps } from "react";
 import type { IconName } from "@/types/icons";
+import type { IconVariants } from "../Icon/Icon.variants";
 import type { ButtonVariants } from "./button.variants";
 
 export interface ButtonProps
-  extends ButtonVariants,
+  extends Omit<ButtonVariants, "size">,
     Pick<
       HTMLProps<HTMLButtonElement>,
       | "onClick"
@@ -14,6 +15,8 @@ export interface ButtonProps
       | "ref"
       | "data"
     > {
+  size?: ButtonVariants["size"];
+  iconSize?: IconVariants["size"];
   href?: string;
   label?: string;
   icon?: IconName;

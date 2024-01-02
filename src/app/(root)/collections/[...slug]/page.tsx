@@ -1,8 +1,7 @@
 import { HydrationBoundary } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import v from "voca";
-import { prefetchNFTCollectionById } from "@/api/NFT/prefetch/prefetch-nft-collection-by-id";
-import { prefetchCollectionById } from "@/api/collections/prefetch/prefetch-get-collection-by-id";
+import { prefetchNFTByContract } from "@/api/NFT/prefetch/prefetch-nft-by-contract";
 import { CollectionDetailsSection } from "@/components/organism/details/CollectionDetailsSection/CollectionDetailsSection";
 
 export const generateMetadata = ({
@@ -22,22 +21,26 @@ export default async function CollectionsDetailsPage({
 }: {
   params: { slug: string[] };
 }) {
-  const [, collectionId] = params?.slug || [];
+  const [, chain, contractAddress] = params?.slug || [];
 
   const { dehydrateState: dehydrateNftCollectionById } =
-    await prefetchNFTCollectionById({
-      collectionId: collectionId,
+    await prefetchNFTByContract({
+      contractAddress,
+      chain,
       limit: 20,
     });
 
   const { dehydrateState: dehydrateCollectionById } =
-    await prefetchCollectionById({ collectionId: collectionId });
+    await prefetchNFTByContract({ contractAddress, chain });
 
   return (
     <HydrationBoundary
       state={[dehydrateNftCollectionById, dehydrateCollectionById]}
     >
-      <CollectionDetailsSection id={collectionId} />
+      <CollectionDetailsSection
+        contractAddress={contractAddress}
+        chain={chain}
+      />
     </HydrationBoundary>
   );
 }

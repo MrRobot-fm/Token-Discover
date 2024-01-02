@@ -4,7 +4,7 @@ import { IconVariants } from "@/components/atoms/Icon/Icon.variants";
 
 export type SocialLinksModel = {
   icon: IconName;
-  size: ButtonVariants["size"] | IconVariants["size"];
+  size: ButtonVariants["size"] & IconVariants["size"];
   variant: ButtonVariants["variant"];
   url: string;
 };
