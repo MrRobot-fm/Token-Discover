@@ -1,5 +1,4 @@
 import { useGetTopSalesByCollection } from "@/api/top-sales/hooks/use-get-top-sales-by-collection";
-import { SearchBar } from "@/components/atoms/Forms/SearchBar/SearchBar";
 import { LoadMore } from "@/components/atoms/LoadMore/LoadMore";
 import { TopNftSoldCard } from "@/components/molecules/cards/TopNftSoldCard/TopNftSoldCard";
 import { DiscoverIndexList } from "@/components/organism/discover/DiscoverIndexList/DiscoverIndexList";
@@ -18,17 +17,12 @@ export const DiscoverNFTSold = ({
     limit: 1,
   });
 
-  const { filteredItems, register } = useDiscoverNftSold({
+  const { filteredItems } = useDiscoverNftSold({
     data: topNftSales,
   });
 
   return (
     <div className="w-full py-[6rem] base:space-y-[4rem] xl:space-y-[6rem]">
-      <SearchBar
-        name="nftSearchValue"
-        placeholder="Search your favorite NFTs"
-        register={register}
-      />
       <DiscoverIndexList
         skeletonVariant="fluid"
         isLoading={isLoading}

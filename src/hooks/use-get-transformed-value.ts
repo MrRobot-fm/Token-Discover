@@ -1,5 +1,6 @@
 import { useMotionValueEvent, useTime, useTransform } from "framer-motion";
 import { useMemo, useState } from "react";
+import { getTransformedValue } from "@/utils/functions/get-transformed-value";
 
 export const useGetTransformedValue = ({ value }: { value: number }) => {
   const [transformedValue, setTransformedValue] = useState<number>(value);
@@ -15,10 +16,7 @@ export const useGetTransformedValue = ({ value }: { value: number }) => {
   });
 
   const motionValue = useMemo(() => {
-    if (transformedValue > 1000)
-      return `${Math.floor(transformedValue / 1000)}k +`;
-
-    if (transformedValue < 1000) return `${Math.floor(transformedValue)} +`;
+    return getTransformedValue({ value: transformedValue });
   }, [transformedValue]);
 
   return { motionValue };

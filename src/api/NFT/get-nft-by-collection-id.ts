@@ -3,7 +3,7 @@ import type {
   GetNftByCollectionsIdResponseModel,
   GetNftByCollectionsIdSearchParams,
 } from "@/types/model/api-nft-by-collection-id";
-import { axiosInstance } from "../axios-instance";
+import { axiosSimpleHashInstance } from "../axios-instance";
 
 export const getNftByCollectionId = async ({
   collection_id,
@@ -14,9 +14,12 @@ export const getNftByCollectionId = async ({
 > => {
   const hasParams = !!Object.values(searchParams || {}).length;
 
-  const response = await axiosInstance.get(`/collection/${collection_id}`, {
-    ...(hasParams && { params: searchParams }),
-  });
+  const response = await axiosSimpleHashInstance.get(
+    `/collection/${collection_id}`,
+    {
+      ...(hasParams && { params: searchParams }),
+    }
+  );
 
   return response.data;
 };

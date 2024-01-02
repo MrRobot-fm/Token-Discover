@@ -12,6 +12,7 @@ export const getFormattedCryptoCurrency = ({
   const conversionValue = Math.pow(10, decimals);
 
   if (!value) return "-";
+
   if (currency === "SOL")
     return ` ${formatNumber(value / conversionValue)} ${currency}`;
 

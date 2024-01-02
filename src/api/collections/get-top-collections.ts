@@ -3,7 +3,7 @@ import type {
   GetTopCollectionsResponseModel,
   GetTopCollectionsSearchParams,
 } from "@/types/model/api-top-collections";
-import { axiosInstance } from "../axios-instance";
+import { axiosSimpleHashInstance } from "../axios-instance";
 
 export const getTopCollections = async (
   searchParams: GetTopCollectionsSearchParams
@@ -12,7 +12,7 @@ export const getTopCollections = async (
 > => {
   const hasParams = !!Object?.values(searchParams || {})?.length;
 
-  const response = await axiosInstance.get("/collections/top_v2", {
+  const response = await axiosSimpleHashInstance.get("/collections/top_v2", {
     ...(hasParams && { params: searchParams }),
   });
 

@@ -10,7 +10,7 @@ export const DiscoverTopCollectionsSection = () => {
   const limitValue = isBase || isMobile || isTablet ? 10 : 20;
 
   const { data, fetchNextPage } = useGetInfiniteTopCollections({
-    chains: "ethereum,polygon,solana",
+    chains: "ethereum",
     period: "7d",
     limit: limitValue,
   });

@@ -1,11 +1,11 @@
-import type { GetCollectionByIdResponseModel } from "@/types/model/api-collection-by-id";
+import { GetCollectionByContractResponseModel } from "@/types/model/api-collections-by-contract";
 import { Button } from "@/components/atoms/Button/Button";
 import { styles } from "./collection-details-info.styles";
 
 export const CollectionDetailsInfo = ({
   data,
 }: {
-  data?: GetCollectionByIdResponseModel;
+  data?: GetCollectionByContractResponseModel;
 }) => {
   return (
     <div className={styles.collectionDetailsInfoWrapper}>
@@ -34,7 +34,7 @@ export const CollectionDetailsInfo = ({
           variant="link"
           icon="globe"
           label="discord url"
-          href={data?.collections[0]?.discord_url}
+          href={data?.collections[0]?.discord_url || ""}
         />
       </div>
     </div>

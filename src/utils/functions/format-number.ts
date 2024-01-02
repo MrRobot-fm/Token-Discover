@@ -1,7 +1,7 @@
 export const formatNumber = (
   number: number,
   locale = "it-IT",
-  options: Intl.NumberFormatOptions = { maximumFractionDigits: 0 }
+  options: Intl.NumberFormatOptions = { maximumFractionDigits: 2 }
 ) => {
   if (isNaN(number)) return "-";
 

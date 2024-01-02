@@ -3,7 +3,7 @@ import type {
   GetTrendingCollectionsResponseModel,
   GetTrendingCollectionsSearchParams,
 } from "@/types/model/api-trending-collections";
-import { axiosInstance } from "../axios-instance";
+import { axiosSimpleHashInstance } from "../axios-instance";
 
 export const getTrendingCollections = async (
   searchParams?: GetTrendingCollectionsSearchParams
@@ -13,7 +13,7 @@ export const getTrendingCollections = async (
 > => {
   const hasParams = !!Object.values(searchParams || {})?.length;
 
-  const response = await axiosInstance.get("/collections/trending", {
+  const response = await axiosSimpleHashInstance.get("/collections/trending", {
     ...(hasParams && { params: searchParams }),
   });
 

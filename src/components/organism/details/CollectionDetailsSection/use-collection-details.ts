@@ -1,61 +1,52 @@
 import { useMemo } from "react";
-import { useForm } from "react-hook-form";
 import v from "voca";
-import type { GetNftByCollectionsIdResponseModel } from "@/types/model/api-nft-by-collection-id";
+import { GetNFTsByCollectionsAddressResponseModel } from "@/types/model/api-nfts-by-collection-address";
 import type { HighlightNFTedCardProps } from "@/components/molecules/cards/HighlightedNFTCard/HighlightedNFTCard.props";
 
 export const useCollectionDetails = ({
   data,
+  collectionImage,
 }: {
-  data: GetNftByCollectionsIdResponseModel["nfts"] | undefined;
+  data: GetNFTsByCollectionsAddressResponseModel["nfts"] | undefined;
+  collectionImage: string;
 }) => {
-  const { register, watch } = useForm({
-    defaultValues: { nftSearchValue: "" },
-  });
-
-  const { nftSearchValue } = watch();
-
   const parsedItems: HighlightNFTedCardProps[] = useMemo(() => {
     if (!data) return [];
 
     return data?.map((nft) => {
       const {
-        collection,
-        image_url,
-        previews,
+        image,
         name,
         token_id,
-        chain,
+        blockchain,
+        collection_name,
         contract_address,
       } = nft || {};
 
       return {
         variant: "nft",
-        collectionName: collection?.name,
+        collectionName: collection_name,
         nftName: name || `#${token_id}`,
-        href: `/nft/${
-          v.kebabCase(name) || null
-        }/${chain}/${contract_address}/${token_id}/${collection?.collection_id}`,
+        href: `/nft/${v.kebabCase(name) || null}/${
+          blockchain === "ETH" && "ethereum"
+        }/${contract_address}/${token_id}`,
         avatarImage: {
-          src: collection?.image_url,
-          alt: ` ${collection?.name}-img`,
+          src: collectionImage,
+          alt: ` ${collection_name}-img`,
         },
         cardImage: {
-          src: image_url || previews?.image_medium_url,
+          src: image,
           alt: `${name}-img`,
         },
       };
     });
-  }, [data]);
+  }, [collectionImage, data]);
 
   const filteredItems = useMemo(() => {
     return parsedItems?.filter(
-      (item) =>
-        item?.cardImage?.src !== "" &&
-        item?.avatarImage?.src !== "" &&
-        item?.nftName?.toLowerCase()?.includes(nftSearchValue.toLowerCase())
+      (item) => item?.cardImage?.src !== "" && item?.avatarImage?.src !== ""
     );
-  }, [parsedItems, nftSearchValue]);
+  }, [parsedItems]);
 
-  return { filteredItems, register };
+  return { filteredItems };
 };

@@ -1,5 +1,4 @@
 import { useGetNftByCollectionByIdCombined } from "@/api/NFT/hooks/use-get-nft-by-collection-id-combined";
-import { SearchBar } from "@/components/atoms/Forms/SearchBar/SearchBar";
 import { LoadMore } from "@/components/atoms/LoadMore/LoadMore";
 import { TopCollectionCard } from "@/components/molecules/cards/TopCollectionCard/TopCollectionCard";
 import { DiscoverIndexList } from "@/components/organism/discover/DiscoverIndexList/DiscoverIndexList";
@@ -18,17 +17,12 @@ export const DiscoverTopCollection = ({
       limit: 4,
     });
 
-  const { filteredItems, register } = useDiscoverTopCollection({
+  const { filteredItems } = useDiscoverTopCollection({
     data: nftByCollection,
   });
 
   return (
     <div className="w-full py-[6rem] base:space-y-[4rem] xl:space-y-[6rem]">
-      <SearchBar
-        name="collectionSearchValue"
-        placeholder="Search your favorite collections"
-        register={register}
-      />
       <DiscoverIndexList
         skeletonVariant="fluid"
         isLoading={isLoading}

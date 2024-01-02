@@ -4,7 +4,7 @@ import {
   GetTopSalesByCollectionResponseModel,
   GetTopSalesByCollectionSearchParams,
 } from "@/types/model/api-top-sales-by-collection";
-import { axiosInstance } from "../axios-instance";
+import { axiosSimpleHashInstance } from "../axios-instance";
 
 export const getTopSalesByCollection = async ({
   collection_id,
@@ -14,7 +14,7 @@ export const getTopSalesByCollection = async ({
 }): Promise<GetTopSalesByCollectionResponseModel> => {
   const hasParams = Object.values(searchParams || {}).length;
 
-  const response = await axiosInstance(
+  const response = await axiosSimpleHashInstance(
     `top_sales/collection/${collection_id}`,
     {
       ...(hasParams && { params: searchParams }),

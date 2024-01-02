@@ -7,7 +7,7 @@ export const footerLinksMap: FooterLinksModel = [
       {
         label: "Discover",
         type: "link",
-        route: "/discover/top-collections",
+        route: "/discover/collections",
       },
       {
         label: "Get in touch",

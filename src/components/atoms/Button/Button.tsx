@@ -10,6 +10,7 @@ export const Button = (props: ButtonProps) => {
     label,
     icon,
     size,
+    iconSize,
     variant,
     buttonWrapperStyles,
     type = "button",
@@ -34,7 +35,7 @@ export const Button = (props: ButtonProps) => {
             type={type}
             {...rest}
           >
-            {!!icon && <Icon name={icon} size={size} />}
+            {!!icon && <Icon name={icon} size={iconSize} />}
             <span className={buttonLabel()}>{label}</span>
           </button>
         </a>
@@ -48,7 +49,7 @@ export const Button = (props: ButtonProps) => {
       type={type}
       {...rest}
     >
-      {!!icon && <Icon name={icon} size={size} />}
+      {!!icon && <Icon name={icon} size={iconSize} />}
       <span className={buttonLabel()}>{label}</span>
     </button>
   );
