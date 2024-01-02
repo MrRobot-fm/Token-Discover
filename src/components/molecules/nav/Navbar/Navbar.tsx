@@ -37,7 +37,7 @@ export const Navbar = () => {
         <NavbarMenuButton
           icon="list"
           variant="link"
-          size="xxl"
+          iconSize="xxl"
           onClick={handleToggleMenu}
           buttonWrapperStyles="gap-0"
         />

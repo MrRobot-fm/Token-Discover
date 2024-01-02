@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { useEffect } from "react";
+import { item, list } from "@/utils/animations/variants";
 import { links } from "@/utils/constants/navbar-links-map";
 import { useScrollBehavior } from "@/hooks/use-scroll-behavior";
 import { Button } from "@/components/atoms/Button/Button";
@@ -49,24 +51,31 @@ export const NavbarMenu = (props: NavbarMenuProps) => {
           />
         </div>
 
-        <div className={styles.navbarMenu_body}>
-          {links.map((link) => (
-            <Button
-              key={link.text}
-              label={link.text}
-              href={link.route}
-              icon={link.icon}
-              variant="link"
-              size="lg"
-              onClick={toggleMenu}
-              buttonWrapperStyles={
-                link.targetSegment === segment
-                  ? "scale-110 text-callToAction"
-                  : "text-[5rem]"
-              }
-            />
+        <motion.div
+          className={styles.navbarMenu_body}
+          initial={false}
+          animate={isMenuOpen ? "open" : "closed"}
+          variants={list}
+        >
+          {links.map((link, index) => (
+            <motion.div key={index} variants={item}>
+              <Button
+                key={link.text}
+                label={link.text}
+                href={link.route}
+                icon={link.icon}
+                variant="link"
+                size="lg"
+                onClick={toggleMenu}
+                buttonWrapperStyles={
+                  link.targetSegment === segment
+                    ? "scale-110 text-callToAction"
+                    : "text-[5rem]"
+                }
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </aside>
     </div>
   );
