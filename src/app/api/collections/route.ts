@@ -12,5 +12,5 @@ export async function GET(request: NextRequest) {
   );
   const data = res?.data;
 
-  return NextResponse.json(data);
+  return NextResponse?.json(data);
 }
