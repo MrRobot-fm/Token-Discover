@@ -4,7 +4,7 @@ import { HighlightedNFTCard } from "@/components/molecules/cards/HighlightedNFTC
 export const HeroCard = () => {
   return (
     <HighlightedNFTCard
-      nftName="#26"
+      nftName="Mutant Ape Yacht Club #2398"
       collectionName="Mutant Ape Yacht Club"
       cardImage={{
         src: HERO_CARD_IMG,
