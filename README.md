@@ -36,7 +36,7 @@ With Token discover you can discover the top collections, the trending collectio
 ## 💾 Installation
 
 ### 1 - Clone the repository
-git clone https://github.com/MrRobot-fm/Flight-footprint.git
+git clone https://github.com/MrRobot-fm/Token-Discover.git
 
 ### 2 - Install the dependencies
 yarn install
