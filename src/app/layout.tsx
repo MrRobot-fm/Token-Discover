@@ -7,7 +7,7 @@ import { Cursor } from "@/components/atoms/Cursor/Cursor";
 import { Navbar } from "@/components/molecules/nav/Navbar/Navbar";
 import { Footer } from "@/components/organism/Footer/Footer";
 import { proximaNova } from "@/public/fonts/fonts";
-import "../globals.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Token Discover",

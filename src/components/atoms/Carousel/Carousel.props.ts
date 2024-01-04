@@ -1,4 +1,4 @@
-import type { EmblaCarouselType } from "embla-carousel-react";
+import type { EmblaCarouselType } from "embla-carousel";
 import type { HTMLProps, ReactNode } from "react";
 import type { ButtonProps } from "@/components/atoms/Button/Button.props";
 import type { CarouselVariants } from "./carousel.variants";
