@@ -11,6 +11,7 @@ export const avatar = tv(
         sm: "h-[3.2rem] w-[3.2rem]",
         md: "h-[6rem] w-[6rem]",
         lg: "h-[12rem] w-[12rem]",
+        xl: "base:h-[13rem] base:w-[13rem] md:h-[15rem] md:w-[15rem]",
       },
     },
     defaultVariants: {

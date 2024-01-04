@@ -62,7 +62,8 @@ export const TopNftSoldCard = (props: TopNftSoldCardProps) => {
               }}
               avatarSize="xs"
               collectionName={collection?.name}
-              footerWrapperStyles="p-0 pt-[0.5rem]"
+              footerWrapperStyles="base:pt-[0.5rem] p-0 overflow-hidden"
+              authorWrapperStyles="md:justify-center"
             />
           )}
         </div>

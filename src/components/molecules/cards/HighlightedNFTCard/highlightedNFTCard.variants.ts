@@ -10,7 +10,7 @@ export const highlightedNftCard = tv({
     cardWrapper:
       "h-fit overflow-hidden rounded-[2rem] bg-background-grey shadow-alpha3",
     imageWrapper: "overflow-hidden",
-    footerWrapper: "flex flex-col justify-between gap-[1rem] p-[2rem]",
+    footerWrapper: "flex w-full flex-col justify-between gap-[1rem] p-[2rem]",
     authorWrapper: "flex items-center gap-[1.2rem]",
     detailsWrapper: "mt-[1rem] flex w-full justify-between",
   },
