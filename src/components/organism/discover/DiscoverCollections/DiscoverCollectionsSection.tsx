@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { useSearchParams } from "@/hooks/use-search-params";
 import { useGetCollectionsByName } from "@/api/collections/hooks/use-get-collections-by-name";
 import { SearchBar } from "@/components/atoms/Forms/SearchBar/SearchBar";
 import { TopNftSoldCard } from "@/components/molecules/cards/TopNftSoldCard/TopNftSoldCard";
@@ -8,16 +9,22 @@ import { DiscoverIndexList } from "../DiscoverIndexList/DiscoverIndexList";
 import { useDiscoverCollections } from "./use-discover-collections";
 
 export const DiscoverCollectionsSection = () => {
-  const { register, watch } = useForm<{ collectionName: string }>({
+  const { register, watch, handleSubmit, reset } = useForm<{
+    collectionName: string;
+  }>({
     defaultValues: {
       collectionName: "",
     },
   });
 
-  const { collectionName } = watch();
+  const { search, handleSearch } = useSearchParams({
+    formValue: watch("collectionName"),
+    defaultParam: "bored",
+    reset,
+  });
 
   const { data, isLoading } = useGetCollectionsByName({
-    collectionName: collectionName,
+    collectionName: search || "bored",
   });
 
   const { filteredItems } = useDiscoverCollections({ data });
@@ -28,6 +35,7 @@ export const DiscoverCollectionsSection = () => {
         name="collectionName"
         placeholder="Search your favorite collections"
         register={register}
+        onSubmit={handleSubmit(handleSearch)}
       />
       <DiscoverIndexList
         skeletonVariant="fluid"

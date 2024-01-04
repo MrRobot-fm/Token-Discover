@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { QueryParamsProvider } from "@/utils/providers/query-param-provider";
 import TanstackQUeryProvider from "@/utils/providers/tanstack-query-provider";
 import { Cursor } from "@/components/atoms/Cursor/Cursor";
 import { Navbar } from "@/components/molecules/nav/Navbar/Navbar";
@@ -24,11 +25,13 @@ export default function RootLayout({
     <html lang="en" className={proximaNova.variable}>
       <body>
         <TanstackQUeryProvider>
-          <Cursor />
-          <Navbar />
-          {children}
-          <ToastContainer position="top-right" autoClose={3000} />
-          <Footer />
+          <QueryParamsProvider>
+            <Cursor />
+            <Navbar />
+            {children}
+            <ToastContainer position="top-right" autoClose={3000} />
+            <Footer />
+          </QueryParamsProvider>
         </TanstackQUeryProvider>
       </body>
     </html>
