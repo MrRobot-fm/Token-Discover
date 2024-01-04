@@ -8,6 +8,7 @@ export type NftCardFooterProps = {
   nftName?: string;
   collectionName?: string;
   footerWrapperStyles?: HTMLProps<HTMLElement>["className"];
+  authorWrapperStyles?: HTMLProps<HTMLElement>["className"];
   nftPrice?: number;
   nftHighBid?: number;
   criptoCurrency?: string;

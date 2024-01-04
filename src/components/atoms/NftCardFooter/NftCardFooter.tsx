@@ -9,6 +9,7 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
     avatarImage,
     avatarSize = "sm",
     footerWrapperStyles,
+    authorWrapperStyles,
     nftPrice,
     nftHighBid,
     criptoCurrency,
@@ -21,7 +22,9 @@ export const NftCardFooter = (props: NftCardFooterProps) => {
       {!!nftName && <h5 className="truncate">{nftName}</h5>}
       <div
         className={authorWrapper({
-          className: `${avatarSize === "xs" && "gap-[0.7rem]"}`,
+          className: `${authorWrapperStyles} ${
+            avatarSize === "xs" && "gap-[0.7rem]"
+          }`,
         })}
       >
         <Avatar

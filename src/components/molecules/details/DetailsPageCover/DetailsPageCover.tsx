@@ -24,7 +24,7 @@ export const DetailsPageCover = (props: DetailsPageCoverProps) => {
           priority
         />
         <Avatar
-          size="lg"
+          size="xl"
           className={styles.collectionDetailsCover_avatar}
           src={avatarProps?.src}
           alt={avatarProps?.alt}
