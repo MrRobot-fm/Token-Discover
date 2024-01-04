@@ -6,9 +6,7 @@ export async function GET(request: NextRequest) {
   const query = searchParams.get("search");
 
   const res = await axiosNftGoInstance(
-    `${process.env.NEXT_PUBLIC_NFT_GO_API_URL}/v1/collection/name/${
-      query === "" ? "azuki" : query
-    }`
+    `${process.env.NEXT_PUBLIC_NFT_GO_API_URL}/v1/collection/name/${query}`
   );
   const data = res?.data;
 

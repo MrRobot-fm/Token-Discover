@@ -1,10 +1,13 @@
+import { HTMLProps } from "react";
 import type { InputProps } from "@/components/atoms/Forms/Input/Input.props";
 
-type SearchInputName =
-  | "nftSearchValue"
+export type SearchInputName =
+  | "nftName"
   | "collectionSearchValue"
   | "collectionName";
 
-export interface SearchBarProps extends Omit<InputProps, "name"> {
+export interface SearchBarProps
+  extends Omit<InputProps, "name" | "onSubmit">,
+    Pick<HTMLProps<HTMLFormElement>, "onSubmit"> {
   name: SearchInputName;
 }
