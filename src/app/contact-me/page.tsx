@@ -6,6 +6,7 @@ import { styles } from "./contact-me.styles";
 
 export const metadata: Metadata = {
   title: "Get In Touch | Token Discover",
+  description: "Get in touch with me",
 };
 
 export default function ContactMePage() {

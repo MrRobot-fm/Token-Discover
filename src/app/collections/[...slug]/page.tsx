@@ -12,8 +12,11 @@ export const generateMetadata = ({
 }): Metadata => {
   const [collectionName] = params?.slug || [];
 
+  const parsedCollectionName = v.titleCase(collectionName).replaceAll("-", " ");
+
   return {
-    title: `${v.titleCase(collectionName).replaceAll("-", " ")} | Details Page`,
+    title: `${parsedCollectionName} | Details Page`,
+    description: `Collection details page for ${parsedCollectionName}`,
   };
 };
 
