@@ -7,9 +7,11 @@ import { useDiscoverTrendingNfts } from "./use-discover-trending-nfts";
 export const DiscoverTrendingNFTs = ({
   collectionId,
   fetchNextPage,
+  hasNextPage,
 }: {
   collectionId: string[];
   fetchNextPage: () => void;
+  hasNextPage: boolean;
 }) => {
   const { data: nftByCollectionId, isLoading } =
     useGetNftByCollectionByIdCombined({
@@ -30,7 +32,7 @@ export const DiscoverTrendingNFTs = ({
           <HighlightedNFTCard key={index} {...item} />
         ))}
       />
-      {!!filteredItems?.length && <LoadMore loadMore={fetchNextPage} />}
+      {hasNextPage && <LoadMore loadMore={fetchNextPage} />}
     </div>
   );
 };

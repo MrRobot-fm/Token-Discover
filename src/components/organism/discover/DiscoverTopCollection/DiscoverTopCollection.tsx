@@ -7,9 +7,11 @@ import { useDiscoverTopCollection } from "./use-discover-top-collection";
 export const DiscoverTopCollection = ({
   collectionId,
   fetchNextPage,
+  hasNextPage,
 }: {
   collectionId: string[];
   fetchNextPage: () => void;
+  hasNextPage: boolean;
 }) => {
   const { data: nftByCollection, isLoading } =
     useGetNftByCollectionByIdCombined({
@@ -30,7 +32,7 @@ export const DiscoverTopCollection = ({
           <TopCollectionCard key={index} data={collection} />
         ))}
       />
-      {!!filteredItems?.length && <LoadMore loadMore={fetchNextPage} />}
+      {hasNextPage && <LoadMore loadMore={fetchNextPage} />}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { HydrationBoundary } from "@tanstack/react-query";
 import type { Metadata } from "next";
 import v from "voca";
+import { QueryParamsProvider } from "@/utils/providers/query-param-provider";
 import { prefetchNFTByContract } from "@/api/NFT/prefetch/prefetch-nft-by-contract";
 import { CollectionDetailsSection } from "@/components/organism/details/CollectionDetailsSection/CollectionDetailsSection";
 
@@ -37,10 +38,12 @@ export default async function CollectionsDetailsPage({
     <HydrationBoundary
       state={[dehydrateNftCollectionById, dehydrateCollectionById]}
     >
-      <CollectionDetailsSection
-        contractAddress={contractAddress}
-        chain={chain}
-      />
+      <QueryParamsProvider>
+        <CollectionDetailsSection
+          contractAddress={contractAddress}
+          chain={chain}
+        />
+      </QueryParamsProvider>
     </HydrationBoundary>
   );
 }

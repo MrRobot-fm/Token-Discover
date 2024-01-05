@@ -7,9 +7,11 @@ import { useDiscoverNftSold } from "./use-discover-nft-sold";
 export const DiscoverNFTSold = ({
   collectionId,
   fetchNextPage,
+  hasNextPage,
 }: {
   collectionId: string[];
   fetchNextPage: () => void;
+  hasNextPage: boolean;
 }) => {
   const { data: topNftSales, isLoading } = useGetTopSalesByCollection({
     collectionId,
@@ -30,7 +32,7 @@ export const DiscoverNFTSold = ({
           <TopNftSoldCard key={index} {...item} />
         ))}
       />
-      {!!filteredItems?.length && <LoadMore loadMore={fetchNextPage} />}
+      {hasNextPage && <LoadMore loadMore={fetchNextPage} />}
     </div>
   );
 };

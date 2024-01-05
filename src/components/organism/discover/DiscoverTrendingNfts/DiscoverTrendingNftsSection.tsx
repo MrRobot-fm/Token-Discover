@@ -9,11 +9,12 @@ export const DiscoverTrendingNftsSection = () => {
 
   const limitValue = isBase || isMobile || isTablet ? 10 : 20;
 
-  const { data, fetchNextPage } = useGetInfiniteTrendingCollections({
-    chains: "ethereum,polygon,solana",
-    interval: "24h",
-    limit: limitValue,
-  });
+  const { data, fetchNextPage, hasNextPage } =
+    useGetInfiniteTrendingCollections({
+      chains: "ethereum,polygon,solana",
+      interval: "24h",
+      limit: limitValue,
+    });
 
   const collectionIds = data?.pages?.flatMap(
     (item) => item?.collections?.map((item) => item?.collection_id)
@@ -23,6 +24,7 @@ export const DiscoverTrendingNftsSection = () => {
     <DiscoverTrendingNFTs
       collectionId={collectionIds || []}
       fetchNextPage={fetchNextPage}
+      hasNextPage={hasNextPage}
     />
   );
 };

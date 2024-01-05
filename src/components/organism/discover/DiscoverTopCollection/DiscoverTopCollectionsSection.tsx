@@ -9,7 +9,7 @@ export const DiscoverTopCollectionsSection = () => {
 
   const limitValue = isBase || isMobile || isTablet ? 10 : 20;
 
-  const { data, fetchNextPage } = useGetInfiniteTopCollections({
+  const { data, fetchNextPage, hasNextPage } = useGetInfiniteTopCollections({
     chains: "ethereum",
     period: "7d",
     limit: limitValue,
@@ -23,6 +23,7 @@ export const DiscoverTopCollectionsSection = () => {
     <DiscoverTopCollection
       collectionId={collectionIds || []}
       fetchNextPage={fetchNextPage}
+      hasNextPage={hasNextPage}
     />
   );
 };

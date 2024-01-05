@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { useCallback } from "react";
 import v from "voca";
 import { DISCOVER_PARAMS } from "@/utils/constants/pages-path";
+import { QueryParamsProvider } from "@/utils/providers/query-param-provider";
 import { DiscoverCollectionsSection } from "@/components/organism/discover/DiscoverCollections/DiscoverCollectionsSection";
 import { DiscoverTopSoldNftsSection } from "@/components/organism/discover/DiscoverNFTSold/DiscoverTopSoldNftsSection";
 import { DiscoverTopCollectionsSection } from "@/components/organism/discover/DiscoverTopCollection/DiscoverTopCollectionsSection";
@@ -39,7 +40,11 @@ export default function DiscoverPage({
     }
 
     if (section === DISCOVER_PARAMS.COLLECTIONS) {
-      return <DiscoverCollectionsSection />;
+      return (
+        <QueryParamsProvider>
+          <DiscoverCollectionsSection />
+        </QueryParamsProvider>
+      );
     }
 
     return notFound();

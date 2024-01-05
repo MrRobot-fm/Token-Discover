@@ -43,6 +43,7 @@ export const CollectionDetailsSection = ({
     data: nftByContract,
     isFetching: isNFTLoading,
     fetchNextPage,
+    hasNextPage,
   } = useGetInfiniteNFTsByCollectionAddress({
     isListing: false,
     contractAddress: contractAddress,
@@ -94,7 +95,7 @@ export const CollectionDetailsSection = ({
             <HighlightedNFTCard key={index} {...item} />
           ))}
         />
-        {!!filteredItems?.length && <LoadMore loadMore={fetchNextPage} />}
+        {hasNextPage && <LoadMore loadMore={fetchNextPage} />}
       </div>
     </div>
   );
