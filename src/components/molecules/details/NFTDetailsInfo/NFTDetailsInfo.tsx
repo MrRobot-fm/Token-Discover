@@ -1,4 +1,5 @@
 import { getFormattedCryptoCurrency } from "@/utils/functions/get-formatted-crypto-currency";
+import { getFormattedDate } from "@/utils/functions/get-formatted-date";
 import type { GetNftByTokenIdResponseModel } from "@/types/model/api-nft-by-token-id";
 import { Avatar } from "@/components/atoms/Avatar/Avatar";
 import { styles } from "./nft-details-info.styles";
@@ -24,11 +25,27 @@ export const NFTDetailsInfo = ({
         <p className={styles.nftDetailsInfo_text}>{data?.chain}</p>
       </div>
       <div>
+        <h5 className={styles.nftDetailsInfo_label}>Contract Address</h5>
+        <p className={styles.nftDetailsInfo_text}>{data?.contract_address}</p>
+      </div>
+      <div>
+        <h5 className={styles.nftDetailsInfo_label}>Created</h5>
+        <p className={styles.nftDetailsInfo_text}>
+          {getFormattedDate({
+            date: data?.first_created?.timestamp,
+            formatTemplate: "DD/MM/YYYY",
+          })}
+        </p>
+      </div>
+      <div>
         <h5 className={styles.nftDetailsInfo_label}>Price</h5>
         <p className={styles.nftDetailsInfo_text}>
           {getFormattedCryptoCurrency({
             value: data?.last_sale?.unit_price || 0,
-            currency: data?.last_sale?.payment_token?.symbol || "-",
+            currency:
+              data?.last_sale?.payment_token?.symbol ||
+              data?.chain?.slice(0, 3).toUpperCase() ||
+              "-",
             decimals: data?.last_sale?.payment_token?.decimals || 0,
           })}
         </p>

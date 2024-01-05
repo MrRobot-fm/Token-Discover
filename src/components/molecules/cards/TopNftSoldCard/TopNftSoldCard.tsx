@@ -22,6 +22,7 @@ export const TopNftSoldCard = (props: TopNftSoldCardProps) => {
     hasPrice = true,
     hasSupply = false,
   } = props;
+
   return (
     <Link {...{ href }} className={styles.link}>
       <div className={styles.cardWrapper}>

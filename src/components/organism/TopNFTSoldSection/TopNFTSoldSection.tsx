@@ -11,7 +11,7 @@ export const TopNFTSoldSection = () => {
   const { data: topCollection } = useGetTopCollections({
     chains: "ethereum,polygon,solana",
     period: "7d",
-    limit: 10,
+    limit: 12,
   });
 
   const collectionId = useMemo(() => {

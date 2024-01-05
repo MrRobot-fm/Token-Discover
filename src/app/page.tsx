@@ -9,6 +9,7 @@ import { TopNFTSoldSection } from "@/components/organism/TopNFTSoldSection/TopNF
 
 export const metadata: Metadata = {
   title: "Home | Token Discover",
+  description: "Home page of the Token Discover",
 };
 
 export default async function Home() {

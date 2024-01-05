@@ -14,8 +14,11 @@ export const generateMetadata = ({
   params: { section: string };
 }) => {
   const { section } = params || {};
+
+  const parsedSectionName = v.titleCase(section).replaceAll("-", " ");
   return {
-    title: `${v.titleCase(section).replaceAll("-", " ")} | Token Discover`,
+    title: `${parsedSectionName} | Token Discover`,
+    description: `Token discover page for ${parsedSectionName}`,
   };
 };
 
