@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { QueryParamsProvider } from "@/utils/providers/query-param-provider";
@@ -25,13 +26,15 @@ export default function RootLayout({
     <html lang="en" className={proximaNova.variable}>
       <body>
         <TanstackQUeryProvider>
-          <QueryParamsProvider>
-            <Cursor />
-            <Navbar />
-            {children}
-            <ToastContainer position="top-right" autoClose={3000} />
-            <Footer />
-          </QueryParamsProvider>
+          <Suspense>
+            <QueryParamsProvider>
+              <Cursor />
+              <Navbar />
+              {children}
+              <ToastContainer position="top-right" autoClose={3000} />
+              <Footer />
+            </QueryParamsProvider>
+          </Suspense>
         </TanstackQUeryProvider>
       </body>
     </html>

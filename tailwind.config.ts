@@ -41,6 +41,20 @@ const config: Config = withTV({
       dropShadow: {
         alpha4: "1px 2px 3px rgba(0, 0, 0, 0.4)",
       },
+      keyframes: {
+        bounce: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        bounce2: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-7px)" },
+        },
+      },
+      animation: {
+        bounce: "bounce 1s infinite",
+        bounce2: "bounce2 1s infinite",
+      },
     },
   },
   plugins: [],
