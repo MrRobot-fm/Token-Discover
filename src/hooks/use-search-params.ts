@@ -16,7 +16,11 @@ export const useSearchParams = <T extends FieldValues>({
   );
 
   const handleSearch = () => {
-    setSearch(formValue);
+    if (formValue) {
+      setSearch(formValue);
+    } else {
+      setSearch(null);
+    }
     reset();
   };
 

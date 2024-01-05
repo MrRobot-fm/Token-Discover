@@ -9,7 +9,7 @@ export const DiscoverTopSoldNftsSection = () => {
 
   const limitValue = isBase || isMobile || isTablet ? 10 : 20;
 
-  const { data, fetchNextPage } = useGetInfiniteTopCollections({
+  const { data, fetchNextPage, hasNextPage } = useGetInfiniteTopCollections({
     chains: "ethereum,polygon,solana",
     period: "7d",
     limit: limitValue,
@@ -23,6 +23,7 @@ export const DiscoverTopSoldNftsSection = () => {
     <DiscoverNFTSold
       collectionId={collectionIds || []}
       fetchNextPage={fetchNextPage}
+      hasNextPage={hasNextPage}
     />
   );
 };
