@@ -5,9 +5,29 @@ export const footerLinksMap: FooterLinksModel = [
     title: "Explore",
     links: [
       {
-        label: "Discover",
+        label: "Home",
+        type: "link",
+        route: "/",
+      },
+      {
+        label: "Trending NFTs",
+        type: "link",
+        route: "/discover/trending-nfts",
+      },
+      {
+        label: "Find Collections",
         type: "link",
         route: "/discover/collections",
+      },
+      {
+        label: "Top Collections",
+        type: "link",
+        route: "/discover/top-collections",
+      },
+      {
+        label: "Top Sold NFTs",
+        type: "link",
+        route: "/discover/top-sold-nfts",
       },
       {
         label: "Get in touch",
