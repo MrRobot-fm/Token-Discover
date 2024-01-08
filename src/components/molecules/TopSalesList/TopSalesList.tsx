@@ -50,7 +50,7 @@ export const TopSalesList = ({ collectionId }: { collectionId: string[] }) => {
         },
         avatarStyle: { size: { base: "md", md: "lg" } },
         criptoCurrency:
-          last_sale?.payment_token?.symbol || chain.slice(0, 3).toUpperCase(),
+          last_sale?.payment_token?.symbol || chain?.slice(0, 3)?.toUpperCase(),
         price: last_sale?.unit_price || 0,
         decimals: last_sale?.payment_token?.decimals || 0,
       };
