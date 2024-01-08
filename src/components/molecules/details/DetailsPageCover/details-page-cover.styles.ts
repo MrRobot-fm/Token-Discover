@@ -4,5 +4,5 @@ export const styles = {
   collectionDetailsCoverWrapper:
     "relative w-full base:h-[25rem] md:h-[28rem] lg:h-[31rem] xl:h-[37rem]",
   collectionDetailsCover_avatar:
-    "absolute base:bottom-[-5rem] lg:bottom-[-7rem] left-[4rem] border border-black",
+    "absolute base:bottom-[-5rem] lg:bottom-[-7rem] base:left-[1rem] md:left-[4rem] border border-black",
 };
