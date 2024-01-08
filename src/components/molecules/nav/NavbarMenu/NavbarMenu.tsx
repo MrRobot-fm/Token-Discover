@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { useEffect } from "react";
 import { item, list } from "@/utils/animations/variants";
@@ -26,57 +26,57 @@ export const NavbarMenu = (props: NavbarMenuProps) => {
   }, [disableScroll, enableScroll, isMenuOpen]);
 
   return (
-    <div
-      className={`${
-        isMenuOpen
-          ? `${styles.navbarMenu_translateXToOrigin} ${styles.opacity_1}`
-          : `${styles.navbarMenu_translateXToHidden} ${styles.opacity_0}`
-      } ${styles.navbarMenu_overlay}`}
-    >
-      <aside
-        className={`${
-          isMenuOpen
-            ? styles.navbarMenu_translateXToOrigin
-            : styles.navbarMenu_translateXToHidden
-        } ${styles.navbarMenu}`}
-      >
-        <div className={styles.navbarMenu_header}>
-          <NavLogo text="token discover" />
-          <NavbarMenuButton
-            icon="close"
-            variant="link"
-            size="lg"
-            onClick={toggleMenu}
-            buttonWrapperStyles="gap-0"
-          />
-        </div>
-
+    <AnimatePresence>
+      {isMenuOpen && (
         <motion.div
-          className={styles.navbarMenu_body}
-          initial={false}
-          animate={isMenuOpen ? "open" : "closed"}
-          variants={list}
+          key="modal"
+          initial={{ x: "100%" }}
+          animate={{ x: "0%" }}
+          transition={{ duration: 0.8, type: "spring" }}
+          exit={{ x: "100%" }}
+          className={styles.navbarMenu_overlay}
         >
-          {links.map((link, index) => (
-            <motion.div key={index} variants={item}>
-              <Button
-                key={link.text}
-                label={link.text}
-                href={link.route}
-                icon={link.icon}
+          <aside className={`${styles.navbarMenu}`}>
+            <div className={styles.navbarMenu_header}>
+              <NavLogo text="token discover" />
+              <NavbarMenuButton
+                icon="close"
                 variant="link"
                 size="lg"
                 onClick={toggleMenu}
-                buttonWrapperStyles={
-                  link.targetSegment === segment
-                    ? "scale-110 text-callToAction"
-                    : "text-[5rem]"
-                }
+                buttonWrapperStyles="gap-0"
               />
+            </div>
+
+            <motion.div
+              className={styles.navbarMenu_body}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={list}
+            >
+              {links.map((link, index) => (
+                <motion.div key={index} variants={item}>
+                  <Button
+                    key={link.text}
+                    label={link.text}
+                    href={link.route}
+                    icon={link.icon}
+                    variant="link"
+                    size="lg"
+                    onClick={toggleMenu}
+                    buttonWrapperStyles={
+                      link.targetSegment === segment
+                        ? "scale-110 text-callToAction"
+                        : "text-[5rem]"
+                    }
+                  />
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </aside>
         </motion.div>
-      </aside>
-    </div>
+      )}
+    </AnimatePresence>
   );
 };

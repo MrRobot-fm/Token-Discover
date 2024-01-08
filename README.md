@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Token Discover 🚀
+#### With token discover, we can discover digital art & collect NFTs.
 
-## Getting Started
+### 💥 Try it:  [Token Discover]()
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
+![Image text](https://github.com/MrRobot-fm/Token-Discover/assets/90281132/8bdf1e25-00d3-457b-89b6-f1702717b09d)
+
+
+## ❓ Why
+I created this project to discover a new and innovative world such as that of nfts.
+
+## 💡 How it works
+With Token discover you can discover the top collections, the trending collections, the best-selling NFTs and search for the collections and NFTs you like most, you can also view the details of the various tokens and get an idea of ​​how vast this world is!
+
+## 💻 Languages
+* Next Js
+* Typescript
+## 📚 Libraries
+* Tanstack Query
+* Axios
+* Tailwind CSS
+* Tailwind Variants
+* Framer Motion
+* React Hook Form
+* Use Query Params
+* Embla Carousel
+* Email JS
+* Tostify
+
+## 🌐 External Services
+* [Simple Hash API](https://docs.simplehash.com/reference/overview)
+* [NFT Go API](https://docs.nftgo.io/reference/introduction)
+
+
+## 💾 Installation
+
+### 1 - Clone the repository
+git clone https://github.com/MrRobot-fm/Token-Discover.git
+
+### 2 - Install the dependencies
+yarn install
+
+### 3 - Open in the browser
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📧 Contact Me
+* Any questions? Send me an e-mail here: federicomiglioredev@gmail.com
+* You can find my Linkedin profile here: https://www.linkedin.com/in/federicomigliore/
