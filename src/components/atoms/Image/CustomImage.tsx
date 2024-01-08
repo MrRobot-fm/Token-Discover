@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { DEFAULT_IMG_URL_FALLBACK } from "@/utils/constants/global";
 import { Skeleton } from "@/components/molecules/Skeleton/Skeleton";
 import type { CustomImageProps } from "./CustomImage.props";
 import { customImage } from "./customImage.variants";
@@ -36,7 +37,7 @@ export const CustomImage = (props: CustomImageProps) => {
         blurDataURL={blurDataURL}
         sizes={sizes}
         alt={alt}
-        src={src}
+        src={src || DEFAULT_IMG_URL_FALLBACK}
         style={{ objectFit: "cover" }}
       />
     </div>

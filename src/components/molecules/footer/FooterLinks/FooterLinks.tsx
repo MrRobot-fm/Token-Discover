@@ -8,13 +8,13 @@ export const FooterLinks = ({
   footerLinks: FooterLinksModel;
 }) => {
   return (
-    <div className="flex flex-col gap-[2.5rem]">
+    <div className="flex flex-col gap-[1rem]">
       {footerLinks?.map((item, index) => (
         <Fragment key={index}>
           <p key={`${index}-${item?.title} `} className="heading5">
             {item.title}
           </p>
-          <div className="flex flex-col gap-[2rem] text-gray-300">
+          <div className="grid gap-[2rem] gap-x-[4rem] text-gray-300 base:grid-cols-1 md:grid-cols-2">
             {item.links.map((link, index) => (
               <Button
                 key={`${index}-${link.label}`}
