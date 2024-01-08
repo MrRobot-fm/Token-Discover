@@ -24,7 +24,7 @@ export const NFTDetailsInfo = ({
         <h5 className={styles.nftDetailsInfo_label}>Chain</h5>
         <p className={styles.nftDetailsInfo_text}>{data?.chain}</p>
       </div>
-      <div>
+      <div className="base:hidden md:block">
         <h5 className={styles.nftDetailsInfo_label}>Contract Address</h5>
         <p className={styles.nftDetailsInfo_text}>{data?.contract_address}</p>
       </div>
