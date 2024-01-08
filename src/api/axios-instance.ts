@@ -20,6 +20,8 @@ export const axiosApiInstance = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}`,
   headers: {
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin":
+      "https://token-discover-aom7eau42-mrrobot-fm.vercel.app",
   },
 });
 
