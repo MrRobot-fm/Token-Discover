@@ -1,6 +1,6 @@
 import type { ImageProps as NextImageProps } from "next/image";
 import { HTMLProps } from "react";
-import type { CustomImageVariants } from "./customImage.variants";
+import type { CustomImageVariants } from "./CustomImage.variants";
 
 export interface CustomImageProps
   extends NextImageProps,
