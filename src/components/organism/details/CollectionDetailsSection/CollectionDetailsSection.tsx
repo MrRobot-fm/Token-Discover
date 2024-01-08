@@ -1,8 +1,7 @@
 "use client";
 
 import { notFound } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { useSearchParams } from "@/hooks/use-search-params";
+import { useSearchTokens } from "@/hooks/use-search-tokens";
 import { useGetInfiniteNFTsByCollectionAddress } from "@/api/NFT/hooks/use-get-nfts-by-collection-address";
 import { useGetCollectionsByContract } from "@/api/collections/hooks/use-get-collections-contract";
 import { SearchBar } from "@/components/atoms/Forms/SearchBar/SearchBar";
@@ -21,16 +20,7 @@ export const CollectionDetailsSection = ({
   contractAddress: string;
   chain: string;
 }) => {
-  const { register, watch, handleSubmit, reset } = useForm<{ nftName: string }>(
-    {
-      defaultValues: { nftName: "" },
-    }
-  );
-
-  const { search, handleSearch } = useSearchParams({
-    formValue: watch("nftName"),
-    reset,
-  });
+  const { search, handleSearch, register, handleSubmit } = useSearchTokens();
 
   const { data: collectionByContract, isLoading } = useGetCollectionsByContract(
     {
@@ -47,7 +37,7 @@ export const CollectionDetailsSection = ({
   } = useGetInfiniteNFTsByCollectionAddress({
     isListing: false,
     contractAddress: contractAddress,
-    sortBy: "listing_price_high_to_low",
+    sortBy: "last_price_high_to_low",
     keyword: search || "",
   });
 
@@ -83,7 +73,7 @@ export const CollectionDetailsSection = ({
       <CollectionDetailsInfo data={collectionByContract} />
       <div className={styles.collectionDetails_list}>
         <SearchBar
-          name="nftName"
+          name="searchValue"
           placeholder="Search your favorite NFTs"
           register={register}
           onSubmit={handleSubmit(handleSearch)}

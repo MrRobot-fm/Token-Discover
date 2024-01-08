@@ -3,7 +3,7 @@ export const styles = {
   mobileSectionWrapper:
     "flex flex-col justify-center base:gap-[4rem] md:items-stretch md:gap-[6rem] md:py-[5rem] lg:w-[55%] lg:items-start lg:gap-[4rem] lg:p-0",
   mobileSectionWrapper_cardWrapper:
-    "w-full items-center justify-center base:flex lg:hidden",
+    "w-full items-center justify-center base:grid base:grid-cols-1 lg:hidden",
   mobileSectionWrapper_statsCardWrapper:
     "flex base:justify-between md:justify-evenly lg:justify-start",
   desktopCardWrapper: "w-[45%] items-start justify-end base:hidden lg:flex",
