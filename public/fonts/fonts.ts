@@ -10,7 +10,7 @@ export const proximaNova = localFont({
     {
       style: 'normal',
       weight: '600',
-      path: './proxima-nova/ProximaNova-SemiBold.woff'
+      path: './proxima-nova/ProximaNova-Semibold.woff'
     },
     {
       style: 'normal',

@@ -1,7 +1,7 @@
 import { DEFAULT_IMG_URL_FALLBACK } from "@/utils/constants/global";
+import { avatar } from "@/components/atoms/Avatar/avatar.variants";
 import { CustomImage } from "../Image/CustomImage";
 import type { AvatarProps } from "./Avatar.props";
-import { avatar } from "./avatar.variants";
 
 export const Avatar = (props: AvatarProps) => {
   const { size, src, alt = "avatar", className, isLoading, ...rest } = props;
