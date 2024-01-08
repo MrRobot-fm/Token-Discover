@@ -1,7 +1,7 @@
 import type { HTMLProps } from "react";
 import type { IconName } from "@/types/icons";
 import type { IconVariants } from "../Icon/Icon.variants";
-import type { ButtonVariants } from "./button.variants";
+import type { ButtonVariants } from "./Button.variants";
 
 export interface ButtonProps
   extends Omit<ButtonVariants, "size">,

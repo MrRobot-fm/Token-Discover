@@ -1,6 +1,6 @@
 import type { ImageProps } from "next/image";
 import type { HTMLProps } from "react";
-import { AvatarVariants } from "../Avatar/avatar.variants";
+import { AvatarVariants } from "../Avatar/Avatar.variants";
 
 export type NftCardFooterProps = {
   avatarImage?: ImageProps;

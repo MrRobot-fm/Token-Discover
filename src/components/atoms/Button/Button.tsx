@@ -2,7 +2,7 @@ import Link from "next/link";
 import { checkIsExternal } from "@/utils/functions/is-external";
 import { Icon } from "@/components/atoms/Icon/Icon";
 import type { ButtonProps } from "./Button.props";
-import { button } from "./button.variants";
+import { button } from "./Button.variants";
 
 export const Button = (props: ButtonProps) => {
   const {

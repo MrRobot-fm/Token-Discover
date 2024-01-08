@@ -1,5 +1,5 @@
 import type { IconName } from "@/types/icons";
-import type { ButtonVariants } from "@/components/atoms/Button/button.variants";
+import type { ButtonVariants } from "@/components/atoms/Button/Button.variants";
 import { IconVariants } from "@/components/atoms/Icon/Icon.variants";
 
 export type SocialLinksModel = {

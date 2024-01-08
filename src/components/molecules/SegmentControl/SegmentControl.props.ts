@@ -1,5 +1,5 @@
 import type { DiscoverTabsModel } from "@/types/model/discover-tabs-model";
-import type { ButtonVariants } from "@/components/atoms/Button/button.variants";
+import type { ButtonVariants } from "@/components/atoms/Button/Button.variants";
 
 export type SegmentControlProps = {
   options: DiscoverTabsModel[];
