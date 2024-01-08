@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { DEFAULT_IMG_URL_FALLBACK } from "@/utils/constants/global";
-import { customImage } from "@/components/atoms/Image/customImage.variants";
 import { Skeleton } from "@/components/molecules/Skeleton/Skeleton";
 import type { CustomImageProps } from "./CustomImage.props";
+import { customImage } from "./customImage.variants";
 
 export const CustomImage = (props: CustomImageProps) => {
   const {
