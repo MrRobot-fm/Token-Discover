@@ -1,4 +1,4 @@
-import { axiosApiInstance } from "@/api/axios-instance";
+import { kyApiInstance } from "@/api/ky-instance";
 import type {
   GetInfiniteNFTsByCollectionsAddressResponseModel,
   GetNFTsByCollectionAddressSearchParams,
@@ -13,9 +13,9 @@ export const getNftByCollectionAddress = async (
 > => {
   const hasParams = !!Object.values(searchParams || {}).length;
 
-  const response = await axiosApiInstance(`/nfts`, {
-    ...(hasParams && { params: searchParams }),
+  const response = await kyApiInstance.get(`nfts`, {
+    ...(hasParams && { searchParams }),
   });
 
-  return response?.data;
+  return response?.json();
 };

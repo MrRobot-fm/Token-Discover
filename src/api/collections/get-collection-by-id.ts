@@ -1,4 +1,4 @@
-import { axiosSimpleHashInstance } from "@/api/axios-instance";
+import { kySimpleHashInstance } from "@/api/ky-instance";
 import {
   GetCollectionByIdResponseModel,
   GetCollectionByIdSearchParams,
@@ -9,9 +9,9 @@ export const getCollectionById = async (
 ): Promise<GetCollectionByIdResponseModel> => {
   const hasParams = !!Object.values(searchParams || {}).length;
 
-  const response = await axiosSimpleHashInstance.get("/collections/ids", {
-    ...(hasParams && { params: searchParams }),
+  const response = await kySimpleHashInstance.get("collections/ids", {
+    ...(hasParams && { searchParams }),
   });
 
-  return response.data;
+  return response.json();
 };

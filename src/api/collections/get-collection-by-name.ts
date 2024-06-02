@@ -1,4 +1,4 @@
-import { axiosApiInstance } from "@/api/axios-instance";
+import { kyApiInstance } from "@/api/ky-instance";
 import { GetCollectionsByNameResponseModel } from "@/types/model/api-collection-by-name";
 
 export const getCollectionByName = async ({
@@ -6,11 +6,11 @@ export const getCollectionByName = async ({
 }: {
   search: string;
 }): Promise<GetCollectionsByNameResponseModel> => {
-  const response = await axiosApiInstance.get("/collections", {
-    params: {
+  const response = await kyApiInstance.get("collections", {
+    searchParams: {
       search,
     },
   });
 
-  return response?.data;
+  return response.json();
 };

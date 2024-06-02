@@ -5,8 +5,8 @@ export type CarouselVariants = VariantProps<typeof carousel>;
 export const carousel = tv({
   slots: {
     carouselRoot: "w-full",
-    carouselViewport: "relative ",
-    carouselContainer: "flex cursor-pointer touch-pan-y ",
+    carouselViewport: "relative",
+    carouselContainer: "flex cursor-pointer touch-pan-y",
     carouselSlide: "relative",
     carouselNavigationLeft: "",
     carouselNavigationRight: "",

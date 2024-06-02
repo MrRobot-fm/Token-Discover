@@ -1,4 +1,4 @@
-import { axiosSimpleHashInstance } from "@/api/axios-instance";
+import { kySimpleHashInstance } from "@/api/ky-instance";
 import type {
   GetCollectionByContractResponseModel,
   GetCollectionsByContractSearchParams,
@@ -11,12 +11,12 @@ export const getCollectionByContract = async ({
 }: GetCollectionsByContractSearchParams): Promise<GetCollectionByContractResponseModel> => {
   const hasParams = !!Object.values(searchParams || {}).length;
 
-  const response = await axiosSimpleHashInstance.get(
-    `/collections/${chain}/${contract_address}`,
+  const response = await kySimpleHashInstance.get(
+    `collections/${chain}/${contract_address}`,
     {
-      ...(hasParams && { params: searchParams }),
+      ...(hasParams && { searchParams }),
     }
   );
 
-  return response.data;
+  return response.json();
 };

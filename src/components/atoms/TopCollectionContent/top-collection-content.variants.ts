@@ -8,7 +8,7 @@ export const topCollectionContent = tv({
   base: "flex w-full items-center justify-center overflow-hidden rounded-[2rem] shadow-alpha3",
   variants: {
     size: {
-      sm: "aspect-[1/1] ",
+      sm: "aspect-[1/1]",
       md: "aspect-[4/3]",
     },
     variant: {
