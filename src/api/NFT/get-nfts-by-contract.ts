@@ -1,4 +1,4 @@
-import { axiosSimpleHashInstance } from "@/api/axios-instance";
+import { kySimpleHashInstance } from "@/api/ky-instance";
 import type {
   GetInfiniteNftByContractResponseModel,
   GetNftByContractResponseModel,
@@ -14,12 +14,12 @@ export const getNftByContract = async ({
 > => {
   const hasParams = !!Object.values(searchParams || {}).length;
 
-  const response = await axiosSimpleHashInstance.get(
-    `/${chain}/${contract_address}`,
+  const response = await kySimpleHashInstance.get(
+    `${chain}/${contract_address}`,
     {
-      ...(hasParams && { params: searchParams }),
+      ...(hasParams && { searchParams }),
     }
   );
 
-  return response?.data;
+  return response.json();
 };

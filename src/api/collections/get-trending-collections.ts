@@ -1,9 +1,9 @@
+import { kySimpleHashInstance } from "@/api/ky-instance";
 import type {
   GetInfiniteTrendingCollectionsResponseModel,
   GetTrendingCollectionsResponseModel,
   GetTrendingCollectionsSearchParams,
 } from "@/types/model/api-trending-collections";
-import { axiosSimpleHashInstance } from "../axios-instance";
 
 export const getTrendingCollections = async (
   searchParams?: GetTrendingCollectionsSearchParams
@@ -13,9 +13,9 @@ export const getTrendingCollections = async (
 > => {
   const hasParams = !!Object.values(searchParams || {})?.length;
 
-  const response = await axiosSimpleHashInstance.get("/collections/trending", {
-    ...(hasParams && { params: searchParams }),
+  const response = await kySimpleHashInstance.get("collections/trending", {
+    ...(hasParams && { searchParams }),
   });
 
-  return response.data;
+  return response.json();
 };

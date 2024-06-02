@@ -1,20 +1,20 @@
+import { kySimpleHashInstance } from "@/api/ky-instance";
 import type {
   GetInfiniteTopCollectionsResponseModel,
   GetTopCollectionsResponseModel,
   GetTopCollectionsSearchParams,
 } from "@/types/model/api-top-collections";
-import { axiosSimpleHashInstance } from "../axios-instance";
 
 export const getTopCollections = async (
   searchParams: GetTopCollectionsSearchParams
 ): Promise<
   GetTopCollectionsResponseModel & GetInfiniteTopCollectionsResponseModel
 > => {
-  const hasParams = !!Object?.values(searchParams || {})?.length;
+  const hasParams = !!Object.values(searchParams || {}).length;
 
-  const response = await axiosSimpleHashInstance.get("/collections/top_v2", {
-    ...(hasParams && { params: searchParams }),
+  const response = await kySimpleHashInstance.get("collections/top_v2", {
+    ...(hasParams && { searchParams }),
   });
 
-  return response?.data;
+  return response.json();
 };

@@ -5,7 +5,7 @@ export type SkeletonVariants = VariantProps<typeof skeleton>;
 export const skeleton = tv({
   slots: {
     skeletonRoot:
-      "w-full animate-pulse rounded-[2rem] bg-background-grey py-4 shadow-md ",
+      "w-full animate-pulse rounded-[2rem] bg-background-grey py-4 shadow-md",
     skeletonHeader: "flex space-x-4 p-4 base:px-8 md:py-[3.5rem]",
     skeletonCircle:
       "flex-shrink-0 rounded-full bg-label-grey base:h-[8rem] base:w-[8rem] md:h-[9rem] md:w-[9rem]",
@@ -29,11 +29,11 @@ export const skeleton = tv({
       },
       nfts: {
         skeletonRoot:
-          " base:min-h-[34.62rem] base:w-full md:min-h-[47.72rem] md:min-w-[48rem] lg:min-h-[41.7rem] lg:min-w-[40rem] xl:min-h-[45.47rem] xl:min-w-[45rem]",
+          "base:min-h-[34.62rem] base:w-full md:min-h-[47.72rem] md:min-w-[48rem] lg:min-h-[41.7rem] lg:min-w-[40rem] xl:min-h-[45.47rem] xl:min-w-[45rem]",
       },
       topSales: {
         skeletonHeader: "md:py-[3rem]",
-        skeletonCircle: "base:h-[7rem] base:w-[7rem] ",
+        skeletonCircle: "base:h-[7rem] base:w-[7rem]",
         skeletonBar: "base:h-[2rem]",
         skeletonBody: "base:hidden md:flex md:flex-col",
       },

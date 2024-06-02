@@ -1,9 +1,9 @@
+import { kySimpleHashInstance } from "@/api/ky-instance";
 import type {
   GetInfiniteNftByCollectionsIdResponseModel,
   GetNftByCollectionsIdResponseModel,
   GetNftByCollectionsIdSearchParams,
 } from "@/types/model/api-nft-by-collection-id";
-import { axiosSimpleHashInstance } from "../axios-instance";
 
 export const getNftByCollectionId = async ({
   collection_id,
@@ -14,12 +14,12 @@ export const getNftByCollectionId = async ({
 > => {
   const hasParams = !!Object.values(searchParams || {}).length;
 
-  const response = await axiosSimpleHashInstance.get(
-    `/collection/${collection_id}`,
+  const response = await kySimpleHashInstance.get(
+    `collection/${collection_id}`,
     {
-      ...(hasParams && { params: searchParams }),
+      ...(hasParams && { searchParams }),
     }
   );
 
-  return response.data;
+  return response.json();
 };

@@ -12,7 +12,7 @@ export const button = tv({
     variant: {
       filled: {
         buttonWrapper:
-          "group border-[2px] border-callToAction bg-callToAction text-white transition duration-700  hover:bg-transparent hover:text-callToAction",
+          "group border-[2px] border-callToAction bg-callToAction text-white transition duration-700 hover:bg-transparent hover:text-callToAction",
         buttonLabel: "transition duration-700 group-hover:text-callToAction",
       },
       outline: {
@@ -54,7 +54,7 @@ export const button = tv({
       },
       segmentControlMd: {
         buttonWrapper: "h-fit w-[16.8rem]",
-        buttonLabel: " paragraph font-semibold capitalize",
+        buttonLabel: "paragraph font-semibold capitalize",
       },
       xl: {
         buttonLabel: "heading4 capitalize",
