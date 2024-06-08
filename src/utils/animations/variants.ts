@@ -25,19 +25,3 @@ export const item = {
   },
   closed: { opacity: 0.3, x: 300 },
 };
-
-export const heroRotate = {
-  initial: {
-    rotate: "30deg",
-    opacity: 0,
-    originX: 0,
-  },
-  rotate: {
-    rotate: "0deg",
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      type: "tween",
-    },
-  },
-};
