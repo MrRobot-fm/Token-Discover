@@ -18,7 +18,7 @@ With Token discover you can discover the top collections, the trending collectio
 * Typescript
 ## 📚 Libraries
 * Tanstack Query
-* Axios
+* Ky fetch
 * Tailwind CSS
 * Tailwind Variants
 * Framer Motion

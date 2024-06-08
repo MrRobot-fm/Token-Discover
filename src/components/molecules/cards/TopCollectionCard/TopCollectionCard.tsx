@@ -11,8 +11,9 @@ export const TopCollectionCard = (props: TopCollectionCardProps) => {
   return (
     <Link
       href={
-        `/collections/${v.kebabCase(data?.nfts[0]?.collection?.name)}/${data
-          ?.nfts[0]?.chain}/${data?.nfts[0]?.contract_address}` || ""
+        `/collections/${v.kebabCase(data?.nfts[0]?.collection?.name)}/${
+          data?.nfts[0]?.chain
+        }/${data?.nfts[0]?.contract_address}` || ""
       }
     >
       <div className={styles.cardWrapper}>

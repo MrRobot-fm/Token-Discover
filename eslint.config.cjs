@@ -12,6 +12,16 @@ module.exports = {
     "google",
     "prettier",
   ],
+  ignorePatterns: [
+    ".next",
+    "commitlint.config.*",
+    "next-env.d.ts",
+    "node_modules",
+    "package-lock.json",
+    "public",
+    "src/api/**/*",
+    "yarn.lock",
+  ],
   overrides: [],
   settings: {
     react: {

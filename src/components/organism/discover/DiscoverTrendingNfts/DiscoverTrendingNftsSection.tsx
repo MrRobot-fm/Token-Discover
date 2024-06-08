@@ -16,8 +16,8 @@ export const DiscoverTrendingNftsSection = () => {
       limit: limitValue,
     });
 
-  const collectionIds = data?.pages?.flatMap(
-    (item) => item?.collections?.map((item) => item?.collection_id)
+  const collectionIds = data?.pages?.flatMap((item) =>
+    item?.collections?.map((item) => item?.collection_id)
   );
 
   return (

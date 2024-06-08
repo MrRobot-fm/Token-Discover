@@ -1,4 +1,4 @@
-import { axiosSimpleHashInstance } from "@/api/axios-instance";
+import { kySimpleHashInstance } from "@/api/ky-instance";
 import type {
   GetNftByTokenIdResponseModel,
   GetNftByTokenIdSearchParams,
@@ -9,9 +9,9 @@ export const getNftByTokenId = async ({
   contract_address,
   token_id,
 }: GetNftByTokenIdSearchParams): Promise<GetNftByTokenIdResponseModel> => {
-  const response = await axiosSimpleHashInstance.get(
+  const response = await kySimpleHashInstance.get(
     `${chain}/${contract_address}/${token_id}`
   );
 
-  return response.data;
+  return response.json();
 };

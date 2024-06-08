@@ -81,7 +81,7 @@ export type GetInfiniteTopCollectionsResponseModel = {
 export type UseGetTopCollectionsApiParams = {
   chains: string;
   period?: string;
-  referenceDate?: Date;
+  referenceDate?: string;
   includeTopContractDetails?: string;
   limit?: number;
   cursor?: string;
@@ -90,7 +90,7 @@ export type UseGetTopCollectionsApiParams = {
 export type GetTopCollectionsSearchParams = {
   chains: string;
   time_period?: string;
-  reference_date?: Date;
+  reference_date?: string;
   include_top_contract_details?: string;
   limit?: number;
   cursor?: string;

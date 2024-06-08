@@ -1,10 +1,8 @@
-import { notFound } from "next/navigation";
-import { GetTopCollectionsSearchParams } from "@/types/model/api-top-collections";
+import { kySimpleHashInstance } from "@/api/ky-instance";
 import {
   GetTopSalesByCollectionResponseModel,
   GetTopSalesByCollectionSearchParams,
 } from "@/types/model/api-top-sales-by-collection";
-import { axiosSimpleHashInstance } from "../axios-instance";
 
 export const getTopSalesByCollection = async ({
   collection_id,
@@ -14,12 +12,12 @@ export const getTopSalesByCollection = async ({
 }): Promise<GetTopSalesByCollectionResponseModel> => {
   const hasParams = Object.values(searchParams || {}).length;
 
-  const response = await axiosSimpleHashInstance(
+  const response = await kySimpleHashInstance.get(
     `top_sales/collection/${collection_id}`,
     {
-      ...(hasParams && { params: searchParams }),
+      ...(hasParams && { searchParams }),
     }
   );
 
-  return response?.data;
+  return response?.json();
 };
