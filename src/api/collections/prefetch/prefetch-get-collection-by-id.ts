@@ -1,5 +1,5 @@
-import { DehydratedState, QueryClient, dehydrate } from "@tanstack/react-query";
-import { useMemo } from "react";
+import { DehydratedState, dehydrate } from "@tanstack/react-query";
+import { getQueryClient } from "@/utils/providers/get-query-client";
 import {
   GetCollectionByIdSearchParams,
   UseGetCollectionByIdApiParams,
@@ -11,7 +11,7 @@ export const prefetchCollectionById = async (
 ): Promise<{
   dehydrateState: DehydratedState;
 }> => {
-  const queryClient = new QueryClient();
+  const queryClient = getQueryClient();
 
   const { collectionId, includeTopContractDetails } = apiParams || {};
 
