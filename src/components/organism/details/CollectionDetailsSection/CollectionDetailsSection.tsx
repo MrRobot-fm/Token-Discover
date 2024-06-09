@@ -49,10 +49,8 @@ export const CollectionDetailsSection = ({
   });
 
   if (
-    !isLoading &&
-    !isNFTLoading &&
-    (!collectionByContract?.collections?.length ||
-      !nftByContract?.pages?.length)
+    (collectionByContract && collectionByContract?.collections?.length === 0) ||
+    (nftByContract && nftByContract?.pages?.length <= 0)
   ) {
     return notFound();
   }
@@ -71,22 +69,24 @@ export const CollectionDetailsSection = ({
         isLoading={isLoading}
       />
       <CollectionDetailsInfo data={collectionByContract} />
-      <div className={styles.collectionDetails_list}>
-        <SearchBar
-          name="searchValue"
-          placeholder="Search your favorite NFTs"
-          register={register}
-          onSubmit={handleSubmit(handleSearch)}
-        />
-        <DiscoverIndexList
-          skeletonVariant="fluid"
-          isLoading={isNFTLoading}
-          items={(filteredItems || []).map((item, index) => (
-            <HighlightedNFTCard key={index} {...item} />
-          ))}
-        />
-        {hasNextPage && <LoadMore loadMore={fetchNextPage} />}
-      </div>
+      {nftByContract && (
+        <div className={styles.collectionDetails_list}>
+          <SearchBar
+            name="searchValue"
+            placeholder="Search your favorite NFTs"
+            register={register}
+            onSubmit={handleSubmit(handleSearch)}
+          />
+          <DiscoverIndexList
+            skeletonVariant="fluid"
+            isLoading={isNFTLoading}
+            items={(filteredItems || []).map((item, index) => (
+              <HighlightedNFTCard key={index} {...item} />
+            ))}
+          />
+          {hasNextPage && <LoadMore loadMore={fetchNextPage} />}
+        </div>
+      )}
     </div>
   );
 };
