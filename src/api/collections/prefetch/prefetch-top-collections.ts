@@ -1,4 +1,5 @@
-import { DehydratedState, QueryClient, dehydrate } from "@tanstack/react-query";
+import { DehydratedState, dehydrate } from "@tanstack/react-query";
+import { getQueryClient } from "@/utils/providers/get-query-client";
 import type { UseGetTopCollectionsApiParams } from "@/types/model/api-top-collections";
 import { getTopCollections } from "../get-top-collections";
 
@@ -7,7 +8,7 @@ export const prefetchTopCollections = async (
 ): Promise<{
   dehydrateState: DehydratedState;
 }> => {
-  const queryClient = new QueryClient();
+  const queryClient = getQueryClient();
 
   const {
     chains,

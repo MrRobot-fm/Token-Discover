@@ -8,7 +8,7 @@ export const DiscoverIndexList = (props: DiscoverIndexListProps) => {
   return (
     <div className={styles.listWrapper}>
       {isLoading
-        ? Array.from({ length: items?.length || 10 }).map((_, index) => (
+        ? Array.from({ length: 8 }).map((_, index) => (
             <Skeleton key={index} variant={skeletonVariant} barCount={2} />
           ))
         : (items || []).map((item, index) => <div key={index}>{item}</div>)}

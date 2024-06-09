@@ -1,4 +1,5 @@
-import { DehydratedState, QueryClient, dehydrate } from "@tanstack/react-query";
+import { DehydratedState, dehydrate } from "@tanstack/react-query";
+import { getQueryClient } from "@/utils/providers/get-query-client";
 import { getNftByContract } from "@/api/NFT/get-nfts-by-contract";
 import type {
   GetNftsByContractSearchParams,
@@ -10,7 +11,7 @@ export const prefetchNFTByContract = async (
 ): Promise<{
   dehydrateState: DehydratedState;
 }> => {
-  const queryClient = new QueryClient();
+  const queryClient = getQueryClient();
 
   const { chain, contractAddress, count, cursor, limit } = apiParams || {};
 

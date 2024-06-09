@@ -1,4 +1,5 @@
-import { DehydratedState, QueryClient, dehydrate } from "@tanstack/react-query";
+import { DehydratedState, dehydrate } from "@tanstack/react-query";
+import { getQueryClient } from "@/utils/providers/get-query-client";
 import { getTrendingCollections } from "@/api/collections/get-trending-collections";
 import type { UseGetTrendingCollectionsApiParams } from "@/types/model/api-trending-collections";
 
@@ -7,7 +8,7 @@ export const prefetchTrendingCollections = async (
 ): Promise<{
   dehydrateState: DehydratedState;
 }> => {
-  const queryClient = new QueryClient();
+  const queryClient = getQueryClient();
 
   const { chains, interval, limit, includeContractDetails } = apiParams || {};
 

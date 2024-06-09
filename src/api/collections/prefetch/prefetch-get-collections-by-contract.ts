@@ -1,4 +1,5 @@
-import { DehydratedState, QueryClient, dehydrate } from "@tanstack/react-query";
+import { DehydratedState, dehydrate } from "@tanstack/react-query";
+import { getQueryClient } from "@/utils/providers/get-query-client";
 import {
   GetCollectionsByContractSearchParams,
   UseGetCollectionByContractApiParams,
@@ -10,7 +11,7 @@ export const prefetchCollectionsByContract = async (
 ): Promise<{
   dehydrateState: DehydratedState;
 }> => {
-  const queryClient = new QueryClient();
+  const queryClient = getQueryClient();
 
   const { chain, contractAddress, cursor, includeDetails, limit } =
     apiParams || {};
