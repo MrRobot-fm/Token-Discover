@@ -11,7 +11,8 @@ const nextConfig = {
   {protocol: 'https',hostname:'raw.seadn.io'},
   {protocol: 'https',hostname:'static.nftgo.io'},
   {protocol: 'https',hostname:'metadata.ens.domains'},
-  {protocol: 'https',hostname:'openseauserdata.com'}
+  {protocol: 'https',hostname:'openseauserdata.com'},
+  {protocol: 'https',hostname:'remilio.org'}
 ] 
 }
 }

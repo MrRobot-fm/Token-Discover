@@ -7,7 +7,7 @@ export const FooterLegalInfo = ({
 }) => {
   return (
     <div className="w-full border-t border-t-label-grey pt-[2rem]">
-      <span className="text-label-grey">{`Ⓒ${year} ${label}`}</span>
+      <span className="text-[1.3rem] text-label-grey md:text-[1.5rem]">{`Ⓒ${year} ${label}`}</span>
     </div>
   );
 };

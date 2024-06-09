@@ -1,3 +1,5 @@
+import Link from "next/link";
+import v from "voca";
 import { getFormattedCryptoCurrency } from "@/utils/functions/get-formatted-crypto-currency";
 import { getFormattedDate } from "@/utils/functions/get-formatted-date";
 import type { GetNftByTokenIdResponseModel } from "@/types/model/api-nft-by-token-id";
@@ -13,6 +15,23 @@ export const NFTDetailsInfo = ({
     <div className={styles.nftDetailsInfo}>
       <div>
         <h3>{data?.name || `#${data?.token_id}`}</h3>
+      </div>
+      <div>
+        <h5 className={styles.nftDetailsInfo_label}>Collection</h5>
+        <Link
+          href={`/collections/${v.slugify(data?.collection?.name)}/${data?.chain}/${data?.contract_address}`}
+        >
+          <div className={styles.nftDetailsInfo_collection}>
+            <Avatar
+              size="sm"
+              src={data?.collection?.image_url || ""}
+              alt={data?.collection?.name || ""}
+            />
+            <span className={styles.nftDetailsInfo_collection_label}>
+              {data?.collection?.name}
+            </span>
+          </div>
+        </Link>
       </div>
       {data?.description && (
         <div>
@@ -49,19 +68,6 @@ export const NFTDetailsInfo = ({
             decimals: data?.last_sale?.payment_token?.decimals || 0,
           })}
         </p>
-      </div>
-      <div>
-        <h5 className={styles.nftDetailsInfo_label}>Collection</h5>
-        <div className={styles.nftDetailsInfo_collection}>
-          <Avatar
-            size="sm"
-            src={data?.collection?.image_url || ""}
-            alt={data?.collection?.name || ""}
-          />
-          <span className={styles.nftDetailsInfo_collection_label}>
-            {data?.collection?.name}
-          </span>
-        </div>
       </div>
     </div>
   );
